@@ -1,0 +1,15 @@
+h1 = @static_page.title
+p
+  ' Last updated
+  => pretty_time(@static_page.updated_at)
+
+p
+  => link to: Routes.page_history_path(@conn, :index, @static_page) do
+    i.fa.fa-history>
+    ' Revision history
+  = if can?(@conn, :edit, Philomena.StaticPages.StaticPage) do
+    =< link to: Routes.page_path(@conn, :edit, @static_page) do
+      i.fa.fa-edit>
+      ' Edit
+
+== @rendered

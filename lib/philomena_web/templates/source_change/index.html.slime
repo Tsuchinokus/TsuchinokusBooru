@@ -1,0 +1,49 @@
+.block
+  .block__header
+    = @pagination
+
+  .block__content
+    table.table
+      thead
+        tr
+          th colspan=2 Image
+          th New Source
+          th Timestamp
+          th User
+          th Initial?
+
+      tbody
+        = for source_change <- @source_changes do
+          tr
+            td.center
+              = link source_change.image_id, to: Routes.image_path(@conn, :show, source_change.image)
+            td.center
+              = render PhilomenaWeb.ImageView, "_image_container.html", image: source_change.image, size: :thumb_tiny, conn: @conn
+
+            td
+              = source_change.new_value
+            
+            td
+              = pretty_time(source_change.created_at)
+
+            td class=user_column_class(source_change)
+              => render PhilomenaWeb.UserAttributionView, "_anon_user.html", object: source_change, conn: @conn
+
+              = if can?(@conn, :show, :ip_address) do
+                => link_to_ip @conn, source_change.ip
+                => link_to_fingerprint @conn,source_change.fingerprint
+
+              = if staff?(source_change) do
+                br
+                small
+                  strong> Stop!
+                  ' This user is a staff member.
+                  br
+                  ' Ask them before reverting their changes.
+
+            td
+              = if source_change.initial do
+                ' &#x2713;
+
+  .block__header
+    = @pagination

@@ -1,0 +1,49 @@
+#!/usr/bin/env sh
+
+# For compatibility with musl libc
+export CARGO_FEATURE_DISABLE_INITIAL_EXEC_TLS=1
+export CARGO_HOME=/srv/philomena/.cargo
+
+background() {
+  while :; do
+    mix run -e 'Philomena.Release.update_channels()'
+    mix run -e 'Philomena.Release.verify_artist_links()'
+    mix run -e 'Philomena.Release.update_stats()'
+    mix run -e 'Philomena.Release.clean_moderation_logs()'
+    mix run -e 'Philomena.Release.generate_autocomplete()'
+
+    sleep 300
+  done
+}
+
+# Always install assets
+(
+cd /srv/philomena/assets
+npm install
+)
+
+# Always install mix dependencies
+(cd /srv/philomena && mix deps.get)
+
+# Sleep to allow Elasticsearch to finish initializing
+# if it's not done doing whatever it does yet
+echo -n "Waiting for Elasticsearch"
+
+until wget -qO - elasticsearch:9200; do
+  echo -n "."
+  sleep 2
+done
+
+echo
+
+# Try to create the database if it doesn't exist yet
+createdb -h postgres -U postgres philomena_dev && mix ecto.setup_dev && mix reindex_all
+
+# Explicitly compile deps to avoid racing
+mix compile
+
+# Run background jobs
+background &
+
+# Run the application
+START_WORKER=true exec mix phx.server

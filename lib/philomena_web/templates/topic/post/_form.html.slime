@@ -1,0 +1,13 @@
+= form_for @changeset, Routes.forum_topic_post_path(@conn, :create, @forum, @topic), fn f ->
+  = if @changeset.action do
+    .alert.alert-danger
+      p Oops, something went wrong! Please check the errors below.
+
+  .block
+    div
+      = render PhilomenaWeb.MarkdownView, "_input.html", conn: @conn, f: f, placeholder: "Please read the site rules before posting and use ||spoilers|| for NSFW stuff in SFW forums."
+
+    .block__content.communication-edit__actions
+      => submit "Post", class: "button", data: [disable_with: raw("Posting&hellip;")]
+
+      = render PhilomenaWeb.MarkdownView, "_anon_checkbox.html", conn: @conn, f: f

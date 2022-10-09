@@ -1,0 +1,12 @@
+h1 Updating Moderation Scratchpad
+
+= form_for @changeset, Routes.profile_scratchpad_path(@conn, :update, @user), [method: "put"], fn f ->
+  = if @changeset.action do
+    .alert.alert-danger
+      p Oops, something went wrong! Please check the errors below.
+  .block
+    div
+      = render PhilomenaWeb.MarkdownView, "_input.html", conn: @conn, f: f, action_text: "Scratchpad", placeholder: "Scratchpad Contents", name: :scratchpad, required: false
+
+    .block__content.communication-edit__actions
+      => submit "Update", class: "button"
