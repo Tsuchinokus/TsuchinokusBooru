@@ -13,6 +13,6 @@ br
 
 .column-layout
   .column-layout__left
-    = render PhilomenaWeb.CommissionView, "_directory_sidebar.html", conn: @conn
+    = render TsuchinokusWeb.CommissionView, "_directory_sidebar.html", conn: @conn
   .column-layout__main
-    = render PhilomenaWeb.CommissionView, "_directory_results.html", commissions: @commissions, conn: @conn
+    = render TsuchinokusWeb.CommissionView, "_directory_results.html", commissions: @commissions, conn: @conn

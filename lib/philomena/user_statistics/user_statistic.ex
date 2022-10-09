@@ -1,8 +1,8 @@
-defmodule Philomena.UserStatistics.UserStatistic do
+defmodule Tsuchinokus.UserStatistics.UserStatistic do
   use Ecto.Schema
   import Ecto.Changeset
 
-  alias Philomena.Users.User
+  alias Tsuchinokus.Users.User
 
   # fixme: rekey this on (user_id, day)
   schema "user_statistics" do

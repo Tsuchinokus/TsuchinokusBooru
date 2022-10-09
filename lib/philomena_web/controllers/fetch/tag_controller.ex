@@ -1,8 +1,8 @@
-defmodule PhilomenaWeb.Fetch.TagController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.Fetch.TagController do
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.Tags.Tag
-  alias Philomena.Repo
+  alias Tsuchinokus.Tags.Tag
+  alias Tsuchinokus.Repo
   import Ecto.Query
 
   def index(conn, %{"ids" => ids}) when is_list(ids) do
@@ -35,6 +35,6 @@ defmodule PhilomenaWeb.Fetch.TagController do
     do: nil
 
   defp tag_url_root do
-    Application.get_env(:philomena, :tag_url_root)
+    Application.get_env(:tsuchinokus, :tag_url_root)
   end
 end

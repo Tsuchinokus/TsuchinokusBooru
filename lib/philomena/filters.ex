@@ -1,15 +1,15 @@
-defmodule Philomena.Filters do
+defmodule Tsuchinokus.Filters do
   @moduledoc """
   The Filters context.
   """
 
   import Ecto.Query, warn: false
-  alias Philomena.Repo
+  alias Tsuchinokus.Repo
 
-  alias Philomena.Filters.Filter
-  alias Philomena.Elasticsearch
-  alias Philomena.Filters.ElasticsearchIndex, as: FilterIndex
-  alias Philomena.IndexWorker
+  alias Tsuchinokus.Filters.Filter
+  alias Tsuchinokus.Elasticsearch
+  alias Tsuchinokus.Filters.ElasticsearchIndex, as: FilterIndex
+  alias Tsuchinokus.IndexWorker
 
   @doc """
   Returns the list of filters.

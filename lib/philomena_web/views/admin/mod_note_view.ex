@@ -1,9 +1,9 @@
-defmodule PhilomenaWeb.Admin.ModNoteView do
-  use PhilomenaWeb, :view
+defmodule TsuchinokusWeb.Admin.ModNoteView do
+  use TsuchinokusWeb, :view
 
-  alias Philomena.Users.User
-  alias Philomena.Reports.Report
-  alias Philomena.DnpEntries.DnpEntry
+  alias Tsuchinokus.Users.User
+  alias Tsuchinokus.Reports.Report
+  alias Tsuchinokus.DnpEntries.DnpEntry
 
   def link_to_noted_thing(conn, %DnpEntry{requesting_user: user} = dnp_entry),
     do: link("#{user.name}'s DNP entry", to: Routes.dnp_entry_path(conn, :show, dnp_entry))

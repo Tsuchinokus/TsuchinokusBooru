@@ -1,9 +1,9 @@
-defmodule PhilomenaWeb.Admin.Donation.UserController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.Admin.Donation.UserController do
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.Users.User
-  alias Philomena.Donations.Donation
-  alias Philomena.Donations
+  alias Tsuchinokus.Users.User
+  alias Tsuchinokus.Donations.Donation
+  alias Tsuchinokus.Donations
 
   plug :verify_authorized
   plug :load_resource, model: User, id_field: "slug", persisted: true, preload: [donations: :user]
@@ -22,7 +22,7 @@ defmodule PhilomenaWeb.Admin.Donation.UserController do
   defp verify_authorized(conn, _opts) do
     case Canada.Can.can?(conn.assigns.current_user, :index, Donation) do
       true -> conn
-      _false -> PhilomenaWeb.NotAuthorizedPlug.call(conn)
+      _false -> TsuchinokusWeb.NotAuthorizedPlug.call(conn)
     end
   end
 end

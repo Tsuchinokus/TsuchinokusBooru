@@ -1,7 +1,7 @@
-defmodule PhilomenaWeb.Router do
-  use PhilomenaWeb, :router
+defmodule TsuchinokusWeb.Router do
+  use TsuchinokusWeb, :router
 
-  import PhilomenaWeb.UserAuth
+  import TsuchinokusWeb.UserAuth
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -10,27 +10,27 @@ defmodule PhilomenaWeb.Router do
     plug :protect_from_forgery
     plug :put_secure_browser_headers
     plug :fetch_current_user
-    plug PhilomenaWeb.ContentSecurityPolicyPlug
-    plug PhilomenaWeb.CurrentFilterPlug
-    plug PhilomenaWeb.ImageFilterPlug
-    plug PhilomenaWeb.PaginationPlug
-    plug PhilomenaWeb.EnsureUserEnabledPlug
-    plug PhilomenaWeb.CurrentBanPlug
-    plug PhilomenaWeb.NotificationCountPlug
-    plug PhilomenaWeb.SiteNoticePlug
-    plug PhilomenaWeb.ForumListPlug
-    plug PhilomenaWeb.FilterSelectPlug
-    plug PhilomenaWeb.ChannelPlug
-    plug PhilomenaWeb.AdminCountersPlug
+    plug TsuchinokusWeb.ContentSecurityPolicyPlug
+    plug TsuchinokusWeb.CurrentFilterPlug
+    plug TsuchinokusWeb.ImageFilterPlug
+    plug TsuchinokusWeb.PaginationPlug
+    plug TsuchinokusWeb.EnsureUserEnabledPlug
+    plug TsuchinokusWeb.CurrentBanPlug
+    plug TsuchinokusWeb.NotificationCountPlug
+    plug TsuchinokusWeb.SiteNoticePlug
+    plug TsuchinokusWeb.ForumListPlug
+    plug TsuchinokusWeb.FilterSelectPlug
+    plug TsuchinokusWeb.ChannelPlug
+    plug TsuchinokusWeb.AdminCountersPlug
   end
 
   pipeline :api do
-    plug PhilomenaWeb.ApiTokenPlug
-    plug PhilomenaWeb.EnsureUserEnabledPlug
-    plug PhilomenaWeb.CurrentFilterPlug
-    plug PhilomenaWeb.FilterIdPlug
-    plug PhilomenaWeb.ImageFilterPlug
-    plug PhilomenaWeb.PaginationPlug
+    plug TsuchinokusWeb.ApiTokenPlug
+    plug TsuchinokusWeb.EnsureUserEnabledPlug
+    plug TsuchinokusWeb.CurrentFilterPlug
+    plug TsuchinokusWeb.FilterIdPlug
+    plug TsuchinokusWeb.ImageFilterPlug
+    plug TsuchinokusWeb.PaginationPlug
   end
 
   pipeline :accepts_rss do
@@ -42,24 +42,24 @@ defmodule PhilomenaWeb.Router do
   end
 
   pipeline :ensure_totp do
-    plug PhilomenaWeb.TotpPlug
+    plug TsuchinokusWeb.TotpPlug
   end
 
   pipeline :ensure_tor_authorized do
-    plug PhilomenaWeb.TorPlug
+    plug TsuchinokusWeb.TorPlug
   end
 
   pipeline :ensure_not_banned do
-    plug PhilomenaWeb.FilterBannedUsersPlug
+    plug TsuchinokusWeb.FilterBannedUsersPlug
   end
 
-  scope "/", PhilomenaWeb do
+  scope "/", TsuchinokusWeb do
     pipe_through [:browser, :redirect_if_user_is_authenticated]
 
     resources "/sessions", SessionController, only: [:new, :create], singleton: true
   end
 
-  scope "/", PhilomenaWeb do
+  scope "/", TsuchinokusWeb do
     pipe_through [:browser, :require_authenticated_user]
 
     # Additional routes for TOTP
@@ -68,7 +68,7 @@ defmodule PhilomenaWeb.Router do
     end
   end
 
-  scope "/", PhilomenaWeb do
+  scope "/", TsuchinokusWeb do
     pipe_through [
       :browser,
       :ensure_not_banned,
@@ -79,7 +79,7 @@ defmodule PhilomenaWeb.Router do
     resources "/registrations", RegistrationController, only: [:new, :create], singleton: true
   end
 
-  scope "/", PhilomenaWeb do
+  scope "/", TsuchinokusWeb do
     pipe_through [
       :browser,
       :ensure_tor_authorized,
@@ -91,7 +91,7 @@ defmodule PhilomenaWeb.Router do
     resources "/unlocks", UnlockController, only: [:new, :create, :show]
   end
 
-  scope "/", PhilomenaWeb do
+  scope "/", TsuchinokusWeb do
     pipe_through [
       :browser,
       :ensure_totp,
@@ -110,12 +110,12 @@ defmodule PhilomenaWeb.Router do
     end
   end
 
-  scope "/api/v1/rss", PhilomenaWeb.Api.Rss, as: :api_rss do
+  scope "/api/v1/rss", TsuchinokusWeb.Api.Rss, as: :api_rss do
     pipe_through [:accepts_rss, :api, :require_authenticated_user]
     resources "/watched", WatchedController, only: [:index]
   end
 
-  scope "/api/v1/json", PhilomenaWeb.Api.Json, as: :api_json do
+  scope "/api/v1/json", TsuchinokusWeb.Api.Json, as: :api_json do
     pipe_through [:accepts_json, :api, :ensure_tor_authorized]
 
     scope "/images", Image, as: :image do
@@ -157,7 +157,7 @@ defmodule PhilomenaWeb.Router do
     end
   end
 
-  scope "/", PhilomenaWeb do
+  scope "/", TsuchinokusWeb do
     pipe_through [:browser, :ensure_totp, :ensure_tor_authorized]
 
     # A curiosity due to the fact that Phoenix routes cannot have constraints
@@ -166,7 +166,7 @@ defmodule PhilomenaWeb.Router do
     end
   end
 
-  scope "/", PhilomenaWeb do
+  scope "/", TsuchinokusWeb do
     pipe_through [:browser, :ensure_totp, :require_authenticated_user]
 
     scope "/notifications", Notification, as: :notification do
@@ -448,7 +448,7 @@ defmodule PhilomenaWeb.Router do
     resources "/channels", ChannelController, only: [:new, :create, :edit, :update, :delete]
   end
 
-  scope "/", PhilomenaWeb do
+  scope "/", TsuchinokusWeb do
     pipe_through [:browser, :ensure_totp, :ensure_tor_authorized]
 
     get "/", ActivityController, :index
@@ -556,7 +556,7 @@ defmodule PhilomenaWeb.Router do
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", PhilomenaWeb do
+  # scope "/api", TsuchinokusWeb do
   #   pipe_through :api
   # end
 end

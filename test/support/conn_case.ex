@@ -1,4 +1,4 @@
-defmodule PhilomenaWeb.ConnCase do
+defmodule TsuchinokusWeb.ConnCase do
   @moduledoc """
   This module defines the test case to be used by
   tests that require setting up a connection.
@@ -20,25 +20,25 @@ defmodule PhilomenaWeb.ConnCase do
       # Import conveniences for testing with connections
       import Plug.Conn
       import Phoenix.ConnTest
-      import PhilomenaWeb.ConnCase
-      alias PhilomenaWeb.Router.Helpers, as: Routes
+      import TsuchinokusWeb.ConnCase
+      alias TsuchinokusWeb.Router.Helpers, as: Routes
 
       # The default endpoint for testing
-      @endpoint PhilomenaWeb.Endpoint
+      @endpoint TsuchinokusWeb.Endpoint
     end
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Philomena.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Tsuchinokus.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(Philomena.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(Tsuchinokus.Repo, {:shared, self()})
     end
 
     # Insert default filter
-    %Philomena.Filters.Filter{name: "Default", system: true}
-    |> Philomena.Filters.change_filter()
-    |> Philomena.Repo.insert!()
+    %Tsuchinokus.Filters.Filter{name: "Default", system: true}
+    |> Tsuchinokus.Filters.change_filter()
+    |> Tsuchinokus.Repo.insert!()
 
     conn =
       Phoenix.ConnTest.build_conn()
@@ -56,7 +56,7 @@ defmodule PhilomenaWeb.ConnCase do
   test context.
   """
   def register_and_log_in_user(%{conn: conn}) do
-    user = Philomena.UsersFixtures.confirmed_user_fixture()
+    user = Tsuchinokus.UsersFixtures.confirmed_user_fixture()
     %{conn: log_in_user(conn, user), user: user}
   end
 
@@ -66,7 +66,7 @@ defmodule PhilomenaWeb.ConnCase do
   It returns an updated `conn`.
   """
   def log_in_user(conn, user) do
-    token = Philomena.Users.generate_user_session_token(user)
+    token = Tsuchinokus.Users.generate_user_session_token(user)
 
     conn
     |> Phoenix.ConnTest.init_test_session(%{})

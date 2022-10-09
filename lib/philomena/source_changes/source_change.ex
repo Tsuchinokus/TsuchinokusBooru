@@ -1,10 +1,10 @@
-defmodule Philomena.SourceChanges.SourceChange do
+defmodule Tsuchinokus.SourceChanges.SourceChange do
   use Ecto.Schema
   import Ecto.Changeset
 
   schema "source_changes" do
-    belongs_to :user, Philomena.Users.User
-    belongs_to :image, Philomena.Images.Image
+    belongs_to :user, Tsuchinokus.Users.User
+    belongs_to :image, Tsuchinokus.Images.Image
 
     field :ip, EctoNetwork.INET
     field :fingerprint, :string

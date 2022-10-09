@@ -1,9 +1,9 @@
-defmodule Philomena.Images.DnpValidator do
+defmodule Tsuchinokus.Images.DnpValidator do
   import Ecto.Changeset
   import Ecto.Query
-  alias Philomena.Repo
-  alias Philomena.Tags.Tag
-  alias Philomena.ArtistLinks.ArtistLink
+  alias Tsuchinokus.Repo
+  alias Tsuchinokus.Tags.Tag
+  alias Tsuchinokus.ArtistLinks.ArtistLink
 
   def validate_dnp(changeset, uploader) do
     tags =

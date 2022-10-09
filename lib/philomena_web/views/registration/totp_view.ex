@@ -1,3 +1,3 @@
-defmodule PhilomenaWeb.Registration.TotpView do
-  use PhilomenaWeb, :view
+defmodule TsuchinokusWeb.Registration.TotpView do
+  use TsuchinokusWeb, :view
 end

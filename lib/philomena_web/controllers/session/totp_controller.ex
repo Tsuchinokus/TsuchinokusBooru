@@ -1,11 +1,11 @@
-defmodule PhilomenaWeb.Session.TotpController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.Session.TotpController do
+  use TsuchinokusWeb, :controller
 
-  alias PhilomenaWeb.LayoutView
-  alias PhilomenaWeb.UserAuth
-  alias Philomena.Users.User
-  alias Philomena.Users
-  alias Philomena.Repo
+  alias TsuchinokusWeb.LayoutView
+  alias TsuchinokusWeb.UserAuth
+  alias Tsuchinokus.Users.User
+  alias Tsuchinokus.Users
+  alias Tsuchinokus.Repo
 
   def new(conn, _params) do
     changeset = Users.change_user(conn.assigns.current_user)

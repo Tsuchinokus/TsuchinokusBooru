@@ -32,7 +32,7 @@ p = link "Edit image", to: Routes.tag_image_path(@conn, :edit, @tag)
   h4 Implied Tags
   .fieldlabel Tags in this list will be added when this tag is added to an image.
   .field
-    = render PhilomenaWeb.TagView, "_tag_editor.html", f: f, name: :implied_tag_list, type: :edit, conn: @conn
+    = render TsuchinokusWeb.TagView, "_tag_editor.html", f: f, name: :implied_tag_list, type: :edit, conn: @conn
 
   br
   = submit "Save Tag", class: "button button--state-primary"

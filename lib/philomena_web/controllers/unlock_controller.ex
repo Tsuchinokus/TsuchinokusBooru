@@ -1,10 +1,10 @@
-defmodule PhilomenaWeb.UnlockController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.UnlockController do
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.Users
+  alias Tsuchinokus.Users
 
-  plug PhilomenaWeb.CaptchaPlug
-  plug PhilomenaWeb.CheckCaptchaPlug when action in [:create]
+  plug TsuchinokusWeb.CaptchaPlug
+  plug TsuchinokusWeb.CheckCaptchaPlug when action in [:create]
 
   def new(conn, _params) do
     render(conn, "new.html")

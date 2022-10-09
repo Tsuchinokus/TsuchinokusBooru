@@ -1,16 +1,16 @@
-defmodule Philomena.Reports do
+defmodule Tsuchinokus.Reports do
   @moduledoc """
   The Reports context.
   """
 
   import Ecto.Query, warn: false
-  alias Philomena.Repo
+  alias Tsuchinokus.Repo
 
-  alias Philomena.Elasticsearch
-  alias Philomena.Reports.Report
-  alias Philomena.Reports.ElasticsearchIndex, as: ReportIndex
-  alias Philomena.IndexWorker
-  alias Philomena.Polymorphic
+  alias Tsuchinokus.Elasticsearch
+  alias Tsuchinokus.Reports.Report
+  alias Tsuchinokus.Reports.ElasticsearchIndex, as: ReportIndex
+  alias Tsuchinokus.IndexWorker
+  alias Tsuchinokus.Polymorphic
 
   @doc """
   Returns the list of reports.
@@ -71,7 +71,7 @@ defmodule Philomena.Reports do
       ip: %Postgrex.INET{address: {127, 0, 0, 1}, netmask: 32},
       fingerprint: "ffff",
       user_agent:
-        "Mozilla/5.0 (X11; Philomena; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0"
+        "Mozilla/5.0 (X11; Tsuchinokus; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0"
     }
 
     %Report{reportable_id: reportable_id, reportable_type: reportable_type}

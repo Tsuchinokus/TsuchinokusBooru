@@ -1,24 +1,24 @@
-defmodule Philomena.Users do
+defmodule Tsuchinokus.Users do
   @moduledoc """
   The Users context.
   """
 
   import Ecto.Query, warn: false
   alias Ecto.Multi
-  alias Philomena.Repo
+  alias Tsuchinokus.Repo
 
-  alias Philomena.Users.{User, UserToken, UserNotifier, Uploader}
-  alias Philomena.{Forums, Forums.Forum}
-  alias Philomena.Topics
-  alias Philomena.Roles.Role
-  alias Philomena.UserNameChanges.UserNameChange
-  alias Philomena.Images
-  alias Philomena.Comments
-  alias Philomena.Posts
-  alias Philomena.Galleries
-  alias Philomena.Reports
-  alias Philomena.Filters
-  alias Philomena.UserRenameWorker
+  alias Tsuchinokus.Users.{User, UserToken, UserNotifier, Uploader}
+  alias Tsuchinokus.{Forums, Forums.Forum}
+  alias Tsuchinokus.Topics
+  alias Tsuchinokus.Roles.Role
+  alias Tsuchinokus.UserNameChanges.UserNameChange
+  alias Tsuchinokus.Images
+  alias Tsuchinokus.Comments
+  alias Tsuchinokus.Posts
+  alias Tsuchinokus.Galleries
+  alias Tsuchinokus.Reports
+  alias Tsuchinokus.Filters
+  alias Tsuchinokus.UserRenameWorker
 
   ## Database getters
 

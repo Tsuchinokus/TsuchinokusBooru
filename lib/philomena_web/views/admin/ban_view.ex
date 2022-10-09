@@ -1,5 +1,5 @@
-defmodule PhilomenaWeb.Admin.BanView do
-  alias PhilomenaWeb.ProfileView
+defmodule TsuchinokusWeb.Admin.BanView do
+  alias TsuchinokusWeb.ProfileView
 
   def user_abbrv(conn, user),
     do: ProfileView.user_abbrv(conn, user)

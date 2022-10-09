@@ -1,5 +1,5 @@
-defmodule PhilomenaWeb.StaffView do
-  use PhilomenaWeb, :view
+defmodule TsuchinokusWeb.StaffView do
+  use TsuchinokusWeb, :view
 
   
   @desc_regex ~r/^([^\n]+)/

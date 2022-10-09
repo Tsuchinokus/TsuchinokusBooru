@@ -1,8 +1,8 @@
-defmodule Philomena.Adverts.Advert do
+defmodule Tsuchinokus.Adverts.Advert do
   use Ecto.Schema
   import Ecto.Changeset
 
-  alias Philomena.Schema.Time
+  alias Tsuchinokus.Schema.Time
 
   schema "adverts" do
     field :image, :string

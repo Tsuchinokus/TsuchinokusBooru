@@ -1,9 +1,9 @@
-defmodule Philomena.DuplicateReports.DuplicateReport do
+defmodule Tsuchinokus.DuplicateReports.DuplicateReport do
   use Ecto.Schema
   import Ecto.Changeset
 
-  alias Philomena.Images.Image
-  alias Philomena.Users.User
+  alias Tsuchinokus.Images.Image
+  alias Tsuchinokus.Users.User
 
   schema "duplicate_reports" do
     belongs_to :image, Image

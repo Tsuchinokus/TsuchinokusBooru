@@ -1,18 +1,18 @@
-defmodule Philomena.Topics do
+defmodule Tsuchinokus.Topics do
   @moduledoc """
   The Topics context.
   """
 
   import Ecto.Query, warn: false
   alias Ecto.Multi
-  alias Philomena.Repo
+  alias Tsuchinokus.Repo
 
-  alias Philomena.Topics.Topic
-  alias Philomena.Forums.Forum
-  alias Philomena.Posts
-  alias Philomena.Notifications
-  alias Philomena.NotificationWorker
-  alias Philomena.Users.User
+  alias Tsuchinokus.Topics.Topic
+  alias Tsuchinokus.Forums.Forum
+  alias Tsuchinokus.Posts
+  alias Tsuchinokus.Notifications
+  alias Tsuchinokus.NotificationWorker
+  alias Tsuchinokus.Users.User
 
   @doc """
   Gets a single topic.
@@ -173,7 +173,7 @@ defmodule Philomena.Topics do
     Topic.changeset(topic, %{})
   end
 
-  alias Philomena.Topics.Subscription
+  alias Tsuchinokus.Topics.Subscription
 
   def subscribed?(_topic, nil), do: false
 

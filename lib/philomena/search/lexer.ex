@@ -1,7 +1,7 @@
-defmodule Philomena.Search.Lexer do
+defmodule Tsuchinokus.Search.Lexer do
   import NimbleParsec
 
-  defp to_number(input), do: Philomena.Search.Helpers.to_number(input)
+  defp to_number(input), do: Tsuchinokus.Search.Helpers.to_number(input)
 
   space =
     choice([string(" "), string("\t"), string("\n"), string("\r"), string("\v"), string("\f")])

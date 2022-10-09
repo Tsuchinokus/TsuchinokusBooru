@@ -1,5 +1,5 @@
-defmodule PhilomenaWeb.Admin.FingerprintBanView do
-  use PhilomenaWeb, :view
+defmodule TsuchinokusWeb.Admin.FingerprintBanView do
+  use TsuchinokusWeb, :view
 
-  import PhilomenaWeb.Admin.BanView
+  import TsuchinokusWeb.Admin.BanView
 end

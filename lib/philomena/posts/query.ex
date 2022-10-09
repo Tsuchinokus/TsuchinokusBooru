@@ -1,5 +1,5 @@
-defmodule Philomena.Posts.Query do
-  alias Philomena.Search.Parser
+defmodule Tsuchinokus.Posts.Query do
+  alias Tsuchinokus.Search.Parser
 
   defp user_id_transform(_ctx, data) do
     case Integer.parse(data) do

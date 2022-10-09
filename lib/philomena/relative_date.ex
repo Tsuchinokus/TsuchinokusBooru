@@ -1,4 +1,4 @@
-defmodule Philomena.RelativeDate do
+defmodule Tsuchinokus.RelativeDate do
   import NimbleParsec
 
   number_words =

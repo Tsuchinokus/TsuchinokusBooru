@@ -1,7 +1,7 @@
-defmodule PhilomenaWeb.Autocomplete.CompiledController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.Autocomplete.CompiledController do
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.Autocomplete
+  alias Tsuchinokus.Autocomplete
 
   def show(conn, _params) do
     autocomplete = Autocomplete.get_autocomplete()

@@ -1,12 +1,12 @@
-defmodule PhilomenaWeb do
+defmodule TsuchinokusWeb do
   @moduledoc """
   The entrypoint for defining your web interface, such
   as controllers, views, channels and so on.
 
   This can be used in your application as:
 
-      use PhilomenaWeb, :controller
-      use PhilomenaWeb, :view
+      use TsuchinokusWeb, :controller
+      use TsuchinokusWeb, :view
 
   The definitions below will be executed for every view,
   controller, etc, so keep them short and clean, focused
@@ -19,21 +19,21 @@ defmodule PhilomenaWeb do
 
   def controller do
     quote do
-      use Phoenix.Controller, namespace: PhilomenaWeb
+      use Phoenix.Controller, namespace: TsuchinokusWeb
 
       import Plug.Conn
-      import PhilomenaWeb.Gettext
+      import TsuchinokusWeb.Gettext
       import Canary.Plugs
-      import PhilomenaWeb.ModerationLogPlug, only: [moderation_log: 2]
-      alias PhilomenaWeb.Router.Helpers, as: Routes
+      import TsuchinokusWeb.ModerationLogPlug, only: [moderation_log: 2]
+      alias TsuchinokusWeb.Router.Helpers, as: Routes
     end
   end
 
   def view do
     quote do
       use Phoenix.View,
-        root: "lib/philomena_web/templates",
-        namespace: PhilomenaWeb
+        root: "lib/tsuchinokus_web/templates",
+        namespace: TsuchinokusWeb
 
       # Import convenience functions from controllers
       import Phoenix.Controller, only: [get_flash: 1, get_flash: 2, view_module: 1]
@@ -41,13 +41,13 @@ defmodule PhilomenaWeb do
       # Use all HTML functionality (forms, tags, etc)
       use Phoenix.HTML
 
-      import PhilomenaWeb.ErrorHelpers
-      import PhilomenaWeb.Gettext
+      import TsuchinokusWeb.ErrorHelpers
+      import TsuchinokusWeb.Gettext
       import PhoenixMTM.Helpers
-      alias PhilomenaWeb.Router.Helpers, as: Routes
+      alias TsuchinokusWeb.Router.Helpers, as: Routes
 
       # Wrong way around for convenience
-      import PhilomenaWeb.AppView
+      import TsuchinokusWeb.AppView
     end
   end
 
@@ -62,7 +62,7 @@ defmodule PhilomenaWeb do
   def channel do
     quote do
       use Phoenix.Channel
-      import PhilomenaWeb.Gettext
+      import TsuchinokusWeb.Gettext
     end
   end
 

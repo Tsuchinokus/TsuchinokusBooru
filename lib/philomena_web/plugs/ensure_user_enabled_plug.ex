@@ -1,15 +1,15 @@
-defmodule PhilomenaWeb.EnsureUserEnabledPlug do
+defmodule TsuchinokusWeb.EnsureUserEnabledPlug do
   @moduledoc """
   This plug ensures that a user is enabled.
 
   ## Example
 
-      plug PhilomenaWeb.EnsureUserEnabledPlug
+      plug TsuchinokusWeb.EnsureUserEnabledPlug
   """
 
   alias Phoenix.Controller
   alias Plug.Conn
-  alias PhilomenaWeb.UserAuth
+  alias TsuchinokusWeb.UserAuth
 
   @doc false
   @spec init(any()) :: any()

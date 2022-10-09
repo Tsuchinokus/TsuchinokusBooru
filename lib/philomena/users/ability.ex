@@ -1,34 +1,34 @@
-defimpl Canada.Can, for: [Atom, Philomena.Users.User] do
-  alias Philomena.Users.User
-  alias Philomena.Roles.Role
-  alias Philomena.Badges.Award
-  alias Philomena.Badges.Badge
-  alias Philomena.Channels.Channel
-  alias Philomena.Comments.Comment
-  alias Philomena.Commissions.Commission
-  alias Philomena.Conversations.Conversation
-  alias Philomena.DuplicateReports.DuplicateReport
-  alias Philomena.DnpEntries.DnpEntry
-  alias Philomena.Images.Image
-  alias Philomena.Forums.Forum
-  alias Philomena.Topics.Topic
-  alias Philomena.ModNotes.ModNote
-  alias Philomena.Posts.Post
-  alias Philomena.Filters.Filter
-  alias Philomena.Galleries.Gallery
-  alias Philomena.DnpEntries.DnpEntry
-  alias Philomena.ArtistLinks.ArtistLink
-  alias Philomena.Tags.Tag
-  alias Philomena.TagChanges.TagChange
-  alias Philomena.Reports.Report
-  alias Philomena.StaticPages.StaticPage
-  alias Philomena.Adverts.Advert
-  alias Philomena.SiteNotices.SiteNotice
-  alias Philomena.ModerationLogs.ModerationLog
+defimpl Canada.Can, for: [Atom, Tsuchinokus.Users.User] do
+  alias Tsuchinokus.Users.User
+  alias Tsuchinokus.Roles.Role
+  alias Tsuchinokus.Badges.Award
+  alias Tsuchinokus.Badges.Badge
+  alias Tsuchinokus.Channels.Channel
+  alias Tsuchinokus.Comments.Comment
+  alias Tsuchinokus.Commissions.Commission
+  alias Tsuchinokus.Conversations.Conversation
+  alias Tsuchinokus.DuplicateReports.DuplicateReport
+  alias Tsuchinokus.DnpEntries.DnpEntry
+  alias Tsuchinokus.Images.Image
+  alias Tsuchinokus.Forums.Forum
+  alias Tsuchinokus.Topics.Topic
+  alias Tsuchinokus.ModNotes.ModNote
+  alias Tsuchinokus.Posts.Post
+  alias Tsuchinokus.Filters.Filter
+  alias Tsuchinokus.Galleries.Gallery
+  alias Tsuchinokus.DnpEntries.DnpEntry
+  alias Tsuchinokus.ArtistLinks.ArtistLink
+  alias Tsuchinokus.Tags.Tag
+  alias Tsuchinokus.TagChanges.TagChange
+  alias Tsuchinokus.Reports.Report
+  alias Tsuchinokus.StaticPages.StaticPage
+  alias Tsuchinokus.Adverts.Advert
+  alias Tsuchinokus.SiteNotices.SiteNotice
+  alias Tsuchinokus.ModerationLogs.ModerationLog
 
-  alias Philomena.Bans.User, as: UserBan
-  alias Philomena.Bans.Subnet, as: SubnetBan
-  alias Philomena.Bans.Fingerprint, as: FingerprintBan
+  alias Tsuchinokus.Bans.User, as: UserBan
+  alias Tsuchinokus.Bans.Subnet, as: SubnetBan
+  alias Tsuchinokus.Bans.Fingerprint, as: FingerprintBan
 
   # Admins can do anything
   def can?(%User{role: "admin"}, _action, _model), do: true

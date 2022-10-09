@@ -1,10 +1,10 @@
-defmodule PhilomenaWeb.Topic.Post.DeleteController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.Topic.Post.DeleteController do
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.Posts.Post
-  alias Philomena.Posts
+  alias Tsuchinokus.Posts.Post
+  alias Tsuchinokus.Posts
 
-  plug PhilomenaWeb.CanaryMapPlug, create: :hide
+  plug TsuchinokusWeb.CanaryMapPlug, create: :hide
 
   plug :load_and_authorize_resource,
     model: Post,

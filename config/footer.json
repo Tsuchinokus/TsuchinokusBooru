@@ -40,7 +40,7 @@
   "Help & Information": [
     {
       "title": "Changelog",
-      "url": "https://github.com/derpibooru/philomena/commits/master",
+      "url": "https://github.com/tsuchinokus/tsuchinokus/commits/master",
       "bold": true,
       "target": "_blank"
     },
@@ -91,7 +91,7 @@
     },
     {
       "title": "Twitter",
-      "url": "https://twitter.com/Derpibooru",
+      "url": "https://twitter.com/Tsuchinokus",
       "target": "_blank"
     }
   ]

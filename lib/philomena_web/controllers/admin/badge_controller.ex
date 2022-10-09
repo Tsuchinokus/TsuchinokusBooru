@@ -1,9 +1,9 @@
-defmodule PhilomenaWeb.Admin.BadgeController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.Admin.BadgeController do
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.Badges.Badge
-  alias Philomena.Badges
-  alias Philomena.Repo
+  alias Tsuchinokus.Badges.Badge
+  alias Tsuchinokus.Badges
+  alias Tsuchinokus.Repo
   import Ecto.Query
 
   plug :verify_authorized
@@ -55,7 +55,7 @@ defmodule PhilomenaWeb.Admin.BadgeController do
   defp verify_authorized(conn, _opts) do
     case Canada.Can.can?(conn.assigns.current_user, :index, Badge) do
       true -> conn
-      _false -> PhilomenaWeb.NotAuthorizedPlug.call(conn)
+      _false -> TsuchinokusWeb.NotAuthorizedPlug.call(conn)
     end
   end
 end

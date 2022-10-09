@@ -1,9 +1,9 @@
-defmodule PhilomenaWeb.Api.Json.Search.GalleryController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.Api.Json.Search.GalleryController do
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.Elasticsearch
-  alias Philomena.Galleries.Gallery
-  alias Philomena.Galleries.Query
+  alias Tsuchinokus.Elasticsearch
+  alias Tsuchinokus.Galleries.Gallery
+  alias Tsuchinokus.Galleries.Query
   import Ecto.Query
 
   def index(conn, params) do
@@ -21,7 +21,7 @@ defmodule PhilomenaWeb.Api.Json.Search.GalleryController do
           |> Elasticsearch.search_records(preload(Gallery, [:creator]))
 
         conn
-        |> put_view(PhilomenaWeb.Api.Json.GalleryView)
+        |> put_view(TsuchinokusWeb.Api.Json.GalleryView)
         |> render("index.json", galleries: galleries, total: galleries.total_entries)
 
       {:error, msg} ->

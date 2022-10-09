@@ -1,5 +1,5 @@
 - route = fn p -> Routes.forum_topic_path(@conn, :show, @forum, @topic, p) end
-- pagination = render PhilomenaWeb.PaginationView, "_pagination.html", page: @posts, route: route, last: true
+- pagination = render TsuchinokusWeb.PaginationView, "_pagination.html", page: @posts, route: route, last: true
 
 h1 = @topic.title
 
@@ -39,7 +39,7 @@ h1 = @topic.title
           = pagination
         .flex--fixed.block__header__item.page__options
           ' Started by
-          => render PhilomenaWeb.UserAttributionView, "_anon_user.html", object: @topic, conn: @conn
+          => render TsuchinokusWeb.UserAttributionView, "_anon_user.html", object: @topic, conn: @conn
         .page__info
           .flex.flex--center-distributed
             .flex--fixed.block__header__item
@@ -49,21 +49,21 @@ h1 = @topic.title
               => @topic.post_count - 1
               ' replies
             = if not @topic.hidden_from_users do
-              = render PhilomenaWeb.Topic.SubscriptionView, "_subscription.html", forum: @forum, topic: @topic, watching: @watching, conn: @conn
+              = render TsuchinokusWeb.Topic.SubscriptionView, "_subscription.html", forum: @forum, topic: @topic, watching: @watching, conn: @conn
 
 = if not @topic.hidden_from_users or can?(@conn, :hide, @topic) do
   / Display the poll, if any
   = if @topic.poll do
-    = render PhilomenaWeb.Topic.PollView, "_display.html", Map.put(assigns, :poll, @topic.poll)
+    = render TsuchinokusWeb.Topic.PollView, "_display.html", Map.put(assigns, :poll, @topic.poll)
 
   / The actual posts
   .posts-area
     .post-list
       = for {post, body} <- @posts, can_view_communication?(@conn, post) do
-        = render PhilomenaWeb.PostView, "_post.html", conn: @conn, post: post, body: body
+        = render TsuchinokusWeb.PostView, "_post.html", conn: @conn, post: post, body: body
 
       = if @conn.assigns.advert do
-        = render PhilomenaWeb.AdvertView, "_box.html", advert: @conn.assigns.advert, conn: @conn
+        = render TsuchinokusWeb.AdvertView, "_box.html", advert: @conn.assigns.advert, conn: @conn
 
       / Footer section
       .block
@@ -91,14 +91,14 @@ h1 = @topic.title
   / Post form
   = cond do
     - @conn.assigns.current_ban ->
-      = render PhilomenaWeb.BanView, "_ban_reason.html", conn: @conn
+      = render TsuchinokusWeb.BanView, "_ban_reason.html", conn: @conn
 
     - @topic.hidden_from_users ->
       .block.block--fixed.block--danger
         h4 Cannot reply to a deleted topic.
 
     - @topic.post_count < 200_000 and can?(@conn, :create_post, @topic) ->
-      = render PhilomenaWeb.Topic.PostView, "_form.html", conn: @conn, forum: @forum, topic: @topic, changeset: @changeset
+      = render TsuchinokusWeb.Topic.PostView, "_form.html", conn: @conn, forum: @forum, topic: @topic, changeset: @changeset
 
     - @topic.post_count >= 200_000 ->
       h3 Okay, we're impressed

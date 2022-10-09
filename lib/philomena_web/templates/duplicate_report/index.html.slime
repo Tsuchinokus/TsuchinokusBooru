@@ -1,7 +1,7 @@
 h1 Duplicate Reports
 
 - route = fn p -> Routes.duplicate_report_path(@conn, :index, p) end
-- pagination = render PhilomenaWeb.PaginationView, "_pagination.html", page: @duplicate_reports, route: route, conn: @conn, params: [states: @conn.params["states"] || ["open", "claimed"]]
+- pagination = render TsuchinokusWeb.PaginationView, "_pagination.html", page: @duplicate_reports, route: route, conn: @conn, params: [states: @conn.params["states"] || ["open", "claimed"]]
 
 .block
   .block__header.page__header
@@ -17,7 +17,7 @@ h1 Duplicate Reports
       => link "Accepted", to: Routes.duplicate_report_path(@conn, :index, states: ~W(accepted))
       = link "All", to: Routes.duplicate_report_path(@conn, :index, states: ~W(open rejected accepted claimed))
 
-  = render PhilomenaWeb.DuplicateReportView, "_list.html", duplicate_reports: @duplicate_reports, conn: @conn
+  = render TsuchinokusWeb.DuplicateReportView, "_list.html", duplicate_reports: @duplicate_reports, conn: @conn
 
   .block
     .block__header.block__header--light.page__header

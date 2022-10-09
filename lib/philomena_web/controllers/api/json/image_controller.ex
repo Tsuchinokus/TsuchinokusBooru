@@ -1,17 +1,17 @@
-defmodule PhilomenaWeb.Api.Json.ImageController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.Api.Json.ImageController do
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.Images.Image
-  alias Philomena.Images
-  alias Philomena.Interactions
-  alias Philomena.Repo
+  alias Tsuchinokus.Images.Image
+  alias Tsuchinokus.Images
+  alias Tsuchinokus.Interactions
+  alias Tsuchinokus.Repo
   import Ecto.Query
 
-  plug PhilomenaWeb.ScraperCachePlug
-  plug PhilomenaWeb.ApiRequireAuthorizationPlug when action in [:create]
-  plug PhilomenaWeb.UserAttributionPlug when action in [:create]
+  plug TsuchinokusWeb.ScraperCachePlug
+  plug TsuchinokusWeb.ApiRequireAuthorizationPlug when action in [:create]
+  plug TsuchinokusWeb.UserAttributionPlug when action in [:create]
 
-  plug PhilomenaWeb.ScraperPlug,
+  plug TsuchinokusWeb.ScraperPlug,
        [params_name: "image", params_key: "image"] when action in [:create]
 
   def show(conn, %{"id" => id}) do
@@ -41,10 +41,10 @@ defmodule PhilomenaWeb.Api.Json.ImageController do
 
     case Images.create_image(attributes, image_params) do
       {:ok, %{image: image}} ->
-        PhilomenaWeb.Endpoint.broadcast!(
+        TsuchinokusWeb.Endpoint.broadcast!(
           "firehose",
           "image:create",
-          PhilomenaWeb.Api.Json.ImageView.render("show.json", %{image: image, interactions: []})
+          TsuchinokusWeb.Api.Json.ImageView.render("show.json", %{image: image, interactions: []})
         )
 
         render(conn, "show.json", image: image, interactions: [])

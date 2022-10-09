@@ -1,12 +1,12 @@
-defmodule PhilomenaWeb.MarkdownRenderer do
-  alias Philomena.Markdown
-  alias Philomena.Images.Image
-  alias Philomena.Repo
+defmodule TsuchinokusWeb.MarkdownRenderer do
+  alias Tsuchinokus.Markdown
+  alias Tsuchinokus.Images.Image
+  alias Tsuchinokus.Repo
   import Phoenix.HTML
   import Phoenix.HTML.Link
   import Ecto.Query
 
-  @image_view Module.concat(["PhilomenaWeb.ImageView"])
+  @image_view Module.concat(["TsuchinokusWeb.ImageView"])
 
   def render_one(item, conn) do
     hd(render_collection([item], conn))

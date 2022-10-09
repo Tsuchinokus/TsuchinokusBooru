@@ -1,9 +1,9 @@
-defmodule PhilomenaWeb.Api.Json.Search.CommentController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.Api.Json.Search.CommentController do
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.Elasticsearch
-  alias Philomena.Comments.Comment
-  alias Philomena.Comments.Query
+  alias Tsuchinokus.Elasticsearch
+  alias Tsuchinokus.Comments.Comment
+  alias Tsuchinokus.Comments.Query
   import Ecto.Query
 
   def index(conn, params) do
@@ -34,7 +34,7 @@ defmodule PhilomenaWeb.Api.Json.Search.CommentController do
           |> Elasticsearch.search_records(preload(Comment, [:image, :user]))
 
         conn
-        |> put_view(PhilomenaWeb.Api.Json.CommentView)
+        |> put_view(TsuchinokusWeb.Api.Json.CommentView)
         |> render("index.json", comments: comments, total: comments.total_entries)
 
       {:error, msg} ->

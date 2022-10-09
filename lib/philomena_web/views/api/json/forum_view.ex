@@ -1,15 +1,15 @@
-defmodule PhilomenaWeb.Api.Json.ForumView do
-  use PhilomenaWeb, :view
+defmodule TsuchinokusWeb.Api.Json.ForumView do
+  use TsuchinokusWeb, :view
 
   def render("index.json", %{forums: forums, total: total} = assigns) do
     %{
-      forums: render_many(forums, PhilomenaWeb.Api.Json.ForumView, "forum.json", assigns),
+      forums: render_many(forums, TsuchinokusWeb.Api.Json.ForumView, "forum.json", assigns),
       total: total
     }
   end
 
   def render("show.json", %{forum: forum} = assigns) do
-    %{forum: render_one(forum, PhilomenaWeb.Api.Json.ForumView, "forum.json", assigns)}
+    %{forum: render_one(forum, TsuchinokusWeb.Api.Json.ForumView, "forum.json", assigns)}
   end
 
   def render("forum.json", %{forum: %{access_level: "normal"} = forum}) do

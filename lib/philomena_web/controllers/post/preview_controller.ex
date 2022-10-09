@@ -1,9 +1,9 @@
-defmodule PhilomenaWeb.Post.PreviewController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.Post.PreviewController do
+  use TsuchinokusWeb, :controller
 
-  alias PhilomenaWeb.MarkdownRenderer
-  alias Philomena.Posts.Post
-  alias Philomena.Repo
+  alias TsuchinokusWeb.MarkdownRenderer
+  alias Tsuchinokus.Posts.Post
+  alias Tsuchinokus.Repo
 
   def create(conn, params) do
     user = preload_awards(conn.assigns.current_user)

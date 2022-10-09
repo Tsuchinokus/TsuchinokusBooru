@@ -1,4 +1,4 @@
-defimpl Philomena.Attribution, for: Philomena.Comments.Comment do
+defimpl Tsuchinokus.Attribution, for: Tsuchinokus.Comments.Comment do
   def object_identifier(comment) do
     to_string(comment.image_id || comment.id)
   end

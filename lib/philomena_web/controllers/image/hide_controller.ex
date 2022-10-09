@@ -1,13 +1,13 @@
-defmodule PhilomenaWeb.Image.HideController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.Image.HideController do
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.{Images, Images.Image}
-  alias Philomena.ImageHides
-  alias Philomena.Repo
+  alias Tsuchinokus.{Images, Images.Image}
+  alias Tsuchinokus.ImageHides
+  alias Tsuchinokus.Repo
   alias Ecto.Multi
 
-  plug PhilomenaWeb.FilterBannedUsersPlug
-  plug PhilomenaWeb.CanaryMapPlug, create: :vote, delete: :vote
+  plug TsuchinokusWeb.FilterBannedUsersPlug
+  plug TsuchinokusWeb.CanaryMapPlug, create: :vote, delete: :vote
   plug :load_and_authorize_resource, model: Image, id_name: "image_id", persisted: true
 
   def create(conn, _params) do

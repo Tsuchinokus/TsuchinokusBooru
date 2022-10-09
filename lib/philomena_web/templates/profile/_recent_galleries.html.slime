@@ -6,4 +6,4 @@
 
     .block__content.js-resizable-media-container
       = for gallery <- @galleries do
-        = render PhilomenaWeb.GalleryView, "_gallery.html", gallery: gallery, conn: @conn
+        = render TsuchinokusWeb.GalleryView, "_gallery.html", gallery: gallery, conn: @conn

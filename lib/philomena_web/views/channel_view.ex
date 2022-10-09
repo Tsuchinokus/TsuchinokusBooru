@@ -1,5 +1,5 @@
-defmodule PhilomenaWeb.ChannelView do
-  use PhilomenaWeb, :view
+defmodule TsuchinokusWeb.ChannelView do
+  use TsuchinokusWeb, :view
 
   def channel_image(%{channel_image: image, is_live: false}) when image not in [nil, ""],
     do: channel_url_root() <> "/" <> image
@@ -25,6 +25,6 @@ defmodule PhilomenaWeb.ChannelView do
       )
 
   defp channel_url_root do
-    Application.get_env(:philomena, :channel_url_root)
+    Application.get_env(:tsuchinokus, :channel_url_root)
   end
 end

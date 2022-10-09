@@ -1,5 +1,5 @@
-defmodule PhilomenaWeb.StatView do
-  use PhilomenaWeb, :view
+defmodule TsuchinokusWeb.StatView do
+  use TsuchinokusWeb, :view
 
   def upload_graph(data) do
     data = Enum.sort_by(data, & &1["key"])

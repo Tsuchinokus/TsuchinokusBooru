@@ -1,5 +1,5 @@
-defmodule Philomena.Config do
+defmodule Tsuchinokus.Config do
   def get(key) do
-    Application.get_env(:philomena, :config)[key]
+    Application.get_env(:tsuchinokus, :config)[key]
   end
 end

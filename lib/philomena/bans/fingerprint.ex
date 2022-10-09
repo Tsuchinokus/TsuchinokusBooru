@@ -1,10 +1,10 @@
-defmodule Philomena.Bans.Fingerprint do
+defmodule Tsuchinokus.Bans.Fingerprint do
   use Ecto.Schema
   import Ecto.Changeset
 
-  alias Philomena.Users.User
-  alias Philomena.Schema.Time
-  alias Philomena.Schema.BanId
+  alias Tsuchinokus.Users.User
+  alias Tsuchinokus.Schema.Time
+  alias Tsuchinokus.Schema.BanId
 
   schema "fingerprint_bans" do
     belongs_to :banning_user, User

@@ -1,9 +1,9 @@
-defmodule Philomena.ImageFeatures.ImageFeature do
+defmodule Tsuchinokus.ImageFeatures.ImageFeature do
   use Ecto.Schema
   import Ecto.Changeset
 
-  alias Philomena.Images.Image
-  alias Philomena.Users.User
+  alias Tsuchinokus.Images.Image
+  alias Tsuchinokus.Users.User
 
   @primary_key false
 

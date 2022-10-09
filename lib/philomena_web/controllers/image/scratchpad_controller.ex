@@ -1,10 +1,10 @@
-defmodule PhilomenaWeb.Image.ScratchpadController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.Image.ScratchpadController do
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.Images.Image
-  alias Philomena.Images
+  alias Tsuchinokus.Images.Image
+  alias Tsuchinokus.Images
 
-  plug PhilomenaWeb.CanaryMapPlug, edit: :hide, update: :hide
+  plug TsuchinokusWeb.CanaryMapPlug, edit: :hide, update: :hide
   plug :load_and_authorize_resource, model: Image, id_name: "image_id", persisted: true
 
   def edit(conn, _params) do

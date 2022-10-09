@@ -1,12 +1,12 @@
-defmodule Philomena.ModNotes do
+defmodule Tsuchinokus.ModNotes do
   @moduledoc """
   The ModNotes context.
   """
 
   import Ecto.Query, warn: false
-  alias Philomena.Repo
+  alias Tsuchinokus.Repo
 
-  alias Philomena.ModNotes.ModNote
+  alias Tsuchinokus.ModNotes.ModNote
 
   @doc """
   Returns the list of mod_notes.

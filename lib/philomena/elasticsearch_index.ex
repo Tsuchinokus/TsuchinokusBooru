@@ -1,4 +1,4 @@
-defmodule Philomena.ElasticsearchIndex do
+defmodule Tsuchinokus.ElasticsearchIndex do
   # Returns the index name for the index.
   # This is usually a collection name like "images".
   @callback index_name() :: String.t()

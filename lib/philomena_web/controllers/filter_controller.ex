@@ -1,14 +1,14 @@
-defmodule PhilomenaWeb.FilterController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.FilterController do
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.{Filters, Filters.Filter, Filters.Query, Tags.Tag}
-  alias Philomena.Elasticsearch
-  alias Philomena.Schema.TagList
-  alias Philomena.Repo
+  alias Tsuchinokus.{Filters, Filters.Filter, Filters.Query, Tags.Tag}
+  alias Tsuchinokus.Elasticsearch
+  alias Tsuchinokus.Schema.TagList
+  alias Tsuchinokus.Repo
   import Ecto.Query
 
   plug :load_and_authorize_resource, model: Filter, except: [:index], preload: :user
-  plug PhilomenaWeb.RequireUserPlug when action not in [:index, :show]
+  plug TsuchinokusWeb.RequireUserPlug when action not in [:index, :show]
 
   def index(conn, %{"fq" => fq}) do
     user = conn.assigns.current_user

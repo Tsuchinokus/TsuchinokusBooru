@@ -3,7 +3,7 @@
 
 .flex.flex--centered.flex__grow
   div
-    => render PhilomenaWeb.UserAttributionView, "_anon_user.html", object: post, conn: @conn
+    => render TsuchinokusWeb.UserAttributionView, "_anon_user.html", object: post, conn: @conn
     => @notification.action
 
     strong>

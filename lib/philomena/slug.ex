@@ -1,4 +1,4 @@
-defmodule Philomena.Slug do
+defmodule Tsuchinokus.Slug do
   # Generates a URL-safe slug from a string by removing nonessential
   # information from it.
   #

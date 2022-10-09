@@ -1,10 +1,10 @@
 defmodule Mix.Tasks.RecalculateIntensities do
   use Mix.Task
 
-  alias Philomena.Images.{Image, Thumbnailer}
-  alias Philomena.ImageIntensities.ImageIntensity
-  alias Philomena.Batch
-  alias Philomena.Repo
+  alias Tsuchinokus.Images.{Image, Thumbnailer}
+  alias Tsuchinokus.ImageIntensities.ImageIntensity
+  alias Tsuchinokus.Batch
+  alias Tsuchinokus.Repo
 
   import Ecto.Query
 

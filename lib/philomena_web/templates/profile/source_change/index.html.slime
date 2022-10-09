@@ -4,6 +4,6 @@ h1
     = @user.name
 
 - route = fn p -> Routes.profile_source_change_path(@conn, :index, @user, p) end
-- pagination = render PhilomenaWeb.PaginationView, "_pagination.html", page: @source_changes, route: route, conn: @conn
+- pagination = render TsuchinokusWeb.PaginationView, "_pagination.html", page: @source_changes, route: route, conn: @conn
 
-= render PhilomenaWeb.SourceChangeView, "index.html", conn: @conn, source_changes: @source_changes, pagination: pagination
+= render TsuchinokusWeb.SourceChangeView, "index.html", conn: @conn, source_changes: @source_changes, pagination: pagination

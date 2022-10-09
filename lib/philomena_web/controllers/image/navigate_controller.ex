@@ -1,14 +1,14 @@
-defmodule PhilomenaWeb.Image.NavigateController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.Image.NavigateController do
+  use TsuchinokusWeb, :controller
 
-  alias PhilomenaWeb.ImageLoader
-  alias PhilomenaWeb.ImageNavigator
-  alias PhilomenaWeb.ImageScope
-  alias Philomena.Elasticsearch
-  alias Philomena.Images.Image
-  alias Philomena.Images.Query
+  alias TsuchinokusWeb.ImageLoader
+  alias TsuchinokusWeb.ImageNavigator
+  alias TsuchinokusWeb.ImageScope
+  alias Tsuchinokus.Elasticsearch
+  alias Tsuchinokus.Images.Image
+  alias Tsuchinokus.Images.Query
 
-  plug PhilomenaWeb.CanaryMapPlug, index: :show
+  plug TsuchinokusWeb.CanaryMapPlug, index: :show
   plug :load_and_authorize_resource, model: Image, id_name: "image_id", persisted: true
 
   def index(conn, %{"rel" => rel}) when rel in ~W(prev next) do

@@ -1,4 +1,4 @@
-defmodule Philomena.Analyzers.Webm do
+defmodule Tsuchinokus.Analyzers.Webm do
   def analyze(file) do
     stats = stats(file)
 

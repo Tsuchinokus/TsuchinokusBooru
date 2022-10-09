@@ -1,15 +1,15 @@
-defmodule PhilomenaWeb.Api.Json.FilterView do
-  use PhilomenaWeb, :view
+defmodule TsuchinokusWeb.Api.Json.FilterView do
+  use TsuchinokusWeb, :view
 
   def render("index.json", %{filters: filters, total: total} = assigns) do
     %{
-      filters: render_many(filters, PhilomenaWeb.Api.Json.FilterView, "filter.json", assigns),
+      filters: render_many(filters, TsuchinokusWeb.Api.Json.FilterView, "filter.json", assigns),
       total: total
     }
   end
 
   def render("show.json", %{filter: filter} = assigns) do
-    %{filter: render_one(filter, PhilomenaWeb.Api.Json.FilterView, "filter.json", assigns)}
+    %{filter: render_one(filter, TsuchinokusWeb.Api.Json.FilterView, "filter.json", assigns)}
   end
 
   def render("filter.json", %{filter: filter}) do

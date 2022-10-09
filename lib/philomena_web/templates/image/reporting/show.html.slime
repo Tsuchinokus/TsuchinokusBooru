@@ -11,7 +11,7 @@ a href=Routes.image_report_path(@conn, :new, @image)
   .toggle-box-container
     .toggle-box-container__content
       = if @conn.assigns.current_user do
-        = render PhilomenaWeb.DuplicateReportView, "_form.html", image: @image, conn: @conn, changeset: @changeset
+        = render TsuchinokusWeb.DuplicateReportView, "_form.html", image: @image, conn: @conn, changeset: @changeset
       - else
         p
           ' You must
@@ -25,7 +25,7 @@ a href=Routes.image_report_path(@conn, :new, @image)
         h4 Existing duplicate reports
 
         = if Enum.any?(target_reports) do
-          = render PhilomenaWeb.DuplicateReportView, "_list.html", duplicate_reports: target_reports, conn: @conn
+          = render TsuchinokusWeb.DuplicateReportView, "_list.html", duplicate_reports: target_reports, conn: @conn
 
         = if Enum.any?(source_reports) do
-          = render PhilomenaWeb.DuplicateReportView, "_list.html", duplicate_reports: source_reports, conn: @conn
+          = render TsuchinokusWeb.DuplicateReportView, "_list.html", duplicate_reports: source_reports, conn: @conn

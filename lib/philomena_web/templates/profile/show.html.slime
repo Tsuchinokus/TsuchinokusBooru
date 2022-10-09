@@ -1,6 +1,6 @@
 .profile-top
   .profile-top__avatar
-    - avatar = render PhilomenaWeb.UserAttributionView, "_user_avatar.html", object: %{user: @user}, class: "avatar--125px"
+    - avatar = render TsuchinokusWeb.UserAttributionView, "_user_avatar.html", object: %{user: @user}, class: "avatar--125px"
     = if current?(@user, @conn.assigns.current_user) do
       = link avatar, to: Routes.avatar_path(@conn, :edit, profile: true), title: "Change avatar"
     - else
@@ -10,7 +10,7 @@
       h1.profile-top__name-header
         = @user.name
         | 's profile
-      = render PhilomenaWeb.UserAttributionView, "_user_title.html", object: %{user: @user}, large: true
+      = render TsuchinokusWeb.UserAttributionView, "_user_title.html", object: %{user: @user}, large: true
       br
 
       = if can?(@conn, :edit_description, @user) do
@@ -41,7 +41,7 @@
 
 = if can_index_user?(@conn) do
   .js-staff-action
-    = render PhilomenaWeb.ProfileView, "_admin_block.html", assigns
+    = render TsuchinokusWeb.ProfileView, "_admin_block.html", assigns
 
 = if @forced && (current?(@user, @conn.assigns.current_user) or can_index_user?(@conn)) do
   .block
@@ -49,19 +49,19 @@
     strong.comment_deleted> Forced Filter:
     = link @forced.name, to: Routes.filter_path(@conn, :show, @forced)
 
-= if (current?(@user, @conn.assigns.current_user) or can?(@conn, :index, Philomena.Bans.User)) and Enum.any?(@bans) do
+= if (current?(@user, @conn.assigns.current_user) or can?(@conn, :index, Tsuchinokus.Bans.User)) and Enum.any?(@bans) do
   .block
     .block__header--single-item
       ' Ban History
     .block__content
-      = render PhilomenaWeb.BanView, "_bans.html", bans: @bans, conn: @conn
+      = render TsuchinokusWeb.BanView, "_bans.html", bans: @bans, conn: @conn
 
 .column-layout
   .column-layout__left
     .block
       .block__header
         span.block__header__title Commissions
-      = render PhilomenaWeb.ProfileView, "_commission.html", user: @user, commission_information: @commission_information, conn: @conn
+      = render TsuchinokusWeb.ProfileView, "_commission.html", user: @user, commission_information: @commission_information, conn: @conn
 
     .block
       = if current?(@user, @conn.assigns.current_user) or manages_links?(@conn, @user) do
@@ -75,7 +75,7 @@
         .block__content.alternating-color.break-word class=link_block_class(link)
           .center
             = if link.tag do
-              .tag_list = render PhilomenaWeb.TagView, "_tag.html", tag: link.tag, conn: @conn
+              .tag_list = render TsuchinokusWeb.TagView, "_tag.html", tag: link.tag, conn: @conn
             = link(link.uri, to: link.uri)
 
             = if current?(@user, @conn.assigns.current_user) or manages_links?(@conn, @user) do
@@ -133,7 +133,7 @@
         - else
           span.block__header__title About Me
 
-      = render PhilomenaWeb.ProfileView, "_about_me.html", user: @user, about_me: @about_me, conn: @conn
+      = render TsuchinokusWeb.ProfileView, "_about_me.html", user: @user, about_me: @about_me, conn: @conn
 
     = if can_read_mod_notes?(@conn) and not hide_staff_tools?(@conn) do
       .block
@@ -155,10 +155,10 @@
           == @scratchpad
 
   .column-layout__main
-    = render PhilomenaWeb.ProfileView, "_statistics.html", user: @user, statistics: @statistics, conn: @conn
-    = render PhilomenaWeb.ProfileView, "_recent_images.html", title: "Recent Artwork", images: @recent_artwork, view_all_path: Routes.search_path(@conn, :index, q: tag_disjunction(@tags)), conn: @conn
-    = render PhilomenaWeb.ProfileView, "_recent_images.html", title: "Recent Uploads", images: @recent_uploads, view_all_path: Routes.search_path(@conn, :index, q: "uploader_id:#{@user.id}"), conn: @conn
-    = render PhilomenaWeb.ProfileView, "_recent_images.html", title: "Recent Favorites", images: @recent_faves, view_all_path: Routes.search_path(@conn, :index, q: "faved_by_id:#{@user.id}"), conn: @conn
-    = render PhilomenaWeb.ProfileView, "_recent_galleries.html", galleries: @recent_galleries, user: @user, conn: @conn
-    = render PhilomenaWeb.ProfileView, "_recent_comments.html", comments: @recent_comments, user: @user, conn: @conn
-    = render PhilomenaWeb.ProfileView, "_recent_posts.html", posts: @recent_posts, user: @user, conn: @conn
+    = render TsuchinokusWeb.ProfileView, "_statistics.html", user: @user, statistics: @statistics, conn: @conn
+    = render TsuchinokusWeb.ProfileView, "_recent_images.html", title: "Recent Artwork", images: @recent_artwork, view_all_path: Routes.search_path(@conn, :index, q: tag_disjunction(@tags)), conn: @conn
+    = render TsuchinokusWeb.ProfileView, "_recent_images.html", title: "Recent Uploads", images: @recent_uploads, view_all_path: Routes.search_path(@conn, :index, q: "uploader_id:#{@user.id}"), conn: @conn
+    = render TsuchinokusWeb.ProfileView, "_recent_images.html", title: "Recent Favorites", images: @recent_faves, view_all_path: Routes.search_path(@conn, :index, q: "faved_by_id:#{@user.id}"), conn: @conn
+    = render TsuchinokusWeb.ProfileView, "_recent_galleries.html", galleries: @recent_galleries, user: @user, conn: @conn
+    = render TsuchinokusWeb.ProfileView, "_recent_comments.html", comments: @recent_comments, user: @user, conn: @conn
+    = render TsuchinokusWeb.ProfileView, "_recent_posts.html", posts: @recent_posts, user: @user, conn: @conn

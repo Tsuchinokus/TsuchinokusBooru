@@ -1,5 +1,5 @@
-defmodule PhilomenaWeb.Admin.SiteNoticeView do
-  use PhilomenaWeb, :view
+defmodule TsuchinokusWeb.Admin.SiteNoticeView do
+  use TsuchinokusWeb, :view
 
   def time_column_class(time) do
     now = DateTime.utc_now()

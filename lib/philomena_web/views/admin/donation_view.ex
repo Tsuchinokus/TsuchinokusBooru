@@ -1,3 +1,3 @@
-defmodule PhilomenaWeb.Admin.DonationView do
-  use PhilomenaWeb, :view
+defmodule TsuchinokusWeb.Admin.DonationView do
+  use TsuchinokusWeb, :view
 end

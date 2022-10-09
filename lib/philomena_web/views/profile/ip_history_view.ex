@@ -1,3 +1,3 @@
-defmodule PhilomenaWeb.Profile.IpHistoryView do
-  use PhilomenaWeb, :view
+defmodule TsuchinokusWeb.Profile.IpHistoryView do
+  use TsuchinokusWeb, :view
 end

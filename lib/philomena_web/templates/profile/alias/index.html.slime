@@ -15,6 +15,6 @@ table.table
       td Creation Date
       td Ban Status
   tbody
-    = render PhilomenaWeb.Profile.AliasView, "_aliases.html", aliases: @both_matches, type: "IP + FP", conn: @conn
-    = render PhilomenaWeb.Profile.AliasView, "_aliases.html", aliases: @ip_matches, type: "IP", conn: @conn
-    = render PhilomenaWeb.Profile.AliasView, "_aliases.html", aliases: @fp_matches, type: "FP", conn: @conn
+    = render TsuchinokusWeb.Profile.AliasView, "_aliases.html", aliases: @both_matches, type: "IP + FP", conn: @conn
+    = render TsuchinokusWeb.Profile.AliasView, "_aliases.html", aliases: @ip_matches, type: "IP", conn: @conn
+    = render TsuchinokusWeb.Profile.AliasView, "_aliases.html", aliases: @fp_matches, type: "FP", conn: @conn

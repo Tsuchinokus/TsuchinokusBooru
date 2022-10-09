@@ -1,8 +1,8 @@
-defmodule PhilomenaWeb.Admin.User.WipeController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.Admin.User.WipeController do
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.UserWipeWorker
-  alias Philomena.Users.User
+  alias Tsuchinokus.UserWipeWorker
+  alias Tsuchinokus.Users.User
 
   plug :verify_authorized
   plug :load_resource, model: User, id_name: "user_id", id_field: "slug", persisted: true
@@ -21,7 +21,7 @@ defmodule PhilomenaWeb.Admin.User.WipeController do
   defp verify_authorized(conn, _opts) do
     case Canada.Can.can?(conn.assigns.current_user, :index, User) do
       true -> conn
-      _false -> PhilomenaWeb.NotAuthorizedPlug.call(conn)
+      _false -> TsuchinokusWeb.NotAuthorizedPlug.call(conn)
     end
   end
 end

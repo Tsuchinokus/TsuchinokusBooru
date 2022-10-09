@@ -1,5 +1,5 @@
-defmodule PhilomenaWeb.Search.ReverseView do
-  use PhilomenaWeb, :view
+defmodule TsuchinokusWeb.Search.ReverseView do
+  use TsuchinokusWeb, :view
 
-  alias Philomena.Tags.Tag
+  alias Tsuchinokus.Tags.Tag
 end

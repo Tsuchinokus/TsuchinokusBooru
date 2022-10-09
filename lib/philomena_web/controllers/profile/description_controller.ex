@@ -1,11 +1,11 @@
-defmodule PhilomenaWeb.Profile.DescriptionController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.Profile.DescriptionController do
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.Users.User
-  alias Philomena.Users
+  alias Tsuchinokus.Users.User
+  alias Tsuchinokus.Users
 
-  plug PhilomenaWeb.FilterBannedUsersPlug
-  plug PhilomenaWeb.CanaryMapPlug, edit: :edit_description, update: :edit_description
+  plug TsuchinokusWeb.FilterBannedUsersPlug
+  plug TsuchinokusWeb.CanaryMapPlug, edit: :edit_description, update: :edit_description
 
   plug :load_and_authorize_resource,
     model: User,

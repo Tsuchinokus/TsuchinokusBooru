@@ -1,10 +1,10 @@
-defmodule Philomena.Users.Uploader do
+defmodule Tsuchinokus.Users.Uploader do
   @moduledoc """
   Upload and processing callback logic for User avatars.
   """
 
-  alias Philomena.Users.User
-  alias Philomena.Uploader
+  alias Tsuchinokus.Users.User
+  alias Tsuchinokus.Uploader
 
   def analyze_upload(user, params) do
     Uploader.analyze_upload(user, "avatar", params["avatar"], &User.avatar_changeset/2)
@@ -19,6 +19,6 @@ defmodule Philomena.Users.Uploader do
   end
 
   defp avatar_file_root do
-    Application.get_env(:philomena, :avatar_file_root)
+    Application.get_env(:tsuchinokus, :avatar_file_root)
   end
 end

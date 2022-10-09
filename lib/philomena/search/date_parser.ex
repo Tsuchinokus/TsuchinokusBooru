@@ -1,4 +1,4 @@
-defmodule Philomena.Search.DateParser do
+defmodule Tsuchinokus.Search.DateParser do
   import NimbleParsec
   @dialyzer [:no_match, :no_unused]
 

@@ -1,4 +1,4 @@
-defmodule Philomena.Repo.Migrations.AddBypassRateLimitsToUsers do
+defmodule Tsuchinokus.Repo.Migrations.AddBypassRateLimitsToUsers do
   use Ecto.Migration
 
   def up do

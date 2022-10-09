@@ -11,4 +11,4 @@ elixir:
   - tab_mode = tab_modes[name]
 
   .block__tab.quick-tag-table__tab class=tab_body_class(i) data-tab=name
-    = render PhilomenaWeb.TagView, "_quick_tag_table_#{tab_mode}.html", tab: name, data: tab_data, shipping: @shipping, tags: @tags, conn: @conn
+    = render TsuchinokusWeb.TagView, "_quick_tag_table_#{tab_mode}.html", tab: name, data: tab_data, shipping: @shipping, tags: @tags, conn: @conn

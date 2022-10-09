@@ -20,7 +20,7 @@ h2
         tr
           td Tag:
           td
-            = render PhilomenaWeb.TagView, "_tag.html", tag: @dnp_entry.tag, conn: @conn
+            = render TsuchinokusWeb.TagView, "_tag.html", tag: @dnp_entry.tag, conn: @conn
         tr
           td Restriction Type:
           td
@@ -50,7 +50,7 @@ h2
             td
               = String.capitalize(@dnp_entry.aasm_state)
 
-= if can?(@conn, :index, Philomena.DnpEntries.DnpEntry) do
+= if can?(@conn, :index, Tsuchinokus.DnpEntries.DnpEntry) do
   = case @dnp_entry.aasm_state do
       - s when s in ["requested", "claimed"] ->
       => link "Claim", to: Routes.admin_dnp_entry_transition_path(@conn, :create, @dnp_entry, state: "claimed"), data: [method: "post", confirm: "Are you really, really sure?"]
@@ -74,5 +74,5 @@ h2
 
 = if assigns[:mod_notes] do
   h4 Mod Notes
-  = render PhilomenaWeb.Admin.ModNoteView, "_table.html", mod_notes: @mod_notes, conn: @conn
+  = render TsuchinokusWeb.Admin.ModNoteView, "_table.html", mod_notes: @mod_notes, conn: @conn
   = link "Add New Note", to: Routes.admin_mod_note_path(@conn, :new, notable_id: @dnp_entry.id, notable_type: "DnpEntry")

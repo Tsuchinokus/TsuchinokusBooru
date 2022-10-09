@@ -1,16 +1,16 @@
-defmodule PhilomenaWeb.ModerationLogPlug do
+defmodule TsuchinokusWeb.ModerationLogPlug do
   @moduledoc """
   This plug writes moderation logs.
   ## Example
 
-      plug PhilomenaWeb.ModerationLogPlug, [details: &log_details/2]
+      plug TsuchinokusWeb.ModerationLogPlug, [details: &log_details/2]
   """
 
-  @controller_regex ~r/PhilomenaWeb\.([\w\.]+)Controller\z/
+  @controller_regex ~r/TsuchinokusWeb\.([\w\.]+)Controller\z/
 
   alias Plug.Conn
   alias Phoenix.Controller
-  alias Philomena.ModerationLogs
+  alias Tsuchinokus.ModerationLogs
 
   @doc false
   @spec init(any()) :: any()

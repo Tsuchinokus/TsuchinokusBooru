@@ -31,7 +31,7 @@
           tr
             td
               = if item.example_image do
-                = render PhilomenaWeb.ImageView, "_image_container.html", image: item.example_image, size: :thumb_small, conn: @conn
+                = render TsuchinokusWeb.ImageView, "_image_container.html", image: item.example_image, size: :thumb_small, conn: @conn
               - else
                 | (No example)
 

@@ -1,4 +1,4 @@
-defmodule Philomena.Users.Encryptor do
+defmodule Tsuchinokus.Users.Encryptor do
   def decrypt_model(secret, iv, salt) do
     # attr_encrypted encoding scheme
     secret = Base.decode64!(secret, ignore: :whitespace)
@@ -29,6 +29,6 @@ defmodule Philomena.Users.Encryptor do
   end
 
   defp otp_secret do
-    Application.get_env(:philomena, :otp_secret_key)
+    Application.get_env(:tsuchinokus, :otp_secret_key)
   end
 end

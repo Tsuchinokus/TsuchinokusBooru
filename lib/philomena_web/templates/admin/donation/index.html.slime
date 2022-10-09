@@ -1,5 +1,5 @@
 - route = fn p -> Routes.admin_donation_path(@conn, :index, p) end
-- pagination = render PhilomenaWeb.PaginationView, "_pagination.html", page: @donations, route: route, conn: @conn
+- pagination = render TsuchinokusWeb.PaginationView, "_pagination.html", page: @donations, route: route, conn: @conn
 
 h1 Donations
 
@@ -8,7 +8,7 @@ h1 Donations
     = pagination
 
   .block__content
-    = render PhilomenaWeb.Admin.DonationView, "_table.html", donations: @donations, conn: @conn
+    = render TsuchinokusWeb.Admin.DonationView, "_table.html", donations: @donations, conn: @conn
 
   .block__header.block__header--light
     = pagination

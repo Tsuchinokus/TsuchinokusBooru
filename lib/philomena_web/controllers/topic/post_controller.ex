@@ -1,18 +1,18 @@
-defmodule PhilomenaWeb.Topic.PostController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.Topic.PostController do
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.{Forums.Forum, Topics.Topic, Posts.Post}
-  alias Philomena.Posts
-  alias Philomena.UserStatistics
+  alias Tsuchinokus.{Forums.Forum, Topics.Topic, Posts.Post}
+  alias Tsuchinokus.Posts
+  alias Tsuchinokus.UserStatistics
 
-  plug PhilomenaWeb.LimitPlug,
+  plug TsuchinokusWeb.LimitPlug,
        [time: 15, error: "You may only make a post once every 15 seconds."]
        when action in [:create]
 
-  plug PhilomenaWeb.FilterBannedUsersPlug
-  plug PhilomenaWeb.UserAttributionPlug
+  plug TsuchinokusWeb.FilterBannedUsersPlug
+  plug TsuchinokusWeb.UserAttributionPlug
 
-  plug PhilomenaWeb.CanaryMapPlug, create: :show, edit: :show, update: :show
+  plug TsuchinokusWeb.CanaryMapPlug, create: :show, edit: :show, update: :show
 
   plug :load_and_authorize_resource,
     model: Forum,
@@ -20,12 +20,12 @@ defmodule PhilomenaWeb.Topic.PostController do
     id_name: "forum_id",
     persisted: true
 
-  plug PhilomenaWeb.LoadTopicPlug
-  plug PhilomenaWeb.CanaryMapPlug, create: :create_post, edit: :create_post, update: :create_post
+  plug TsuchinokusWeb.LoadTopicPlug
+  plug TsuchinokusWeb.CanaryMapPlug, create: :create_post, edit: :create_post, update: :create_post
   plug :authorize_resource, model: Topic, persisted: true
 
-  plug PhilomenaWeb.LoadPostPlug, [param: "id"] when action in [:edit, :update]
-  plug PhilomenaWeb.CanaryMapPlug, edit: :edit, update: :edit
+  plug TsuchinokusWeb.LoadPostPlug, [param: "id"] when action in [:edit, :update]
+  plug TsuchinokusWeb.CanaryMapPlug, edit: :edit, update: :edit
   plug :authorize_resource, model: Post, only: [:edit, :update]
 
   def create(conn, %{"post" => post_params}) do
@@ -43,10 +43,10 @@ defmodule PhilomenaWeb.Topic.PostController do
         end
 
         if forum.access_level == "normal" do
-          PhilomenaWeb.Endpoint.broadcast!(
+          TsuchinokusWeb.Endpoint.broadcast!(
             "firehose",
             "post:create",
-            PhilomenaWeb.Api.Json.Forum.Topic.PostView.render("firehose.json", %{
+            TsuchinokusWeb.Api.Json.Forum.Topic.PostView.render("firehose.json", %{
               post: post,
               topic: topic,
               forum: forum

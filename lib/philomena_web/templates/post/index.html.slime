@@ -15,7 +15,7 @@ h2 Search Results
 = cond do
   - Enum.any?(@posts) ->
     - route = fn p -> Routes.post_path(@conn, :index, p) end
-    - pagination = render PhilomenaWeb.PaginationView, "_pagination.html", page: @posts, route: route, params: [pq: @conn.params["pq"]], conn: @conn
+    - pagination = render TsuchinokusWeb.PaginationView, "_pagination.html", page: @posts, route: route, params: [pq: @conn.params["pq"]], conn: @conn
 
     = for {body, post} <- @posts, post.topic.hidden_from_users == false do
       div
@@ -29,14 +29,14 @@ h2 Search Results
             =<> link "Topic Opener", to: post_link
           - else
             =<> link "Post #{post.topic_position}", to: post_link
-        = render PhilomenaWeb.PostView, "_post.html", body: body, post: post, conn: @conn
+        = render TsuchinokusWeb.PostView, "_post.html", body: body, post: post, conn: @conn
 
     .block
       .block__header.block__header--light.page__header
         .page__pagination = pagination
         .page__info
           span.block__header__title
-            = render PhilomenaWeb.PaginationView, "_pagination_info.html", page: @posts, conn: @conn
+            = render TsuchinokusWeb.PaginationView, "_pagination_info.html", page: @posts, conn: @conn
 
   - assigns[:error] ->
     p

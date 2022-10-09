@@ -1,4 +1,4 @@
-defmodule PhilomenaWeb.RenderTimePlug do
+defmodule TsuchinokusWeb.RenderTimePlug do
   import Plug.Conn
 
   # No options

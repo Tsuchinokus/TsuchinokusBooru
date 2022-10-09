@@ -1,3 +1,3 @@
-defmodule PhilomenaWeb.Admin.User.ForceFilterView do
-  use PhilomenaWeb, :view
+defmodule TsuchinokusWeb.Admin.User.ForceFilterView do
+  use TsuchinokusWeb, :view
 end

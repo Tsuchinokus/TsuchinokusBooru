@@ -1,10 +1,10 @@
-defmodule PhilomenaWeb.DuplicateReport.ClaimController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.DuplicateReport.ClaimController do
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.DuplicateReports.DuplicateReport
-  alias Philomena.DuplicateReports
+  alias Tsuchinokus.DuplicateReports.DuplicateReport
+  alias Tsuchinokus.DuplicateReports
 
-  plug PhilomenaWeb.CanaryMapPlug, create: :edit, delete: :edit
+  plug TsuchinokusWeb.CanaryMapPlug, create: :edit, delete: :edit
 
   plug :load_and_authorize_resource,
     model: DuplicateReport,

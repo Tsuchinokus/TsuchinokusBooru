@@ -1,4 +1,4 @@
-defmodule Philomena.Filename do
+defmodule Tsuchinokus.Filename do
   @moduledoc """
   Utilities for building arbitrary filenames for uploaded files.
   """

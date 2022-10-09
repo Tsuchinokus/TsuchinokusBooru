@@ -1,4 +1,4 @@
-defmodule Philomena.ImageHides do
+defmodule Tsuchinokus.ImageHides do
   @moduledoc """
   The ImageHides context.
   """
@@ -6,8 +6,8 @@ defmodule Philomena.ImageHides do
   import Ecto.Query, warn: false
   alias Ecto.Multi
 
-  alias Philomena.Images.Image
-  alias Philomena.ImageHides.ImageHide
+  alias Tsuchinokus.Images.Image
+  alias Tsuchinokus.ImageHides.ImageHide
 
   @doc """
   Creates a image_hide.

@@ -1,7 +1,7 @@
-defmodule PhilomenaWeb.Endpoint do
-  use Phoenix.Endpoint, otp_app: :philomena
+defmodule TsuchinokusWeb.Endpoint do
+  use Phoenix.Endpoint, otp_app: :tsuchinokus
 
-  socket "/socket", PhilomenaWeb.UserSocket,
+  socket "/socket", TsuchinokusWeb.UserSocket,
     websocket: true,
     longpoll: false
 
@@ -14,7 +14,7 @@ defmodule PhilomenaWeb.Endpoint do
   # when deploying your static files in production.
   plug Plug.Static,
     at: "/",
-    from: :philomena,
+    from: :tsuchinokus,
     gzip: false,
     only: ~w(css fonts images js favicon.ico robots.txt)
 
@@ -41,12 +41,12 @@ defmodule PhilomenaWeb.Endpoint do
   plug Plug.Session,
     store: :cookie,
     extra: "SameSite=Lax",
-    key: "_philomena_key",
+    key: "_tsuchinokus_key",
     signing_salt: "signed cookie",
     encryption_salt: "authenticated encrypted cookie"
 
-  plug PhilomenaWeb.RenderTimePlug
-  plug PhilomenaWeb.ReferrerPlug
-  plug PhilomenaWeb.LastIpPlug
-  plug PhilomenaWeb.Router
+  plug TsuchinokusWeb.RenderTimePlug
+  plug TsuchinokusWeb.ReferrerPlug
+  plug TsuchinokusWeb.LastIpPlug
+  plug TsuchinokusWeb.Router
 end

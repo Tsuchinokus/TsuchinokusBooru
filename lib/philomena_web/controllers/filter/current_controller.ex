@@ -1,10 +1,10 @@
-defmodule PhilomenaWeb.Filter.CurrentController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.Filter.CurrentController do
+  use TsuchinokusWeb, :controller
 
   @cookie_opts [max_age: 788_923_800, same_site: "Lax"]
 
-  alias Philomena.{Filters, Filters.Filter, Users.User}
-  alias Philomena.Repo
+  alias Tsuchinokus.{Filters, Filters.Filter, Users.User}
+  alias Tsuchinokus.Repo
 
   plug :load_resource, model: Filter
 

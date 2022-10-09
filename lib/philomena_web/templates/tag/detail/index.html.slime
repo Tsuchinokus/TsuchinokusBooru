@@ -3,10 +3,10 @@ h1
   = link @tag.name, to: Routes.tag_path(@conn, :show, @tag)
 
 h3 Filters that spoiler this tag:
-= render PhilomenaWeb.Tag.DetailView, "_filters.html", filters: @filters_spoilering, conn: @conn
+= render TsuchinokusWeb.Tag.DetailView, "_filters.html", filters: @filters_spoilering, conn: @conn
 
 h3 Filters that hide this tag:
-= render PhilomenaWeb.Tag.DetailView, "_filters.html", filters: @filters_hiding, conn: @conn
+= render TsuchinokusWeb.Tag.DetailView, "_filters.html", filters: @filters_hiding, conn: @conn
 
 h3
   | Users that watch this tag (

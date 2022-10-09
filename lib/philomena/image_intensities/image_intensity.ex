@@ -1,8 +1,8 @@
-defmodule Philomena.ImageIntensities.ImageIntensity do
+defmodule Tsuchinokus.ImageIntensities.ImageIntensity do
   use Ecto.Schema
   import Ecto.Changeset
 
-  alias Philomena.Images.Image
+  alias Tsuchinokus.Images.Image
 
   @primary_key false
 

@@ -1,12 +1,12 @@
-defmodule Philomena.Notifications do
+defmodule Tsuchinokus.Notifications do
   @moduledoc """
   The Notifications context.
   """
 
   import Ecto.Query, warn: false
-  alias Philomena.Repo
+  alias Tsuchinokus.Repo
 
-  alias Philomena.Notifications.Notification
+  alias Tsuchinokus.Notifications.Notification
 
   @doc """
   Returns the list of notifications.
@@ -102,7 +102,7 @@ defmodule Philomena.Notifications do
     Notification.changeset(notification, %{})
   end
 
-  alias Philomena.Notifications.UnreadNotification
+  alias Tsuchinokus.Notifications.UnreadNotification
 
   def count_unread_notifications(user) do
     UnreadNotification

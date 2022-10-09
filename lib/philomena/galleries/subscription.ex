@@ -1,9 +1,9 @@
-defmodule Philomena.Galleries.Subscription do
+defmodule Tsuchinokus.Galleries.Subscription do
   use Ecto.Schema
   import Ecto.Changeset
 
-  alias Philomena.Galleries.Gallery
-  alias Philomena.Users.User
+  alias Tsuchinokus.Galleries.Gallery
+  alias Tsuchinokus.Users.User
 
   @primary_key false
 

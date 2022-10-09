@@ -48,11 +48,11 @@ h3 Visibility
 h3 Associated tag
 = if @artist_link.tag do
   .tag-list
-    = render PhilomenaWeb.TagView, "_tag.html", tag: @artist_link.tag, conn: @conn
+    = render TsuchinokusWeb.TagView, "_tag.html", tag: @artist_link.tag, conn: @conn
 - else
   p There is no tag associated with this link.
 
-= if can?(@conn, :index, Philomena.ArtistLinks.ArtistLink) do
+= if can?(@conn, :index, Tsuchinokus.ArtistLinks.ArtistLink) do
   p
     => link "Edit", to: Routes.profile_artist_link_path(@conn, :edit, @user, @artist_link)
     ' &bull;

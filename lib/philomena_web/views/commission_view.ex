@@ -1,7 +1,7 @@
-defmodule PhilomenaWeb.CommissionView do
-  use PhilomenaWeb, :view
+defmodule TsuchinokusWeb.CommissionView do
+  use TsuchinokusWeb, :view
 
-  alias Philomena.Commissions.Commission
+  alias Tsuchinokus.Commissions.Commission
 
   def categories, do: [[key: "-", value: ""] | Commission.categories()]
   def types, do: Commission.types()

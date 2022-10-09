@@ -1,8 +1,8 @@
-defmodule Philomena.Images.Source do
+defmodule Tsuchinokus.Images.Source do
   use Ecto.Schema
   import Ecto.Changeset
 
-  alias Philomena.Images.Image
+  alias Tsuchinokus.Images.Image
 
   schema "image_sources" do
     belongs_to :image, Image

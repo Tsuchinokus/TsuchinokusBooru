@@ -1,25 +1,25 @@
-defmodule Philomena.Comments do
+defmodule Tsuchinokus.Comments do
   @moduledoc """
   The Comments context.
   """
 
   import Ecto.Query, warn: false
   alias Ecto.Multi
-  alias Philomena.Repo
+  alias Tsuchinokus.Repo
 
-  alias Philomena.Elasticsearch
-  alias Philomena.Reports.Report
-  alias Philomena.UserStatistics
-  alias Philomena.Comments.Comment
-  alias Philomena.Comments.ElasticsearchIndex, as: CommentIndex
-  alias Philomena.IndexWorker
-  alias Philomena.Images.Image
-  alias Philomena.Images
-  alias Philomena.Notifications
-  alias Philomena.NotificationWorker
-  alias Philomena.Versions
-  alias Philomena.Reports
-  alias Philomena.Users.User
+  alias Tsuchinokus.Elasticsearch
+  alias Tsuchinokus.Reports.Report
+  alias Tsuchinokus.UserStatistics
+  alias Tsuchinokus.Comments.Comment
+  alias Tsuchinokus.Comments.ElasticsearchIndex, as: CommentIndex
+  alias Tsuchinokus.IndexWorker
+  alias Tsuchinokus.Images.Image
+  alias Tsuchinokus.Images
+  alias Tsuchinokus.Notifications
+  alias Tsuchinokus.NotificationWorker
+  alias Tsuchinokus.Versions
+  alias Tsuchinokus.Reports
+  alias Tsuchinokus.Users.User
 
   @doc """
   Gets a single comment.

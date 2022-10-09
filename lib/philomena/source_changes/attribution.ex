@@ -1,4 +1,4 @@
-defimpl Philomena.Attribution, for: Philomena.SourceChanges.SourceChange do
+defimpl Tsuchinokus.Attribution, for: Tsuchinokus.SourceChanges.SourceChange do
   def object_identifier(source_change) do
     to_string(source_change.image_id || source_change.id)
   end

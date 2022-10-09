@@ -1,9 +1,9 @@
-defmodule PhilomenaWeb.ChannelController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.ChannelController do
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.Channels
-  alias Philomena.Channels.Channel
-  alias Philomena.Repo
+  alias Tsuchinokus.Channels
+  alias Tsuchinokus.Channels.Channel
+  alias Tsuchinokus.Repo
   import Ecto.Query
 
   plug :load_and_authorize_resource,

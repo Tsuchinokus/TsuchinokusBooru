@@ -1,15 +1,15 @@
-defmodule PhilomenaWeb.AdminCountersPlug do
+defmodule TsuchinokusWeb.AdminCountersPlug do
   @moduledoc """
   This plug stores the counts used by the admin bar.
   ## Example
-      plug PhilomenaWeb.AdminCountersPlug
+      plug TsuchinokusWeb.AdminCountersPlug
   """
 
-  alias Philomena.DuplicateReports
-  alias Philomena.Reports
-  alias Philomena.ArtistLinks
-  alias Philomena.DnpEntries
-  alias Philomena.Images
+  alias Tsuchinokus.DuplicateReports
+  alias Tsuchinokus.Reports
+  alias Tsuchinokus.ArtistLinks
+  alias Tsuchinokus.DnpEntries
+  alias Tsuchinokus.Images
 
   import Plug.Conn, only: [assign: 3]
 

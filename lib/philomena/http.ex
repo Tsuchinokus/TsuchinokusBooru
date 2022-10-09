@@ -1,4 +1,4 @@
-defmodule Philomena.Http do
+defmodule Tsuchinokus.Http do
   def get(url, headers \\ [], options \\ []) do
     Tesla.get(client(headers), url, opts: [adapter: adapter_opts(options)])
   end
@@ -14,7 +14,7 @@ defmodule Philomena.Http do
   defp adapter_opts(opts) do
     opts = Keyword.merge(opts, max_body: 125_000_000, inet6: true)
 
-    case Application.get_env(:philomena, :proxy_host) do
+    case Application.get_env(:tsuchinokus, :proxy_host) do
       nil ->
         opts
 
@@ -36,7 +36,7 @@ defmodule Philomena.Http do
         {Tesla.Middleware.Headers,
          [
            {"User-Agent",
-            "Mozilla/5.0 (X11; Philomena; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0"}
+            "Mozilla/5.0 (X11; Tsuchinokus; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0"}
            | headers
          ]}
       ],

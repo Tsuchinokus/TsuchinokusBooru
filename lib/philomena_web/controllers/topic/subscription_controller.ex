@@ -1,10 +1,10 @@
-defmodule PhilomenaWeb.Topic.SubscriptionController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.Topic.SubscriptionController do
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.Forums.Forum
-  alias Philomena.Topics
+  alias Tsuchinokus.Forums.Forum
+  alias Tsuchinokus.Topics
 
-  plug PhilomenaWeb.CanaryMapPlug, create: :show, delete: :show
+  plug TsuchinokusWeb.CanaryMapPlug, create: :show, delete: :show
 
   plug :load_and_authorize_resource,
     model: Forum,
@@ -12,8 +12,8 @@ defmodule PhilomenaWeb.Topic.SubscriptionController do
     id_field: "short_name",
     persisted: true
 
-  plug PhilomenaWeb.LoadTopicPlug, [show_hidden: true] when action in [:delete]
-  plug PhilomenaWeb.LoadTopicPlug when action in [:create]
+  plug TsuchinokusWeb.LoadTopicPlug, [show_hidden: true] when action in [:delete]
+  plug TsuchinokusWeb.LoadTopicPlug when action in [:create]
 
   def create(conn, _params) do
     topic = conn.assigns.topic

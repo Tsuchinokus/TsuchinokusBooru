@@ -1,3 +1,3 @@
-defmodule PhilomenaWeb.Channel.SubscriptionView do
-  use PhilomenaWeb, :view
+defmodule TsuchinokusWeb.Channel.SubscriptionView do
+  use TsuchinokusWeb, :view
 end

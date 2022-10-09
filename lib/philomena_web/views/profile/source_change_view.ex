@@ -1,3 +1,3 @@
-defmodule PhilomenaWeb.Profile.SourceChangeView do
-  use PhilomenaWeb, :view
+defmodule TsuchinokusWeb.Profile.SourceChangeView do
+  use TsuchinokusWeb, :view
 end

@@ -1,9 +1,9 @@
-defmodule PhilomenaWeb.Api.Json.Search.TagController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.Api.Json.Search.TagController do
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.Elasticsearch
-  alias Philomena.Tags.Tag
-  alias Philomena.Tags.Query
+  alias Tsuchinokus.Elasticsearch
+  alias Tsuchinokus.Tags.Tag
+  alias Tsuchinokus.Tags.Query
   import Ecto.Query
 
   def index(conn, params) do
@@ -20,7 +20,7 @@ defmodule PhilomenaWeb.Api.Json.Search.TagController do
           )
 
         conn
-        |> put_view(PhilomenaWeb.Api.Json.TagView)
+        |> put_view(TsuchinokusWeb.Api.Json.TagView)
         |> render("index.json", tags: tags, total: tags.total_entries)
 
       {:error, msg} ->

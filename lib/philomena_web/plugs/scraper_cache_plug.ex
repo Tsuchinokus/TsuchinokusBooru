@@ -1,4 +1,4 @@
-defmodule PhilomenaWeb.ScraperCachePlug do
+defmodule TsuchinokusWeb.ScraperCachePlug do
   @spec init(any()) :: any()
   def init(opts) do
     opts

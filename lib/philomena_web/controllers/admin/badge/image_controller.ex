@@ -1,8 +1,8 @@
-defmodule PhilomenaWeb.Admin.Badge.ImageController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.Admin.Badge.ImageController do
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.Badges.Badge
-  alias Philomena.Badges
+  alias Tsuchinokus.Badges.Badge
+  alias Tsuchinokus.Badges
 
   plug :verify_authorized
   plug :load_resource, model: Badge, id_name: "badge_id", persisted: true, only: [:edit, :update]
@@ -27,7 +27,7 @@ defmodule PhilomenaWeb.Admin.Badge.ImageController do
   defp verify_authorized(conn, _opts) do
     case Canada.Can.can?(conn.assigns.current_user, :index, Badge) do
       true -> conn
-      _false -> PhilomenaWeb.NotAuthorizedPlug.call(conn)
+      _false -> TsuchinokusWeb.NotAuthorizedPlug.call(conn)
     end
   end
 end

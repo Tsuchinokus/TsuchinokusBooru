@@ -1,10 +1,10 @@
-defmodule Philomena.Posts.Post do
+defmodule Tsuchinokus.Posts.Post do
   use Ecto.Schema
   import Ecto.Changeset
 
-  alias Philomena.Users.User
-  alias Philomena.Topics.Topic
-  alias Philomena.Schema.Approval
+  alias Tsuchinokus.Users.User
+  alias Tsuchinokus.Topics.Topic
+  alias Tsuchinokus.Schema.Approval
 
   schema "posts" do
     belongs_to :user, User

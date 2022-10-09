@@ -1,10 +1,10 @@
-defmodule PhilomenaWeb.SearchController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.SearchController do
+  use TsuchinokusWeb, :controller
 
-  alias PhilomenaWeb.ImageLoader
-  alias Philomena.Images.Image
-  alias Philomena.Elasticsearch
-  alias Philomena.Interactions
+  alias TsuchinokusWeb.ImageLoader
+  alias Tsuchinokus.Images.Image
+  alias Tsuchinokus.Elasticsearch
+  alias Tsuchinokus.Interactions
   import Ecto.Query
 
   def index(conn, params) do

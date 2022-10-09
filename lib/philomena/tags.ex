@@ -1,28 +1,28 @@
-defmodule Philomena.Tags do
+defmodule Tsuchinokus.Tags do
   @moduledoc """
   The Tags context.
   """
 
   import Ecto.Query, warn: false
-  alias Philomena.Repo
+  alias Tsuchinokus.Repo
 
-  alias Philomena.Elasticsearch
-  alias Philomena.IndexWorker
-  alias Philomena.TagAliasWorker
-  alias Philomena.TagUnaliasWorker
-  alias Philomena.TagReindexWorker
-  alias Philomena.TagDeleteWorker
-  alias Philomena.Tags.Tag
-  alias Philomena.Tags.Uploader
-  alias Philomena.Images
-  alias Philomena.Images.Image
-  alias Philomena.Users.User
-  alias Philomena.Filters
-  alias Philomena.Filters.Filter
-  alias Philomena.Images.Tagging
-  alias Philomena.ArtistLinks.ArtistLink
-  alias Philomena.DnpEntries.DnpEntry
-  alias Philomena.Channels.Channel
+  alias Tsuchinokus.Elasticsearch
+  alias Tsuchinokus.IndexWorker
+  alias Tsuchinokus.TagAliasWorker
+  alias Tsuchinokus.TagUnaliasWorker
+  alias Tsuchinokus.TagReindexWorker
+  alias Tsuchinokus.TagDeleteWorker
+  alias Tsuchinokus.Tags.Tag
+  alias Tsuchinokus.Tags.Uploader
+  alias Tsuchinokus.Images
+  alias Tsuchinokus.Images.Image
+  alias Tsuchinokus.Users.User
+  alias Tsuchinokus.Filters
+  alias Tsuchinokus.Filters.Filter
+  alias Tsuchinokus.Images.Tagging
+  alias Tsuchinokus.ArtistLinks.ArtistLink
+  alias Tsuchinokus.DnpEntries.DnpEntry
+  alias Tsuchinokus.Channels.Channel
 
   @spec get_or_create_tags(String.t()) :: list()
   def get_or_create_tags(tag_list) do
@@ -419,7 +419,7 @@ defmodule Philomena.Tags do
     |> Elasticsearch.reindex(Tag)
   end
 
-  alias Philomena.Tags.Implication
+  alias Tsuchinokus.Tags.Implication
 
   @doc """
   Returns the list of tags_implied_tags.

@@ -1,5 +1,5 @@
 - route = fn p -> Routes.admin_advert_path(@conn, :index, p) end
-- pagination = render PhilomenaWeb.PaginationView, "_pagination.html", page: @adverts, route: route
+- pagination = render TsuchinokusWeb.PaginationView, "_pagination.html", page: @adverts, route: route
 
 .block
   .block__header

@@ -1,5 +1,5 @@
-defmodule Philomena.Reports.ElasticsearchIndex do
-  @behaviour Philomena.ElasticsearchIndex
+defmodule Tsuchinokus.Reports.ElasticsearchIndex do
+  @behaviour Tsuchinokus.ElasticsearchIndex
 
   @impl true
   def index_name do

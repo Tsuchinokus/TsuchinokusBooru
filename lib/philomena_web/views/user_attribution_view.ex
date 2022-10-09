@@ -1,9 +1,9 @@
-defmodule PhilomenaWeb.UserAttributionView do
-  use PhilomenaWeb, :view
+defmodule TsuchinokusWeb.UserAttributionView do
+  use TsuchinokusWeb, :view
   use Bitwise
 
-  alias Philomena.Attribution
-  alias PhilomenaWeb.AvatarGeneratorView
+  alias Tsuchinokus.Attribution
+  alias TsuchinokusWeb.AvatarGeneratorView
 
   def anonymous?(object) do
     Attribution.anonymous?(object)
@@ -129,11 +129,11 @@ defmodule PhilomenaWeb.UserAttributionView do
     do: labels
 
   defp avatar_url_root do
-    Application.get_env(:philomena, :avatar_url_root)
+    Application.get_env(:tsuchinokus, :avatar_url_root)
   end
 
   defp anonymous_name_salt do
-    Application.get_env(:philomena, :anonymous_name_salt)
+    Application.get_env(:tsuchinokus, :anonymous_name_salt)
     |> to_string()
   end
 end

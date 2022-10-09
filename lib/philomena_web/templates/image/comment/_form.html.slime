@@ -7,9 +7,9 @@
 
   .block
     div
-      = render PhilomenaWeb.MarkdownView, "_input.html", conn: @conn, f: f, placeholder: "Please read the site rules before posting and use ||spoilers|| for above-rating stuff."
+      = render TsuchinokusWeb.MarkdownView, "_input.html", conn: @conn, f: f, placeholder: "Please read the site rules before posting and use ||spoilers|| for above-rating stuff."
 
     .block__content.communication-edit__actions
       => submit "Post", class: "button", data: [disable_with: raw("Posting&hellip;")]
 
-      = render PhilomenaWeb.MarkdownView, "_anon_checkbox.html", conn: @conn, f: f
+      = render TsuchinokusWeb.MarkdownView, "_anon_checkbox.html", conn: @conn, f: f

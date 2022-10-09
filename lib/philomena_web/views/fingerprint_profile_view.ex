@@ -1,3 +1,3 @@
-defmodule PhilomenaWeb.FingerprintProfileView do
-  use PhilomenaWeb, :view
+defmodule TsuchinokusWeb.FingerprintProfileView do
+  use TsuchinokusWeb, :view
 end

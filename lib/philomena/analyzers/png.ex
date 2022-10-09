@@ -1,4 +1,4 @@
-defmodule Philomena.Analyzers.Png do
+defmodule Tsuchinokus.Analyzers.Png do
   def analyze(file) do
     stats = stats(file)
 

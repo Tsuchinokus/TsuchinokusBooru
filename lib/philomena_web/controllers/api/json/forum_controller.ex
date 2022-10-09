@@ -1,8 +1,8 @@
-defmodule PhilomenaWeb.Api.Json.ForumController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.Api.Json.ForumController do
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.Forums.Forum
-  alias Philomena.Repo
+  alias Tsuchinokus.Forums.Forum
+  alias Tsuchinokus.Repo
   import Ecto.Query
 
   def index(conn, _params) do

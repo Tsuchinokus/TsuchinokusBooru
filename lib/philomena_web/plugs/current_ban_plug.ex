@@ -1,12 +1,12 @@
-defmodule PhilomenaWeb.CurrentBanPlug do
+defmodule TsuchinokusWeb.CurrentBanPlug do
   @moduledoc """
   This plug loads the ban for the current user.
 
   ## Example
 
-      plug PhilomenaWeb.CurrentBanPlug
+      plug TsuchinokusWeb.CurrentBanPlug
   """
-  alias Philomena.Bans
+  alias Tsuchinokus.Bans
   alias Plug.Conn
 
   @doc false

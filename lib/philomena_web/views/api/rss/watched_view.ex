@@ -1,7 +1,7 @@
-defmodule PhilomenaWeb.Api.Rss.WatchedView do
-  use PhilomenaWeb, :view
+defmodule TsuchinokusWeb.Api.Rss.WatchedView do
+  use TsuchinokusWeb, :view
 
-  alias PhilomenaWeb.ImageView
+  alias TsuchinokusWeb.ImageView
 
   def last_build_date do
     DateTime.utc_now()

@@ -16,8 +16,8 @@
     | Preview
 
 .block__tab.communication-edit__tab.selected.js-preview-input-wrapper data-tab="write"
-  = render PhilomenaWeb.MarkdownView, "_help.html", conn: @conn
-  = render PhilomenaWeb.MarkdownView, "_toolbar.html", conn: @conn
+  = render TsuchinokusWeb.MarkdownView, "_help.html", conn: @conn
+  = render TsuchinokusWeb.MarkdownView, "_toolbar.html", conn: @conn
 
   .field
     = textarea form, field_name, class: add_classes("input input--wide input--text input--resize-vertical js-toolbar-input js-preview-input", input_classes), placeholder: field_placeholder, required: required?(is_required)

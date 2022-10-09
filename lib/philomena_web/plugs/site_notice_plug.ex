@@ -1,14 +1,14 @@
-defmodule PhilomenaWeb.SiteNoticePlug do
+defmodule TsuchinokusWeb.SiteNoticePlug do
   @moduledoc """
   This plug stores the current site-wide notices.
 
   ## Example
 
-      plug PhilomenaWeb.SiteNoticePlug
+      plug TsuchinokusWeb.SiteNoticePlug
   """
 
   alias Plug.Conn
-  alias Philomena.SiteNotices
+  alias Tsuchinokus.SiteNotices
 
   @doc false
   @spec init(any()) :: any()

@@ -1,12 +1,12 @@
-defmodule Philomena.UserIps do
+defmodule Tsuchinokus.UserIps do
   @moduledoc """
   The UserIps context.
   """
 
   import Ecto.Query, warn: false
-  alias Philomena.Repo
+  alias Tsuchinokus.Repo
 
-  alias Philomena.UserIps.UserIp
+  alias Tsuchinokus.UserIps.UserIp
 
   @doc """
   Gets a single user_ip.

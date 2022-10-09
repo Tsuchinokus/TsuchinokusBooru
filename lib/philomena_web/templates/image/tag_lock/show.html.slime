@@ -6,7 +6,7 @@ h1
 
 = form_for @changeset, Routes.image_tag_lock_path(@conn, :update, @image), fn f ->
   .field
-    = render PhilomenaWeb.TagView, "_tag_editor.html", f: f, name: :tag_input, type: :edit, extra: [value: tag_input]
+    = render TsuchinokusWeb.TagView, "_tag_editor.html", f: f, name: :tag_input, type: :edit, extra: [value: tag_input]
     = error_tag f, :tag_input
 
   .actions

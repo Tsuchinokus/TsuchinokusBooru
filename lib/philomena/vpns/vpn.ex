@@ -1,4 +1,4 @@
-defmodule Philomena.Vpns.Vpn do
+defmodule Tsuchinokus.Vpns.Vpn do
   use Ecto.Schema
   import Ecto.Changeset
 

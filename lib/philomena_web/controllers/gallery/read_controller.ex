@@ -1,9 +1,9 @@
-defmodule PhilomenaWeb.Gallery.ReadController do
+defmodule TsuchinokusWeb.Gallery.ReadController do
   import Plug.Conn
-  use PhilomenaWeb, :controller
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.Galleries.Gallery
-  alias Philomena.Galleries
+  alias Tsuchinokus.Galleries.Gallery
+  alias Tsuchinokus.Galleries
 
   plug :load_resource, model: Gallery, id_name: "gallery_id", persisted: true
 

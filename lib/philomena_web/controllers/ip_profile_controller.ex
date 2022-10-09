@@ -1,9 +1,9 @@
-defmodule PhilomenaWeb.IpProfileController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.IpProfileController do
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.UserIps.UserIp
-  alias Philomena.Bans.Subnet
-  alias Philomena.Repo
+  alias Tsuchinokus.UserIps.UserIp
+  alias Tsuchinokus.Bans.Subnet
+  alias Tsuchinokus.Repo
   import Ecto.Query
 
   plug :authorize_ip
@@ -34,7 +34,7 @@ defmodule PhilomenaWeb.IpProfileController do
 
   defp authorize_ip(conn, _opts) do
     case Canada.Can.can?(conn.assigns.current_user, :show, :ip_address) do
-      false -> PhilomenaWeb.NotAuthorizedPlug.call(conn)
+      false -> TsuchinokusWeb.NotAuthorizedPlug.call(conn)
       true -> conn
     end
   end

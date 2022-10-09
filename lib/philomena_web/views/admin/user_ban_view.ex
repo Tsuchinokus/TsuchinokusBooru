@@ -1,5 +1,5 @@
-defmodule PhilomenaWeb.Admin.UserBanView do
-  use PhilomenaWeb, :view
+defmodule TsuchinokusWeb.Admin.UserBanView do
+  use TsuchinokusWeb, :view
 
-  import PhilomenaWeb.Admin.BanView
+  import TsuchinokusWeb.Admin.BanView
 end

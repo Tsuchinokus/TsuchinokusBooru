@@ -1,11 +1,11 @@
-defmodule PhilomenaWeb.Image.Comment.ApproveController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.Image.Comment.ApproveController do
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.Comments.Comment
-  alias Philomena.Comments
-  alias Philomena.UserStatistics
+  alias Tsuchinokus.Comments.Comment
+  alias Tsuchinokus.Comments
+  alias Tsuchinokus.UserStatistics
 
-  plug PhilomenaWeb.CanaryMapPlug, create: :approve
+  plug TsuchinokusWeb.CanaryMapPlug, create: :approve
 
   plug :load_and_authorize_resource,
     model: Comment,

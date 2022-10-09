@@ -1,5 +1,5 @@
-defmodule Philomena.Processors.Webm do
-  alias Philomena.Intensities
+defmodule Tsuchinokus.Processors.Webm do
+  alias Tsuchinokus.Intensities
   import Bitwise
 
   def process(analysis, file, versions) do

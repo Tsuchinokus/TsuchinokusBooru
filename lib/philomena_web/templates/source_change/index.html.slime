@@ -18,7 +18,7 @@
             td.center
               = link source_change.image_id, to: Routes.image_path(@conn, :show, source_change.image)
             td.center
-              = render PhilomenaWeb.ImageView, "_image_container.html", image: source_change.image, size: :thumb_tiny, conn: @conn
+              = render TsuchinokusWeb.ImageView, "_image_container.html", image: source_change.image, size: :thumb_tiny, conn: @conn
 
             td
               = source_change.new_value
@@ -27,7 +27,7 @@
               = pretty_time(source_change.created_at)
 
             td class=user_column_class(source_change)
-              => render PhilomenaWeb.UserAttributionView, "_anon_user.html", object: source_change, conn: @conn
+              => render TsuchinokusWeb.UserAttributionView, "_anon_user.html", object: source_change, conn: @conn
 
               = if can?(@conn, :show, :ip_address) do
                 => link_to_ip @conn, source_change.ip

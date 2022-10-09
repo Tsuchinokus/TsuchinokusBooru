@@ -1,39 +1,39 @@
-defmodule PhilomenaWeb.ImageController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.ImageController do
+  use TsuchinokusWeb, :controller
 
-  alias PhilomenaWeb.ImageLoader
-  alias PhilomenaWeb.CommentLoader
-  alias PhilomenaWeb.NotificationCountPlug
-  alias PhilomenaWeb.MarkdownRenderer
+  alias TsuchinokusWeb.ImageLoader
+  alias TsuchinokusWeb.CommentLoader
+  alias TsuchinokusWeb.NotificationCountPlug
+  alias TsuchinokusWeb.MarkdownRenderer
 
-  alias Philomena.{
+  alias Tsuchinokus.{
     Images,
     Images.Image,
     Comments.Comment,
     Galleries.Gallery
   }
 
-  alias Philomena.Elasticsearch
-  alias Philomena.Interactions
-  alias Philomena.Comments
-  alias Philomena.Repo
+  alias Tsuchinokus.Elasticsearch
+  alias Tsuchinokus.Interactions
+  alias Tsuchinokus.Comments
+  alias Tsuchinokus.Repo
   import Ecto.Query
 
-  plug PhilomenaWeb.LimitPlug,
+  plug TsuchinokusWeb.LimitPlug,
        [time: 5, error: "You may only upload images once every 5 seconds."]
        when action in [:create]
 
   plug :load_image when action in [:show]
 
-  plug PhilomenaWeb.FilterBannedUsersPlug when action in [:new, :create]
-  plug PhilomenaWeb.UserAttributionPlug when action in [:create]
-  plug PhilomenaWeb.CaptchaPlug when action in [:new, :show, :create]
-  plug PhilomenaWeb.CheckCaptchaPlug when action in [:create]
+  plug TsuchinokusWeb.FilterBannedUsersPlug when action in [:new, :create]
+  plug TsuchinokusWeb.UserAttributionPlug when action in [:create]
+  plug TsuchinokusWeb.CaptchaPlug when action in [:new, :show, :create]
+  plug TsuchinokusWeb.CheckCaptchaPlug when action in [:create]
 
-  plug PhilomenaWeb.ScraperPlug,
+  plug TsuchinokusWeb.ScraperPlug,
        [params_name: "image", params_key: "image"] when action in [:create]
 
-  plug PhilomenaWeb.AdvertPlug when action in [:show]
+  plug TsuchinokusWeb.AdvertPlug when action in [:show]
 
   def index(conn, _params) do
     {:ok, {images, _tags}} =
@@ -119,10 +119,10 @@ defmodule PhilomenaWeb.ImageController do
 
     case Images.create_image(attributes, image_params) do
       {:ok, %{image: image}} ->
-        PhilomenaWeb.Endpoint.broadcast!(
+        TsuchinokusWeb.Endpoint.broadcast!(
           "firehose",
           "image:create",
-          PhilomenaWeb.Api.Json.ImageView.render("show.json", %{image: image, interactions: []})
+          TsuchinokusWeb.Api.Json.ImageView.render("show.json", %{image: image, interactions: []})
         )
 
         conn
@@ -195,7 +195,7 @@ defmodule PhilomenaWeb.ImageController do
 
     cond do
       is_nil(image) ->
-        PhilomenaWeb.NotFoundPlug.call(conn)
+        TsuchinokusWeb.NotFoundPlug.call(conn)
 
       not is_nil(image.duplicate_id) and
           not Canada.Can.can?(conn.assigns.current_user, :show, image) ->

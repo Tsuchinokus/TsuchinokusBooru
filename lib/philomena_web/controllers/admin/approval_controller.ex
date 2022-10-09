@@ -1,8 +1,8 @@
-defmodule PhilomenaWeb.Admin.ApprovalController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.Admin.ApprovalController do
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.Images.Image
-  alias Philomena.Repo
+  alias Tsuchinokus.Images.Image
+  alias Tsuchinokus.Repo
   import Ecto.Query
 
   plug :verify_authorized
@@ -22,7 +22,7 @@ defmodule PhilomenaWeb.Admin.ApprovalController do
   defp verify_authorized(conn, _opts) do
     case Canada.Can.can?(conn.assigns.current_user, :approve, %Image{}) do
       true -> conn
-      false -> PhilomenaWeb.NotAuthorizedPlug.call(conn)
+      false -> TsuchinokusWeb.NotAuthorizedPlug.call(conn)
     end
   end
 end

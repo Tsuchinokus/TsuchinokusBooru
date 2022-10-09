@@ -1,10 +1,10 @@
-defmodule PhilomenaWeb.Filter.HideController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.Filter.HideController do
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.Filters
-  alias Philomena.Tags.Tag
+  alias Tsuchinokus.Filters
+  alias Tsuchinokus.Tags.Tag
 
-  plug PhilomenaWeb.FilterBannedUsersPlug
+  plug TsuchinokusWeb.FilterBannedUsersPlug
   plug :authorize_filter
 
   plug :load_resource, model: Tag, id_field: "slug", id_name: "tag", persisted: true

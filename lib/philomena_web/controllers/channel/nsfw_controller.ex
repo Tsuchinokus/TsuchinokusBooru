@@ -1,5 +1,5 @@
-defmodule PhilomenaWeb.Channel.NsfwController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.Channel.NsfwController do
+  use TsuchinokusWeb, :controller
 
   alias Plug.Conn
 

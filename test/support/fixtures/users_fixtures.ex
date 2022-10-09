@@ -1,11 +1,11 @@
-defmodule Philomena.UsersFixtures do
+defmodule Tsuchinokus.UsersFixtures do
   @moduledoc """
   This module defines test helpers for creating
-  entities via the `Philomena.Users` context.
+  entities via the `Tsuchinokus.Users` context.
   """
 
-  alias Philomena.Users
-  alias Philomena.Repo
+  alias Tsuchinokus.Users
+  alias Tsuchinokus.Repo
 
   def unique_user_email, do: "user#{System.unique_integer()}@example.com"
   def valid_user_password, do: "hello world!"

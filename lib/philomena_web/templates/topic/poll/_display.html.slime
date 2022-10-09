@@ -19,12 +19,12 @@
     - @poll_active and not @voted and not is_nil(@conn.assigns.current_user) ->
       .poll
         .poll-area
-          = render PhilomenaWeb.Topic.PollView, "_vote_form.html", assigns
+          = render TsuchinokusWeb.Topic.PollView, "_vote_form.html", assigns
 
     - true ->
       .poll
         .poll-area
-          = render PhilomenaWeb.Topic.PollView, "_results.html", assigns
+          = render TsuchinokusWeb.Topic.PollView, "_results.html", assigns
 
 
 = if can?(@conn, :hide, @topic) do

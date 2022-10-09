@@ -1,13 +1,13 @@
-defmodule PhilomenaWeb.Conversation.MessageController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.Conversation.MessageController do
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.Conversations.{Conversation, Message}
-  alias Philomena.Conversations
-  alias Philomena.Repo
+  alias Tsuchinokus.Conversations.{Conversation, Message}
+  alias Tsuchinokus.Conversations
+  alias Tsuchinokus.Repo
   import Ecto.Query
 
-  plug PhilomenaWeb.FilterBannedUsersPlug
-  plug PhilomenaWeb.CanaryMapPlug, create: :show
+  plug TsuchinokusWeb.FilterBannedUsersPlug
+  plug TsuchinokusWeb.CanaryMapPlug, create: :show
 
   plug :load_and_authorize_resource,
     model: Conversation,

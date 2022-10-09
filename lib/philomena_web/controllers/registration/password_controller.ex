@@ -1,10 +1,10 @@
-defmodule PhilomenaWeb.Registration.PasswordController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.Registration.PasswordController do
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.Users
-  alias PhilomenaWeb.UserAuth
+  alias Tsuchinokus.Users
+  alias TsuchinokusWeb.UserAuth
 
-  plug PhilomenaWeb.CompromisedPasswordCheckPlug when action in [:update]
+  plug TsuchinokusWeb.CompromisedPasswordCheckPlug when action in [:update]
 
   def update(conn, %{"current_password" => password, "user" => user_params}) do
     user = conn.assigns.current_user

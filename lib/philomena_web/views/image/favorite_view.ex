@@ -1,3 +1,3 @@
-defmodule PhilomenaWeb.Image.FavoriteView do
-  use PhilomenaWeb, :view
+defmodule TsuchinokusWeb.Image.FavoriteView do
+  use TsuchinokusWeb, :view
 end

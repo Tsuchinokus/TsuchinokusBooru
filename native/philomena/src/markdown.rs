@@ -11,7 +11,7 @@ fn common_options() -> ComrakOptions {
     options.extension.description_lists = true;
     options.extension.superscript = true;
     options.extension.strikethrough = true;
-    options.extension.philomena = true;
+    options.extension.tsuchinokus = true;
     options.parse.smart = true;
     options.render.hardbreaks = true;
     options.render.github_pre_lang = true;
@@ -19,7 +19,7 @@ fn common_options() -> ComrakOptions {
     options.extension.camoifier = Some(|s| camo::image_url(s).unwrap_or_else(|| String::from("")));
 
     if let Ok(domains) = env::var("SITE_DOMAINS") {
-        options.extension.philomena_domains = Some(domains.split(',').map(|s| s.to_string()).collect::<Vec<String>>());
+        options.extension.tsuchinokus_domains = Some(domains.split(',').map(|s| s.to_string()).collect::<Vec<String>>());
     }
 
     options
@@ -38,7 +38,7 @@ pub fn to_html(input: String, reps: Term) -> String {
     let mut options = common_options();
     options.render.escape = true;
 
-    options.extension.philomena_replacements = map_to_hashmap(reps);
+    options.extension.tsuchinokus_replacements = map_to_hashmap(reps);
 
     comrak::markdown_to_html(&input, &options)
 }
@@ -47,7 +47,7 @@ pub fn to_html_unsafe(input: String, reps: Term) -> String {
     let mut options = common_options();
     options.render.unsafe_ = true;
 
-    options.extension.philomena_replacements = map_to_hashmap(reps);
+    options.extension.tsuchinokus_replacements = map_to_hashmap(reps);
 
     comrak::markdown_to_html(&input, &options)
 }

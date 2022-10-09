@@ -1,10 +1,10 @@
-defmodule PhilomenaWeb.Conversation.Message.ApproveController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.Conversation.Message.ApproveController do
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.Conversations.Message
-  alias Philomena.Conversations
+  alias Tsuchinokus.Conversations.Message
+  alias Tsuchinokus.Conversations
 
-  plug PhilomenaWeb.CanaryMapPlug, create: :approve
+  plug TsuchinokusWeb.CanaryMapPlug, create: :approve
 
   plug :load_and_authorize_resource,
     model: Message,

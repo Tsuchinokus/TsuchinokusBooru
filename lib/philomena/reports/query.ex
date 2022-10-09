@@ -1,5 +1,5 @@
-defmodule Philomena.Reports.Query do
-  alias Philomena.Search.Parser
+defmodule Tsuchinokus.Reports.Query do
+  alias Tsuchinokus.Search.Parser
 
   defp fields do
     [

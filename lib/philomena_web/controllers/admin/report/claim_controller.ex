@@ -1,10 +1,10 @@
-defmodule PhilomenaWeb.Admin.Report.ClaimController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.Admin.Report.ClaimController do
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.Reports.Report
-  alias Philomena.Reports
+  alias Tsuchinokus.Reports.Report
+  alias Tsuchinokus.Reports
 
-  plug PhilomenaWeb.CanaryMapPlug, create: :edit, delete: :edit
+  plug TsuchinokusWeb.CanaryMapPlug, create: :edit, delete: :edit
   plug :load_and_authorize_resource, model: Report, id_name: "report_id", persisted: true
 
   def create(conn, _params) do

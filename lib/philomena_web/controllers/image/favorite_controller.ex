@@ -1,8 +1,8 @@
-defmodule PhilomenaWeb.Image.FavoriteController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.Image.FavoriteController do
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.Images.Image
-  alias Philomena.Repo
+  alias Tsuchinokus.Images.Image
+  alias Tsuchinokus.Repo
 
   plug :load_and_authorize_resource,
     model: Image,

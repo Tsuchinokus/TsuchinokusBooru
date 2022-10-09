@@ -1,4 +1,4 @@
-defmodule Philomena.Repo.Migrations.CreateModerationLogs do
+defmodule Tsuchinokus.Repo.Migrations.CreateModerationLogs do
   use Ecto.Migration
 
   def change do

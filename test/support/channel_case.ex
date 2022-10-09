@@ -1,4 +1,4 @@
-defmodule PhilomenaWeb.ChannelCase do
+defmodule TsuchinokusWeb.ChannelCase do
   @moduledoc """
   This module defines the test case to be used by
   channel tests.
@@ -21,15 +21,15 @@ defmodule PhilomenaWeb.ChannelCase do
       use Phoenix.ChannelTest
 
       # The default endpoint for testing
-      @endpoint PhilomenaWeb.Endpoint
+      @endpoint TsuchinokusWeb.Endpoint
     end
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Philomena.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Tsuchinokus.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(Philomena.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(Tsuchinokus.Repo, {:shared, self()})
     end
 
     :ok

@@ -7,8 +7,8 @@
   = for report <- @duplicate_reports do
     - background_class = background_class(report)
 
-    = render PhilomenaWeb.DuplicateReportView, "_image_cell.html", image: report.image, source: true, report: report, conn: @conn
-    = render PhilomenaWeb.DuplicateReportView, "_image_cell.html", image: report.duplicate_of_image, source: false, report: report, conn: @conn
+    = render TsuchinokusWeb.DuplicateReportView, "_image_cell.html", image: report.image, source: true, report: report, conn: @conn
+    = render TsuchinokusWeb.DuplicateReportView, "_image_cell.html", image: report.duplicate_of_image, source: false, report: report, conn: @conn
 
     .grid--dupe-report-list__cell.dr__diff.border-vertical
       table.table

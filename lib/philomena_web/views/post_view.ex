@@ -1,16 +1,16 @@
-defmodule PhilomenaWeb.PostView do
-  alias Philomena.Attribution
+defmodule TsuchinokusWeb.PostView do
+  alias Tsuchinokus.Attribution
 
-  use PhilomenaWeb, :view
+  use TsuchinokusWeb, :view
 
   def markdown_safe_author(object) do
-    Philomena.Markdown.escape("@" <> author_name(object))
+    Tsuchinokus.Markdown.escape("@" <> author_name(object))
   end
 
   defp author_name(object) do
     cond do
       Attribution.anonymous?(object) || !object.user ->
-        PhilomenaWeb.UserAttributionView.anonymous_name(object)
+        TsuchinokusWeb.UserAttributionView.anonymous_name(object)
 
       true ->
         object.user.name

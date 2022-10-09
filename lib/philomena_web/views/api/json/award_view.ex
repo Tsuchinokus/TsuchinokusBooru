@@ -1,5 +1,5 @@
-defmodule PhilomenaWeb.Api.Json.AwardView do
-  use PhilomenaWeb, :view
+defmodule TsuchinokusWeb.Api.Json.AwardView do
+  use TsuchinokusWeb, :view
 
   def render("award.json", %{award: award}) do
     %{
@@ -12,6 +12,6 @@ defmodule PhilomenaWeb.Api.Json.AwardView do
   end
 
   defp badge_url_root do
-    Application.get_env(:philomena, :badge_url_root)
+    Application.get_env(:tsuchinokus, :badge_url_root)
   end
 end

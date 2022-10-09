@@ -1,4 +1,4 @@
-defmodule PhilomenaWeb.NotAuthorizedPlug do
+defmodule TsuchinokusWeb.NotAuthorizedPlug do
   alias Phoenix.Controller
   alias Plug.Conn
 

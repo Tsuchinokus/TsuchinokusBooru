@@ -1,10 +1,10 @@
-defmodule PhilomenaWeb.ImageLoader do
-  alias PhilomenaWeb.ImageSorter
-  alias Philomena.Elasticsearch
-  alias Philomena.Images.{Image, Query}
-  alias PhilomenaWeb.MarkdownRenderer
-  alias Philomena.Tags.Tag
-  alias Philomena.Repo
+defmodule TsuchinokusWeb.ImageLoader do
+  alias TsuchinokusWeb.ImageSorter
+  alias Tsuchinokus.Elasticsearch
+  alias Tsuchinokus.Images.{Image, Query}
+  alias TsuchinokusWeb.MarkdownRenderer
+  alias Tsuchinokus.Tags.Tag
+  alias Tsuchinokus.Repo
   import Ecto.Query
 
   # sobelow_skip ["SQL.Query"]

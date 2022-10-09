@@ -7,7 +7,7 @@ ul
   li = link "View comments this IP has posted", to: Routes.comment_path(@conn, :index, cq: "ip:#{@ip}")
   li = link "View posts this IP has made", to: Routes.post_path(@conn, :index, pq: "ip:#{@ip}")
 
-= render PhilomenaWeb.BanView, "_bans.html", bans: @subnet_bans, conn: @conn
+= render TsuchinokusWeb.BanView, "_bans.html", bans: @subnet_bans, conn: @conn
 
 h2 Administration Options
 ul

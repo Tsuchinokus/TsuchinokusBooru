@@ -1,10 +1,10 @@
-defmodule PhilomenaWeb.Image.ReportingController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.Image.ReportingController do
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.Images.Image
-  alias Philomena.DuplicateReports.DuplicateReport
-  alias Philomena.DuplicateReports
-  alias Philomena.Repo
+  alias Tsuchinokus.Images.Image
+  alias Tsuchinokus.DuplicateReports.DuplicateReport
+  alias Tsuchinokus.DuplicateReports
+  alias Tsuchinokus.Repo
   import Ecto.Query
 
   plug :load_and_authorize_resource,

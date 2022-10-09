@@ -3,12 +3,12 @@
 h1 Notification Area
 .walloftext
   .block__header
-    = render PhilomenaWeb.PaginationView, "_pagination.html", page: @notifications, route: route, conn: @conn
+    = render TsuchinokusWeb.PaginationView, "_pagination.html", page: @notifications, route: route, conn: @conn
 
   = cond do
     - Enum.any?(@notifications) ->
       = for notification <- @notifications do
-        = render PhilomenaWeb.NotificationView, "_notification.html", notification: notification, conn: @conn
+        = render TsuchinokusWeb.NotificationView, "_notification.html", notification: notification, conn: @conn
 
     - true ->
       p

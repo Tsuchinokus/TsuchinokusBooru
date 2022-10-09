@@ -1,9 +1,9 @@
-defmodule Philomena.DnpEntries.DnpEntry do
+defmodule Tsuchinokus.DnpEntries.DnpEntry do
   use Ecto.Schema
   import Ecto.Changeset
 
-  alias Philomena.Tags.Tag
-  alias Philomena.Users.User
+  alias Tsuchinokus.Tags.Tag
+  alias Tsuchinokus.Users.User
 
   schema "dnp_entries" do
     belongs_to :requesting_user, User
@@ -71,11 +71,11 @@ defmodule Philomena.DnpEntries.DnpEntry do
       {"Uploader Credit Change",
        "I would like the uploader credit for already existing uploads of my art to be assigned to me"},
       {"Certain Type/Location Only",
-       "I only want to allow art of a certain type or from a certain location to be uploaded to Derpibooru"},
+       "I only want to allow art of a certain type or from a certain location to be uploaded to Tsuchinokus"},
       {"With Permission Only",
-       "I only want people with my permission to be allowed to upload my art to Derpibooru"},
+       "I only want people with my permission to be allowed to upload my art to Tsuchinokus"},
       {"Artist Upload Only",
-       "I want to be the only person allowed to upload my art to Derpibooru"},
+       "I want to be the only person allowed to upload my art to Tsuchinokus"},
       {"Other", "I would like a DNP entry under other conditions"}
     ]
   end

@@ -1,24 +1,24 @@
-defmodule PhilomenaWeb.Image.TagController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.Image.TagController do
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.TagChanges.TagChange
-  alias Philomena.UserStatistics
-  alias Philomena.Comments
-  alias Philomena.Images.Image
-  alias Philomena.Images
-  alias Philomena.Tags
-  alias Philomena.Repo
+  alias Tsuchinokus.TagChanges.TagChange
+  alias Tsuchinokus.UserStatistics
+  alias Tsuchinokus.Comments
+  alias Tsuchinokus.Images.Image
+  alias Tsuchinokus.Images
+  alias Tsuchinokus.Tags
+  alias Tsuchinokus.Repo
   import Ecto.Query
 
-  plug PhilomenaWeb.LimitPlug,
+  plug TsuchinokusWeb.LimitPlug,
        [time: 5, error: "You may only update metadata once every 5 seconds."]
        when action in [:update]
 
-  plug PhilomenaWeb.FilterBannedUsersPlug
-  plug PhilomenaWeb.CaptchaPlug
-  plug PhilomenaWeb.CheckCaptchaPlug
-  plug PhilomenaWeb.UserAttributionPlug
-  plug PhilomenaWeb.CanaryMapPlug, update: :edit_metadata
+  plug TsuchinokusWeb.FilterBannedUsersPlug
+  plug TsuchinokusWeb.CaptchaPlug
+  plug TsuchinokusWeb.CheckCaptchaPlug
+  plug TsuchinokusWeb.UserAttributionPlug
+  plug TsuchinokusWeb.CanaryMapPlug, update: :edit_metadata
 
   plug :load_and_authorize_resource,
     model: Image,
@@ -31,7 +31,7 @@ defmodule PhilomenaWeb.Image.TagController do
 
     case Images.update_tags(image, attributes, image_params) do
       {:ok, %{image: {image, added_tags, removed_tags}}} ->
-        PhilomenaWeb.Endpoint.broadcast!(
+        TsuchinokusWeb.Endpoint.broadcast!(
           "firehose",
           "image:tag_update",
           %{
@@ -41,10 +41,10 @@ defmodule PhilomenaWeb.Image.TagController do
           }
         )
 
-        PhilomenaWeb.Endpoint.broadcast!(
+        TsuchinokusWeb.Endpoint.broadcast!(
           "firehose",
           "image:update",
-          PhilomenaWeb.Api.Json.ImageView.render("show.json", %{image: image, interactions: []})
+          TsuchinokusWeb.Api.Json.ImageView.render("show.json", %{image: image, interactions: []})
         )
 
         Comments.reindex_comments(image)
@@ -67,7 +67,7 @@ defmodule PhilomenaWeb.Image.TagController do
         changeset = Images.change_image(image)
 
         conn
-        |> put_view(PhilomenaWeb.ImageView)
+        |> put_view(TsuchinokusWeb.ImageView)
         |> render("_tags.html",
           layout: false,
           tag_change_count: tag_change_count,
@@ -81,7 +81,7 @@ defmodule PhilomenaWeb.Image.TagController do
           |> Repo.preload([tags: :aliases], force: true)
 
         conn
-        |> put_view(PhilomenaWeb.ImageView)
+        |> put_view(TsuchinokusWeb.ImageView)
         |> render("_tags.html",
           layout: false,
           tag_change_count: 0,

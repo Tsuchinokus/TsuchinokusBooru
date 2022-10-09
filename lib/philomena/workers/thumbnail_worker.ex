@@ -1,11 +1,11 @@
-defmodule Philomena.ThumbnailWorker do
-  alias Philomena.Images.Thumbnailer
-  alias Philomena.Images
+defmodule Tsuchinokus.ThumbnailWorker do
+  alias Tsuchinokus.Images.Thumbnailer
+  alias Tsuchinokus.Images
 
   def perform(image_id) do
     Thumbnailer.generate_thumbnails(image_id)
 
-    PhilomenaWeb.Endpoint.broadcast!(
+    TsuchinokusWeb.Endpoint.broadcast!(
       "firehose",
       "image:process",
       %{image_id: image_id}

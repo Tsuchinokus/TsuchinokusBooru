@@ -1,6 +1,6 @@
-defmodule Philomena.Users.UserNotifier do
+defmodule Tsuchinokus.Users.UserNotifier do
   alias Bamboo.Email
-  alias Philomena.Mailer
+  alias Tsuchinokus.Mailer
 
   defp deliver(to, subject, body) do
     email =
@@ -16,7 +16,7 @@ defmodule Philomena.Users.UserNotifier do
   end
 
   defp mailer_address do
-    Application.get_env(:philomena, :mailer_address)
+    Application.get_env(:tsuchinokus, :mailer_address)
   end
 
   @doc """

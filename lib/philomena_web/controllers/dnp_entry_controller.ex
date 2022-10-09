@@ -1,16 +1,16 @@
-defmodule PhilomenaWeb.DnpEntryController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.DnpEntryController do
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.DnpEntries.DnpEntry
-  alias PhilomenaWeb.MarkdownRenderer
-  alias Philomena.DnpEntries
-  alias Philomena.Tags.Tag
-  alias Philomena.ModNotes.ModNote
-  alias Philomena.Polymorphic
-  alias Philomena.Repo
+  alias Tsuchinokus.DnpEntries.DnpEntry
+  alias TsuchinokusWeb.MarkdownRenderer
+  alias Tsuchinokus.DnpEntries
+  alias Tsuchinokus.Tags.Tag
+  alias Tsuchinokus.ModNotes.ModNote
+  alias Tsuchinokus.Polymorphic
+  alias Tsuchinokus.Repo
   import Ecto.Query
 
-  plug PhilomenaWeb.FilterBannedUsersPlug when action in [:new, :create]
+  plug TsuchinokusWeb.FilterBannedUsersPlug when action in [:new, :create]
   plug :set_tags when action in [:new, :create, :edit, :update, :create]
 
   plug :load_and_authorize_resource,
@@ -179,7 +179,7 @@ defmodule PhilomenaWeb.DnpEntryController do
 
     case tags do
       [] ->
-        PhilomenaWeb.NotAuthorizedPlug.call(conn)
+        TsuchinokusWeb.NotAuthorizedPlug.call(conn)
 
       _ ->
         assign(conn, :selectable_tags, tags)

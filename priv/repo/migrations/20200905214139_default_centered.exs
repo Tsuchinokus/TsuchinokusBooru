@@ -1,4 +1,4 @@
-defmodule Philomena.Repo.Migrations.DefaultCentered do
+defmodule Tsuchinokus.Repo.Migrations.DefaultCentered do
   use Ecto.Migration
 
   def change do

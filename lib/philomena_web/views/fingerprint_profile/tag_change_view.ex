@@ -1,3 +1,3 @@
-defmodule PhilomenaWeb.FingerprintProfile.TagChangeView do
-  use PhilomenaWeb, :view
+defmodule TsuchinokusWeb.FingerprintProfile.TagChangeView do
+  use TsuchinokusWeb, :view
 end

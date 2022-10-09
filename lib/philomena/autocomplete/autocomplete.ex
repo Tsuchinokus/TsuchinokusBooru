@@ -1,4 +1,4 @@
-defmodule Philomena.Autocomplete.Autocomplete do
+defmodule Tsuchinokus.Autocomplete.Autocomplete do
   use Ecto.Schema
   import Ecto.Changeset
 

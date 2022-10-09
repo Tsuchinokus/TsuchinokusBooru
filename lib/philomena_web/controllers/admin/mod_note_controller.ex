@@ -1,11 +1,11 @@
-defmodule PhilomenaWeb.Admin.ModNoteController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.Admin.ModNoteController do
+  use TsuchinokusWeb, :controller
 
-  alias PhilomenaWeb.MarkdownRenderer
-  alias Philomena.ModNotes.ModNote
-  alias Philomena.Polymorphic
-  alias Philomena.ModNotes
-  alias Philomena.Repo
+  alias TsuchinokusWeb.MarkdownRenderer
+  alias Tsuchinokus.ModNotes.ModNote
+  alias Tsuchinokus.Polymorphic
+  alias Tsuchinokus.ModNotes
+  alias Tsuchinokus.Repo
   import Ecto.Query
 
   plug :verify_authorized
@@ -81,7 +81,7 @@ defmodule PhilomenaWeb.Admin.ModNoteController do
   defp verify_authorized(conn, _opts) do
     case Canada.Can.can?(conn.assigns.current_user, :index, ModNote) do
       true -> conn
-      _false -> PhilomenaWeb.NotAuthorizedPlug.call(conn)
+      _false -> TsuchinokusWeb.NotAuthorizedPlug.call(conn)
     end
   end
 

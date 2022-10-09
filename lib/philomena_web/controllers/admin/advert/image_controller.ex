@@ -1,8 +1,8 @@
-defmodule PhilomenaWeb.Admin.Advert.ImageController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.Admin.Advert.ImageController do
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.Adverts.Advert
-  alias Philomena.Adverts
+  alias Tsuchinokus.Adverts.Advert
+  alias Tsuchinokus.Adverts
 
   plug :verify_authorized
 
@@ -32,7 +32,7 @@ defmodule PhilomenaWeb.Admin.Advert.ImageController do
   defp verify_authorized(conn, _opts) do
     case Canada.Can.can?(conn.assigns.current_user, :index, Advert) do
       true -> conn
-      _false -> PhilomenaWeb.NotAuthorizedPlug.call(conn)
+      _false -> TsuchinokusWeb.NotAuthorizedPlug.call(conn)
     end
   end
 end

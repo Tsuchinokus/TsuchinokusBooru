@@ -1,6 +1,6 @@
 .flex.flex--centered.flex__grow
   div
-    => render PhilomenaWeb.UserAttributionView, "_user.html", object: %{user: @notification.actor.creator}, conn: @conn
+    => render TsuchinokusWeb.UserAttributionView, "_user.html", object: %{user: @notification.actor.creator}, conn: @conn
     => @notification.action
 
     strong>

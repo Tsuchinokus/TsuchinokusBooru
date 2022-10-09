@@ -1,4 +1,4 @@
-defmodule PhilomenaWeb.FirehoseChannel do
+defmodule TsuchinokusWeb.FirehoseChannel do
   use Phoenix.Channel
 
   def join("firehose", _params, socket) do

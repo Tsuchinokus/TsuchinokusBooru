@@ -1,4 +1,4 @@
-# NIF for Elixir.Philomena.Native
+# NIF for Elixir.Tsuchinokus.Native
 
 ## To build the NIF module:
 
@@ -9,8 +9,8 @@
 ## To load the NIF:
 
 ```elixir
-defmodule Philomena.Native do
-    use Rustler, otp_app: <otp-app>, crate: "philomena"
+defmodule Tsuchinokus.Native do
+    use Rustler, otp_app: <otp-app>, crate: "tsuchinokus"
 
     # When your NIF is loaded, it will override this function.
     def add(_a, _b), do: :erlang.nif_error(:nif_not_loaded)

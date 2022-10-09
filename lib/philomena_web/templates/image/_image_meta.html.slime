@@ -32,8 +32,8 @@
         span.hide-span title="Hide"
           i.fa.fa-eye-slash
     .stretched-mobile-links
-      = render PhilomenaWeb.Image.SubscriptionView, "_subscription.html", watching: @watching, image: @image, conn: @conn
-      = render PhilomenaWeb.ImageView, "_add_to_gallery_dropdown.html", image: @image, user_galleries: @user_galleries, conn: @conn
+      = render TsuchinokusWeb.Image.SubscriptionView, "_subscription.html", watching: @watching, image: @image, conn: @conn
+      = render TsuchinokusWeb.ImageView, "_add_to_gallery_dropdown.html", image: @image, user_galleries: @user_galleries, conn: @conn
       a href=Routes.image_related_path(@conn, :index, @image) title="Related Images"
         i.fa.fa-sitemap>
         span.hide-limited-desktop.hide-mobile Related
@@ -54,7 +54,7 @@
     div
       ' Uploaded
       => pretty_time(@image.created_at)
-      = render PhilomenaWeb.ImageView, "_uploader.html", assigns
+      = render TsuchinokusWeb.ImageView, "_uploader.html", assigns
 
     span.image-size
       | &nbsp;

@@ -1,7 +1,7 @@
-defmodule PhilomenaWeb.ChannelPlug do
+defmodule TsuchinokusWeb.ChannelPlug do
   alias Plug.Conn
-  alias Philomena.Channels.Channel
-  alias Philomena.Repo
+  alias Tsuchinokus.Channels.Channel
+  alias Tsuchinokus.Repo
   import Ecto.Query
 
   def init([]), do: []

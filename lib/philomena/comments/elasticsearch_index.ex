@@ -1,5 +1,5 @@
-defmodule Philomena.Comments.ElasticsearchIndex do
-  @behaviour Philomena.ElasticsearchIndex
+defmodule Tsuchinokus.Comments.ElasticsearchIndex do
+  @behaviour Tsuchinokus.ElasticsearchIndex
 
   @impl true
   def index_name do

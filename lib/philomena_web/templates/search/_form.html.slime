@@ -116,7 +116,7 @@ h1 Search
 
   #js-search-tags.hidden
     .block.js-tagtable data-target=".js-search-field"
-      = PhilomenaWeb.TagView.quick_tags(@conn)
+      = TsuchinokusWeb.TagView.quick_tags(@conn)
 
   .field.field--inline.flex-wrap
     = submit "Search", class: "button button--state-primary"

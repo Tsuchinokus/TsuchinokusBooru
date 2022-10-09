@@ -1,10 +1,10 @@
-defmodule PhilomenaWeb.Topic.Post.ApproveController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.Topic.Post.ApproveController do
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.Posts.Post
-  alias Philomena.Posts
+  alias Tsuchinokus.Posts.Post
+  alias Tsuchinokus.Posts
 
-  plug PhilomenaWeb.CanaryMapPlug, create: :approve
+  plug TsuchinokusWeb.CanaryMapPlug, create: :approve
 
   plug :load_and_authorize_resource,
     model: Post,

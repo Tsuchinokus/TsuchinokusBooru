@@ -1,8 +1,8 @@
-defmodule PhilomenaWeb.Admin.ArtistLinkController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.Admin.ArtistLinkController do
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.ArtistLinks.ArtistLink
-  alias Philomena.Repo
+  alias Tsuchinokus.ArtistLinks.ArtistLink
+  alias Tsuchinokus.Repo
   import Ecto.Query
 
   plug :verify_authorized
@@ -44,7 +44,7 @@ defmodule PhilomenaWeb.Admin.ArtistLinkController do
   defp verify_authorized(conn, _opts) do
     case Canada.Can.can?(conn.assigns.current_user, :index, %ArtistLink{}) do
       true -> conn
-      false -> PhilomenaWeb.NotAuthorizedPlug.call(conn)
+      false -> TsuchinokusWeb.NotAuthorizedPlug.call(conn)
     end
   end
 end

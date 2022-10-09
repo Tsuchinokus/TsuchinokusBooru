@@ -8,4 +8,4 @@
       = @gallery.spoiler_warning
 
   .media-box__content.media-box__content--large
-    = render PhilomenaWeb.ImageView, "_image_container.html", image: @gallery.thumbnail, size: :thumb, conn: @conn, link: link
+    = render TsuchinokusWeb.ImageView, "_image_container.html", image: @gallery.thumbnail, size: :thumb, conn: @conn, link: link

@@ -1,12 +1,12 @@
-defmodule Philomena.ModerationLogsTest do
-  use Philomena.DataCase
+defmodule Tsuchinokus.ModerationLogsTest do
+  use Tsuchinokus.DataCase
 
-  alias Philomena.ModerationLogs
+  alias Tsuchinokus.ModerationLogs
 
   describe "moderation_logs" do
-    alias Philomena.ModerationLogs.ModerationLog
+    alias Tsuchinokus.ModerationLogs.ModerationLog
 
-    import Philomena.UsersFixtures
+    import Tsuchinokus.UsersFixtures
 
     test "create_moderation_log/4 with valid data creates a moderation_log" do
       user = user_fixture()

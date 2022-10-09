@@ -1,4 +1,4 @@
-defmodule Philomena.Intensities do
+defmodule Tsuchinokus.Intensities do
   @doc """
   Gets the corner intensities of the given image file.
   The image file must be in the PNG or JPEG format.

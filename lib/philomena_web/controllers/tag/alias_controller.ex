@@ -1,10 +1,10 @@
-defmodule PhilomenaWeb.Tag.AliasController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.Tag.AliasController do
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.Tags.Tag
-  alias Philomena.Tags
+  alias Tsuchinokus.Tags.Tag
+  alias Tsuchinokus.Tags
 
-  plug PhilomenaWeb.CanaryMapPlug, edit: :alias, update: :alias, delete: :alias
+  plug TsuchinokusWeb.CanaryMapPlug, edit: :alias, update: :alias, delete: :alias
 
   plug :load_and_authorize_resource,
     model: Tag,

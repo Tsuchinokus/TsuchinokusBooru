@@ -1,4 +1,4 @@
-defimpl Philomena.Attribution, for: Philomena.Topics.Topic do
+defimpl Tsuchinokus.Attribution, for: Tsuchinokus.Topics.Topic do
   def object_identifier(topic) do
     to_string(topic.id)
   end

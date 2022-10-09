@@ -1,4 +1,4 @@
-name: Philomena Build
+name: Tsuchinokus Build
 
 on: [push, pull_request]
 

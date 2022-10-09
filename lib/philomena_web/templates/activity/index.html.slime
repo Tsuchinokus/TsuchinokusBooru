@@ -1,10 +1,10 @@
 .column-layout
   = if @show_sidebar do
     aside.column-layout__left#activity-side
-      = if not is_nil(@featured_image) and not PhilomenaWeb.ImageView.filter_or_spoiler_hits?(@conn, @featured_image) do
+      = if not is_nil(@featured_image) and not TsuchinokusWeb.ImageView.filter_or_spoiler_hits?(@conn, @featured_image) do
         .center
           h4.remove-top-margin Featured Image
-          = render PhilomenaWeb.ImageView, "_image_box.html", image: @featured_image, size: :medium, conn: @conn
+          = render TsuchinokusWeb.ImageView, "_image_box.html", image: @featured_image, size: :medium, conn: @conn
       .block.block--fixed.block--fixed--sub.block--success.center.hide-mobile
         ' Enjoy the site?
         a href="/pages/donations"
@@ -17,29 +17,29 @@
           ' Trending Images
         .block__content.flex.flex--centered.flex--wrap.image-flex-grid
           = for image <- @top_scoring do
-            = render PhilomenaWeb.ImageView, "_image_box.html", image: image, size: :thumb_small, conn: @conn
+            = render TsuchinokusWeb.ImageView, "_image_box.html", image: image, size: :thumb_small, conn: @conn
         a.block__header--single-item.center href="/search?q=*&amp;sf=score&amp;sd=desc"
           ' All Time Top Scoring
       .block.hide-mobile
         a.block__header--single-item.center href="/channels"
           ' Streams
         = for channel <- @streams do
-          = render PhilomenaWeb.ActivityView, "_channel_strip.html", channel: channel, conn: @conn
+          = render TsuchinokusWeb.ActivityView, "_channel_strip.html", channel: channel, conn: @conn
       .block.hide-mobile
         a.block__header--single-item.center href="/forums"
           ' Forum Activity
         = for topic <- @topics do
-          = render PhilomenaWeb.ActivityView, "_topic_strip.html", topic: topic, conn: @conn
+          = render TsuchinokusWeb.ActivityView, "_topic_strip.html", topic: topic, conn: @conn
       .block.hide-mobile
         a.block__header--single-item.center href="/comments"
           ' Recent Comments
         = for comment <- @comments do
-          = render PhilomenaWeb.ActivityView, "_comment_strip.html", comment: comment, conn: @conn
+          = render TsuchinokusWeb.ActivityView, "_comment_strip.html", comment: comment, conn: @conn
         a.block__header--single-item.center href="/search?q=first_seen_at.gt:3 days ago&amp;sf=comment_count&amp;sd=desc"
           ' Most Commented-on Images
 
   .column-layout__main
-    = render PhilomenaWeb.ImageView, "index.html", conn: @conn, images: @images, size: :thumb
+    = render TsuchinokusWeb.ImageView, "index.html", conn: @conn, images: @images, size: :thumb
     = if @show_sidebar and not is_nil(@watched) and Enum.any?(@watched) do
       .block
         .block__header
@@ -51,4 +51,4 @@
               ' Browse Watched Images
         .block__content.js-resizable-media-container
           = for image <- @watched do
-            = render PhilomenaWeb.ImageView, "_image_box.html", image: image, link: Routes.image_path(@conn, :show, image, q: "my:watched"), size: :thumb_small, conn: @conn
+            = render TsuchinokusWeb.ImageView, "_image_box.html", image: image, link: Routes.image_path(@conn, :show, image, q: "my:watched"), size: :thumb_small, conn: @conn

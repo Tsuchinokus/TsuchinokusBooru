@@ -1,4 +1,4 @@
-defmodule Philomena.Scrapers.Twitter do
+defmodule Tsuchinokus.Scrapers.Twitter do
   @url_regex ~r|\Ahttps?://(?:mobile\.)?twitter.com/([A-Za-z\d_]+)/status/([\d]+)/?|
   @script_regex ~r|="(https://abs.twimg.com/responsive-web/client-web(?:-legacy)?/main\.[\da-z]+\.js)"|
   @bearer_regex ~r|"(AAAAAAAAAAAAA[^"]*)"|
@@ -46,11 +46,11 @@ defmodule Philomena.Scrapers.Twitter do
     url = "https://twitter.com/#{user}/status/#{status_id}"
 
     {gt, bearer} =
-      Philomena.Http.get(page_url)
+      Tsuchinokus.Http.get(page_url)
       |> extract_guest_token_and_bearer()
 
     {:ok, api_resp} =
-      Philomena.Http.get(api_url, [{"Authorization", "Bearer #{bearer}"}, {"x-guest-token", gt}])
+      Tsuchinokus.Http.get(api_url, [{"Authorization", "Bearer #{bearer}"}, {"x-guest-token", gt}])
 
     api_resp
     |> Map.get(:body)
@@ -64,12 +64,12 @@ defmodule Philomena.Scrapers.Twitter do
 
   defp extract_guest_token_and_bearer({:ok, %Tesla.Env{body: page}}) do
     [script | _] = Regex.run(@script_regex, page, capture: :all_but_first)
-    {:ok, %{body: body}} = Philomena.Http.get(script)
+    {:ok, %{body: body}} = Tsuchinokus.Http.get(script)
 
     [bearer] = Regex.run(@bearer_regex, body, capture: :all_but_first)
 
     {:ok, %{body: body}} =
-      Philomena.Http.post(@activate_url, nil, [{"Authorization", "Bearer #{bearer}"}])
+      Tsuchinokus.Http.post(@activate_url, nil, [{"Authorization", "Bearer #{bearer}"}])
 
     gt = Map.fetch!(Jason.decode!(body), "guest_token")
 

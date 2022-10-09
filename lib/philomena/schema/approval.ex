@@ -1,5 +1,5 @@
-defmodule Philomena.Schema.Approval do
-  alias Philomena.Users.User
+defmodule Tsuchinokus.Schema.Approval do
+  alias Tsuchinokus.Users.User
   import Ecto.Changeset
 
   @image_embed_regex ~r/!+\[/

@@ -1,4 +1,4 @@
-defmodule PhilomenaWeb.ErrorHelpers do
+defmodule TsuchinokusWeb.ErrorHelpers do
   @moduledoc """
   Conveniences for translating and building error messages.
   """
@@ -36,9 +36,9 @@ defmodule PhilomenaWeb.ErrorHelpers do
     # should be written to the errors.po file. The :count option is
     # set by Ecto and indicates we should also apply plural rules.
     if count = opts[:count] do
-      Gettext.dngettext(PhilomenaWeb.Gettext, "errors", msg, msg, count, opts)
+      Gettext.dngettext(TsuchinokusWeb.Gettext, "errors", msg, msg, count, opts)
     else
-      Gettext.dgettext(PhilomenaWeb.Gettext, "errors", msg, opts)
+      Gettext.dgettext(TsuchinokusWeb.Gettext, "errors", msg, opts)
     end
   end
 

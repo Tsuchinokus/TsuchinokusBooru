@@ -1,7 +1,7 @@
 h2 Badges
 
 - route = fn p -> Routes.admin_badge_path(@conn, :index, p) end
-- pagination = render PhilomenaWeb.PaginationView, "_pagination.html", page: @badges, route: route, conn: @conn
+- pagination = render TsuchinokusWeb.PaginationView, "_pagination.html", page: @badges, route: route, conn: @conn
 
 .block
   .block__header

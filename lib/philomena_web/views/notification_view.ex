@@ -1,5 +1,5 @@
-defmodule PhilomenaWeb.NotificationView do
-  use PhilomenaWeb, :view
+defmodule TsuchinokusWeb.NotificationView do
+  use TsuchinokusWeb, :view
 
   @template_paths %{
     "Channel" => "_channel.html",

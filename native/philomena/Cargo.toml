@@ -1,16 +1,16 @@
 [package]
-name = "philomena"
+name = "tsuchinokus"
 version = "0.3.0"
 authors = ["Xe <https://github.com/Xe>", "Luna <https://github.com/Meow>", "Liam White <https://github.com/liamwhite>"]
 edition = "2018"
 
 [lib]
-name = "philomena"
+name = "tsuchinokus"
 path = "src/lib.rs"
 crate-type = ["dylib"]
 
 [dependencies]
-comrak = { git = "https://github.com/philomena-dev/comrak", branch = "main" }
+comrak = { git = "https://github.com/tsuchinokus-dev/comrak", branch = "main" }
 jemallocator = { version = "0.3.2", features = ["disable_initial_exec_tls"] }
 rustler = "0.22"
 ring = "0.16"

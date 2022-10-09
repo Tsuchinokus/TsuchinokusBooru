@@ -1,12 +1,12 @@
-defmodule Philomena.ModerationLogs do
+defmodule Tsuchinokus.ModerationLogs do
   @moduledoc """
   The ModerationLogs context.
   """
 
   import Ecto.Query, warn: false
-  alias Philomena.Repo
+  alias Tsuchinokus.Repo
 
-  alias Philomena.ModerationLogs.ModerationLog
+  alias Tsuchinokus.ModerationLogs.ModerationLog
 
   @doc """
   Returns the list of moderation_logs.

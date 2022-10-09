@@ -1,5 +1,5 @@
-# Philomena
-![Philomena](/assets/static/images/phoenix.svg)
+# Tsuchinokus
+![Tsuchinokus](/assets/static/images/phoenix.svg)
 
 ## Getting started
 On systems with `docker` and `docker-compose` installed, the process should be as simple as:
@@ -16,7 +16,7 @@ podman-compose build
 podman-compose up
 ```
 
-Once the application has started, navigate to http://localhost:8080 and login with admin@example.com / philomena123
+Once the application has started, navigate to http://localhost:8080 and login with admin@example.com / tsuchinokus123
 
 ## Troubleshooting
 
@@ -39,7 +39,7 @@ If you are using a platform which uses cgroups v2 by default (Fedora 31+), use `
 ## Deployment
 You need a key installed on the server you target, and the git remote installed in your ssh configuration.
 
-    git remote add production philomena@<serverip>:philomena/
+    git remote add production tsuchinokus@<serverip>:tsuchinokus/
 
 The general syntax is:
 

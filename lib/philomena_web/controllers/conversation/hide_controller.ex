@@ -1,10 +1,10 @@
-defmodule PhilomenaWeb.Conversation.HideController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.Conversation.HideController do
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.Conversations.Conversation
-  alias Philomena.Conversations
+  alias Tsuchinokus.Conversations.Conversation
+  alias Tsuchinokus.Conversations
 
-  plug PhilomenaWeb.CanaryMapPlug, create: :show, delete: :show
+  plug TsuchinokusWeb.CanaryMapPlug, create: :show, delete: :show
 
   plug :load_and_authorize_resource,
     model: Conversation,

@@ -1,5 +1,5 @@
-defmodule PhilomenaWeb.ApiTokenPlug do
-  alias Philomena.Users
+defmodule TsuchinokusWeb.ApiTokenPlug do
+  alias Tsuchinokus.Users
   alias Plug.Conn
 
   def init([]), do: []

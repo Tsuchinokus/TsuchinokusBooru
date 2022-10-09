@@ -1,8 +1,8 @@
-defmodule PhilomenaWeb.Admin.DnpEntry.TransitionController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.Admin.DnpEntry.TransitionController do
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.DnpEntries.DnpEntry
-  alias Philomena.DnpEntries
+  alias Tsuchinokus.DnpEntries.DnpEntry
+  alias Tsuchinokus.DnpEntries
 
   plug :verify_authorized
   plug :load_resource, model: DnpEntry, only: [:create], id_name: "dnp_entry_id", persisted: true
@@ -28,7 +28,7 @@ defmodule PhilomenaWeb.Admin.DnpEntry.TransitionController do
   defp verify_authorized(conn, _opts) do
     case Canada.Can.can?(conn.assigns.current_user, :index, DnpEntry) do
       true -> conn
-      _false -> PhilomenaWeb.NotAuthorizedPlug.call(conn)
+      _false -> TsuchinokusWeb.NotAuthorizedPlug.call(conn)
     end
   end
 end

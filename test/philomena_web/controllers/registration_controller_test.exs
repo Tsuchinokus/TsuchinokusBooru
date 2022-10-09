@@ -1,7 +1,7 @@
-defmodule PhilomenaWeb.RegistrationControllerTest do
-  use PhilomenaWeb.ConnCase, async: true
+defmodule TsuchinokusWeb.RegistrationControllerTest do
+  use TsuchinokusWeb.ConnCase, async: true
 
-  import Philomena.UsersFixtures
+  import Tsuchinokus.UsersFixtures
 
   describe "GET /registrations/new" do
     test "renders registration page", %{conn: conn} do

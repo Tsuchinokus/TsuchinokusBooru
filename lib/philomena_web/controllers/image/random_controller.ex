@@ -1,11 +1,11 @@
-defmodule PhilomenaWeb.Image.RandomController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.Image.RandomController do
+  use TsuchinokusWeb, :controller
 
-  alias PhilomenaWeb.ImageSorter
-  alias PhilomenaWeb.ImageScope
-  alias PhilomenaWeb.ImageLoader
-  alias Philomena.Elasticsearch
-  alias Philomena.Images.Image
+  alias TsuchinokusWeb.ImageSorter
+  alias TsuchinokusWeb.ImageScope
+  alias TsuchinokusWeb.ImageLoader
+  alias Tsuchinokus.Elasticsearch
+  alias Tsuchinokus.Images.Image
 
   def index(conn, params) do
     scope = ImageScope.scope(conn)

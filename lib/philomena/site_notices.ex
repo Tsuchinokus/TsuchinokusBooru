@@ -1,12 +1,12 @@
-defmodule Philomena.SiteNotices do
+defmodule Tsuchinokus.SiteNotices do
   @moduledoc """
   The SiteNotices context.
   """
 
   import Ecto.Query, warn: false
-  alias Philomena.Repo
+  alias Tsuchinokus.Repo
 
-  alias Philomena.SiteNotices.SiteNotice
+  alias Tsuchinokus.SiteNotices.SiteNotice
 
   @doc """
   Returns the list of site_notices.

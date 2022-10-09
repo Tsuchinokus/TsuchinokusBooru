@@ -1,4 +1,4 @@
-defmodule Philomena.DataCase do
+defmodule Tsuchinokus.DataCase do
   @moduledoc """
   This module defines the setup for tests requiring
   access to the application's data layer.
@@ -16,20 +16,20 @@ defmodule Philomena.DataCase do
 
   using do
     quote do
-      alias Philomena.Repo
+      alias Tsuchinokus.Repo
 
       import Ecto
       import Ecto.Changeset
       import Ecto.Query
-      import Philomena.DataCase
+      import Tsuchinokus.DataCase
     end
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Philomena.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Tsuchinokus.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(Philomena.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(Tsuchinokus.Repo, {:shared, self()})
     end
 
     :ok

@@ -1,3 +1,3 @@
-defmodule PhilomenaWeb.Image.DescriptionView do
-  use PhilomenaWeb, :view
+defmodule TsuchinokusWeb.Image.DescriptionView do
+  use TsuchinokusWeb, :view
 end

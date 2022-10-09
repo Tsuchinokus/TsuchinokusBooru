@@ -1,5 +1,5 @@
 FROM nginx:1.21.4-alpine
-ENV APP_DIR /srv/philomena
+ENV APP_DIR /srv/tsuchinokus
 COPY docker/web/nginx.conf /tmp/docker.nginx
 RUN envsubst '$APP_DIR' < /tmp/docker.nginx > /etc/nginx/conf.d/default.conf
 EXPOSE 80

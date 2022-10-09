@@ -33,7 +33,7 @@ function nameInNamespace(s) {
 }
 
 /**
- * See lib/philomena/autocomplete.ex for binary structure details.
+ * See lib/tsuchinokus/autocomplete.ex for binary structure details.
  *
  * A binary blob is used to avoid the creation of large amounts of garbage on
  * the JS heap and speed up the execution of the search.

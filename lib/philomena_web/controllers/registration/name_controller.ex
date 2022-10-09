@@ -1,9 +1,9 @@
-defmodule PhilomenaWeb.Registration.NameController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.Registration.NameController do
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.Users
+  alias Tsuchinokus.Users
 
-  plug PhilomenaWeb.FilterBannedUsersPlug
+  plug TsuchinokusWeb.FilterBannedUsersPlug
   plug :verify_authorized
 
   def edit(conn, _params) do
@@ -27,7 +27,7 @@ defmodule PhilomenaWeb.Registration.NameController do
   defp verify_authorized(conn, _opts) do
     case Canada.Can.can?(conn.assigns.current_user, :change_username, conn.assigns.current_user) do
       true -> conn
-      _false -> PhilomenaWeb.NotAuthorizedPlug.call(conn)
+      _false -> TsuchinokusWeb.NotAuthorizedPlug.call(conn)
     end
   end
 end

@@ -13,8 +13,8 @@ config :logger,
     [application: :mint]
   ]
 
-config :philomena,
-  ecto_repos: [Philomena.Repo]
+config :tsuchinokus,
+  ecto_repos: [Tsuchinokus.Repo]
 
 config :elastix,
   json_codec: Jason
@@ -25,20 +25,20 @@ config :exq,
   start_on_application: false
 
 config :canary,
-  repo: Philomena.Repo,
-  unauthorized_handler: {PhilomenaWeb.NotAuthorizedPlug, :call},
-  not_found_handler: {PhilomenaWeb.NotFoundPlug, :call}
+  repo: Tsuchinokus.Repo,
+  unauthorized_handler: {TsuchinokusWeb.NotAuthorizedPlug, :call},
+  not_found_handler: {TsuchinokusWeb.NotFoundPlug, :call}
 
 # Configures the endpoint
-config :philomena, PhilomenaWeb.Endpoint,
+config :tsuchinokus, TsuchinokusWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "xZYTon09JNRrj8snd7KL31wya4x71jmo5aaSSRmw1dGjWLRmEwWMTccwxgsGFGjM",
-  render_errors: [view: PhilomenaWeb.ErrorView, accepts: ~w(html json)],
-  pubsub_server: Philomena.PubSub
+  render_errors: [view: TsuchinokusWeb.ErrorView, accepts: ~w(html json)],
+  pubsub_server: Tsuchinokus.PubSub
 
 # Markdown
-config :philomena, Philomena.Native,
-  crate: "philomena",
+config :tsuchinokus, Tsuchinokus.Native,
+  crate: "tsuchinokus",
   mode: :release
 
 config :phoenix, :template_engines,

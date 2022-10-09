@@ -1,12 +1,12 @@
-defmodule PhilomenaWeb.RegistrationController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.RegistrationController do
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.Users
-  alias Philomena.Users.User
+  alias Tsuchinokus.Users
+  alias Tsuchinokus.Users.User
 
-  plug PhilomenaWeb.CaptchaPlug when action in [:new, :create]
-  plug PhilomenaWeb.CheckCaptchaPlug when action in [:create]
-  plug PhilomenaWeb.CompromisedPasswordCheckPlug when action in [:create]
+  plug TsuchinokusWeb.CaptchaPlug when action in [:new, :create]
+  plug TsuchinokusWeb.CheckCaptchaPlug when action in [:create]
+  plug TsuchinokusWeb.CompromisedPasswordCheckPlug when action in [:create]
   plug :assign_email_and_password_changesets when action in [:edit]
 
   def new(conn, _params) do

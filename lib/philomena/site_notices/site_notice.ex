@@ -1,9 +1,9 @@
-defmodule Philomena.SiteNotices.SiteNotice do
+defmodule Tsuchinokus.SiteNotices.SiteNotice do
   use Ecto.Schema
   import Ecto.Changeset
 
-  alias Philomena.Users.User
-  alias Philomena.Schema.Time
+  alias Tsuchinokus.Users.User
+  alias Tsuchinokus.Schema.Time
 
   schema "site_notices" do
     belongs_to :user, User

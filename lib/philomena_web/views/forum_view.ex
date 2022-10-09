@@ -1,3 +1,3 @@
-defmodule PhilomenaWeb.ForumView do
-  use PhilomenaWeb, :view
+defmodule TsuchinokusWeb.ForumView do
+  use TsuchinokusWeb, :view
 end

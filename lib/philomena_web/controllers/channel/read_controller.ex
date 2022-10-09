@@ -1,9 +1,9 @@
-defmodule PhilomenaWeb.Channel.ReadController do
+defmodule TsuchinokusWeb.Channel.ReadController do
   import Plug.Conn
-  use PhilomenaWeb, :controller
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.Channels.Channel
-  alias Philomena.Channels
+  alias Tsuchinokus.Channels.Channel
+  alias Tsuchinokus.Channels
 
   plug :load_resource, model: Channel, id_name: "channel_id", persisted: true
 

@@ -1,10 +1,10 @@
-defmodule PhilomenaWeb.ReportController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.ReportController do
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.Polymorphic
-  alias Philomena.Reports.Report
-  alias Philomena.Reports
-  alias Philomena.Repo
+  alias Tsuchinokus.Polymorphic
+  alias Tsuchinokus.Reports.Report
+  alias Tsuchinokus.Reports
+  alias Tsuchinokus.Repo
   import Ecto.Query
 
   def index(conn, _params) do
@@ -27,10 +27,10 @@ defmodule PhilomenaWeb.ReportController do
 
   # Make sure that you load the resource in your controller:
   #
-  # plug PhilomenaWeb.FilterBannedUsersPlug
-  # plug PhilomenaWeb.UserAttributionPlug
-  # plug PhilomenaWeb.CaptchaPlug
-  # plug PhilomenaWeb.CheckCaptchaPlug when action in [:create]
+  # plug TsuchinokusWeb.FilterBannedUsersPlug
+  # plug TsuchinokusWeb.UserAttributionPlug
+  # plug TsuchinokusWeb.CaptchaPlug
+  # plug TsuchinokusWeb.CheckCaptchaPlug when action in [:create]
   # plug :load_and_authorize_resource, model: Image, id_name: "image_id", persisted: true
 
   def create(conn, action, reportable, reportable_type, %{"report" => report_params}) do

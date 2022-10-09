@@ -1,12 +1,12 @@
-defmodule PhilomenaWeb.Profile.CommissionController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.Profile.CommissionController do
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.Commissions.Commission
-  alias Philomena.Commissions
-  alias PhilomenaWeb.MarkdownRenderer
-  alias Philomena.Users.User
+  alias Tsuchinokus.Commissions.Commission
+  alias Tsuchinokus.Commissions
+  alias TsuchinokusWeb.MarkdownRenderer
+  alias Tsuchinokus.Users.User
 
-  plug PhilomenaWeb.FilterBannedUsersPlug when action in [:new, :create, :edit, :update, :delete]
+  plug TsuchinokusWeb.FilterBannedUsersPlug when action in [:new, :create, :edit, :update, :delete]
 
   plug :load_resource,
     model: User,
@@ -123,14 +123,14 @@ defmodule PhilomenaWeb.Profile.CommissionController do
 
   defp ensure_commission(conn, _opts) do
     case is_nil(conn.assigns.user.commission) do
-      true -> PhilomenaWeb.NotFoundPlug.call(conn)
+      true -> TsuchinokusWeb.NotFoundPlug.call(conn)
       false -> conn
     end
   end
 
   defp ensure_no_commission(conn, _opts) do
     case is_nil(conn.assigns.user.commission) do
-      false -> PhilomenaWeb.NotAuthorizedPlug.call(conn)
+      false -> TsuchinokusWeb.NotAuthorizedPlug.call(conn)
       true -> conn
     end
   end
@@ -141,7 +141,7 @@ defmodule PhilomenaWeb.Profile.CommissionController do
     case conn.assigns.current_user do
       %{id: ^user_id} -> conn
       %{role: role} when role in ["admin", "moderator"] -> conn
-      _other -> PhilomenaWeb.NotAuthorizedPlug.call(conn)
+      _other -> TsuchinokusWeb.NotAuthorizedPlug.call(conn)
     end
   end
 

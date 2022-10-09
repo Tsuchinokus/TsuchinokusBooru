@@ -1,9 +1,9 @@
-defmodule Philomena.Badges.Award do
+defmodule Tsuchinokus.Badges.Award do
   use Ecto.Schema
   import Ecto.Changeset
 
-  alias Philomena.Badges.Badge
-  alias Philomena.Users.User
+  alias Tsuchinokus.Badges.Badge
+  alias Tsuchinokus.Users.User
 
   schema "badge_awards" do
     belongs_to :user, User

@@ -1,4 +1,4 @@
-defmodule Philomena.Repo.Migrations.AddMarkdownColumns do
+defmodule Tsuchinokus.Repo.Migrations.AddMarkdownColumns do
   use Ecto.Migration
 
   def up do

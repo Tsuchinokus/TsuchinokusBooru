@@ -1,3 +1,3 @@
-defmodule PhilomenaWeb.Image.CommentView do
-  use PhilomenaWeb, :view
+defmodule TsuchinokusWeb.Image.CommentView do
+  use TsuchinokusWeb, :view
 end

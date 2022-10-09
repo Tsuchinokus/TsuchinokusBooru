@@ -1,12 +1,12 @@
-defmodule PhilomenaWeb.CommissionController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.CommissionController do
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.Commissions.{Item, Commission}
-  alias Philomena.UserIps.UserIp
-  alias Philomena.Repo
+  alias Tsuchinokus.Commissions.{Item, Commission}
+  alias Tsuchinokus.UserIps.UserIp
+  alias Tsuchinokus.Repo
   import Ecto.Query
 
-  plug PhilomenaWeb.MapParameterPlug, [param: "commission"] when action in [:index]
+  plug TsuchinokusWeb.MapParameterPlug, [param: "commission"] when action in [:index]
   plug :preload_commission
 
   def index(conn, params) do

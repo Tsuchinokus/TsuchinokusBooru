@@ -1,15 +1,15 @@
-defmodule Philomena.Images.Thumbnailer do
+defmodule Tsuchinokus.Images.Thumbnailer do
   @moduledoc """
   Prevewing and thumbnailing logic for Images.
   """
 
-  alias Philomena.DuplicateReports
-  alias Philomena.ImageIntensities
-  alias Philomena.Images.Image
-  alias Philomena.Processors
-  alias Philomena.Analyzers
-  alias Philomena.Sha512
-  alias Philomena.Repo
+  alias Tsuchinokus.DuplicateReports
+  alias Tsuchinokus.ImageIntensities
+  alias Tsuchinokus.Images.Image
+  alias Tsuchinokus.Processors
+  alias Tsuchinokus.Analyzers
+  alias Tsuchinokus.Sha512
+  alias Tsuchinokus.Repo
 
   @versions [
     thumb_tiny: {50, 50},
@@ -156,11 +156,11 @@ defmodule Philomena.Images.Thumbnailer do
     do: Enum.join([time.year, time.month, time.day], "/")
 
   defp image_file_root,
-    do: Application.get_env(:philomena, :image_file_root)
+    do: Application.get_env(:tsuchinokus, :image_file_root)
 
   defp image_thumbnail_root,
-    do: Application.get_env(:philomena, :image_file_root) <> "/thumbs"
+    do: Application.get_env(:tsuchinokus, :image_file_root) <> "/thumbs"
 
   defp image_url_root,
-    do: Application.get_env(:philomena, :image_url_root)
+    do: Application.get_env(:tsuchinokus, :image_url_root)
 end

@@ -1,3 +1,3 @@
-defmodule PhilomenaWeb.Registration.NameView do
-  use PhilomenaWeb, :view
+defmodule TsuchinokusWeb.Registration.NameView do
+  use TsuchinokusWeb, :view
 end

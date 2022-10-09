@@ -1,6 +1,6 @@
 elixir:
   route = fn p -> Routes.moderation_log_path(@conn, :index, p) end
-  pagination = render PhilomenaWeb.PaginationView, "_pagination.html", page: @moderation_logs, route: route, conn: @conn
+  pagination = render TsuchinokusWeb.PaginationView, "_pagination.html", page: @moderation_logs, route: route, conn: @conn
 
 h1 Listing Moderation Logs
 
@@ -19,7 +19,7 @@ table
   tbody
     = for log <- @moderation_logs do
       tr
-        td = render PhilomenaWeb.UserAttributionView, "_user.html", object: %{user: log.user}, conn: @conn
+        td = render TsuchinokusWeb.UserAttributionView, "_user.html", object: %{user: log.user}, conn: @conn
         td = log.type
         td = log.body
         td = pretty_time(log.created_at)

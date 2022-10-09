@@ -1,14 +1,14 @@
-defmodule Philomena.Forums do
+defmodule Tsuchinokus.Forums do
   @moduledoc """
   The Forums context.
   """
 
   import Ecto.Query, warn: false
-  alias Philomena.Repo
+  alias Tsuchinokus.Repo
 
-  alias Philomena.Forums.Forum
-  alias Philomena.Forums.Subscription
-  alias Philomena.Notifications
+  alias Tsuchinokus.Forums.Forum
+  alias Tsuchinokus.Forums.Subscription
+  alias Tsuchinokus.Notifications
 
   @doc """
   Returns the list of forums.

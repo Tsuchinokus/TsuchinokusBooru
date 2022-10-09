@@ -1,11 +1,11 @@
-defmodule PhilomenaWeb.UserAttributionPlug do
+defmodule TsuchinokusWeb.UserAttributionPlug do
   @moduledoc """
   This plug stores information about the current session for use in
   model attribution.
 
   ## Example
 
-      plug PhilomenaWeb.UserAttributionPlug
+      plug TsuchinokusWeb.UserAttributionPlug
   """
 
   alias Plug.Conn

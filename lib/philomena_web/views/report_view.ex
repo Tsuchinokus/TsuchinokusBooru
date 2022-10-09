@@ -1,13 +1,13 @@
-defmodule PhilomenaWeb.ReportView do
-  use PhilomenaWeb, :view
+defmodule TsuchinokusWeb.ReportView do
+  use TsuchinokusWeb, :view
 
-  alias Philomena.Images.Image
-  alias Philomena.Comments.Comment
-  alias Philomena.Commissions.Commission
-  alias Philomena.Conversations.Conversation
-  alias Philomena.Galleries.Gallery
-  alias Philomena.Posts.Post
-  alias Philomena.Users.User
+  alias Tsuchinokus.Images.Image
+  alias Tsuchinokus.Comments.Comment
+  alias Tsuchinokus.Commissions.Commission
+  alias Tsuchinokus.Conversations.Conversation
+  alias Tsuchinokus.Galleries.Gallery
+  alias Tsuchinokus.Posts.Post
+  alias Tsuchinokus.Users.User
 
   import Ecto.Changeset
 

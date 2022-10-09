@@ -1,8 +1,8 @@
-defmodule PhilomenaWeb.SessionController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.SessionController do
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.Users
-  alias PhilomenaWeb.UserAuth
+  alias Tsuchinokus.Users
+  alias TsuchinokusWeb.UserAuth
 
   def new(conn, _params) do
     render(conn, "new.html", error_message: nil)

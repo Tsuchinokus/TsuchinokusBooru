@@ -1,10 +1,10 @@
-defmodule Philomena.Bans.Subnet do
+defmodule Tsuchinokus.Bans.Subnet do
   use Ecto.Schema
   import Ecto.Changeset
 
-  alias Philomena.Users.User
-  alias Philomena.Schema.Time
-  alias Philomena.Schema.BanId
+  alias Tsuchinokus.Users.User
+  alias Tsuchinokus.Schema.Time
+  alias Tsuchinokus.Schema.BanId
 
   schema "subnet_bans" do
     belongs_to :banning_user, User

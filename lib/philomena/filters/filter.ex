@@ -1,11 +1,11 @@
-defmodule Philomena.Filters.Filter do
+defmodule Tsuchinokus.Filters.Filter do
   use Ecto.Schema
   import Ecto.Changeset
 
-  alias Philomena.Schema.TagList
-  alias Philomena.Schema.Search
-  alias Philomena.Users.User
-  alias Philomena.Repo
+  alias Tsuchinokus.Schema.TagList
+  alias Tsuchinokus.Schema.Search
+  alias Tsuchinokus.Users.User
+  alias Tsuchinokus.Repo
 
   schema "filters" do
     belongs_to :user, User

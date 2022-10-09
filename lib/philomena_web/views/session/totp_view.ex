@@ -1,3 +1,3 @@
-defmodule PhilomenaWeb.Session.TotpView do
-  use PhilomenaWeb, :view
+defmodule TsuchinokusWeb.Session.TotpView do
+  use TsuchinokusWeb, :view
 end

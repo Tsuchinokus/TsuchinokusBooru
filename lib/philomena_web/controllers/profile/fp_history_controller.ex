@@ -1,12 +1,12 @@
-defmodule PhilomenaWeb.Profile.FpHistoryController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.Profile.FpHistoryController do
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.UserFingerprints.UserFingerprint
-  alias Philomena.Users.User
-  alias Philomena.Repo
+  alias Tsuchinokus.UserFingerprints.UserFingerprint
+  alias Tsuchinokus.Users.User
+  alias Tsuchinokus.Repo
   import Ecto.Query
 
-  plug PhilomenaWeb.CanaryMapPlug, index: :show_details
+  plug TsuchinokusWeb.CanaryMapPlug, index: :show_details
 
   plug :load_and_authorize_resource,
     model: User,

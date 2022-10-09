@@ -10,7 +10,7 @@ import Config
 config :bcrypt_elixir,
   log_rounds: String.to_integer(System.get_env("BCRYPT_ROUNDS", "12"))
 
-config :philomena,
+config :tsuchinokus,
   anonymous_name_salt: System.fetch_env!("ANONYMOUS_NAME_SALT"),
   hcaptcha_secret_key: System.fetch_env!("HCAPTCHA_SECRET_KEY"),
   hcaptcha_site_key: System.fetch_env!("HCAPTCHA_SITE_KEY"),
@@ -50,7 +50,7 @@ json_config =
     {name, Jason.decode!(File.read!("#{app_dir}/config/#{file}"))}
   end)
 
-config :philomena,
+config :tsuchinokus,
   config: json_config
 
 config :exq,
@@ -69,14 +69,14 @@ end
 
 if config_env() != :test do
   # Database config
-  config :philomena, Philomena.Repo,
+  config :tsuchinokus, Tsuchinokus.Repo,
     url: System.fetch_env!("DATABASE_URL"),
     pool_size: String.to_integer(System.get_env("POOL_SIZE", "16"))
 end
 
 if config_env() == :prod do
   # Production mailer config
-  config :philomena, Philomena.Mailer,
+  config :tsuchinokus, Tsuchinokus.Mailer,
     adapter: Bamboo.SMTPAdapter,
     server: System.fetch_env!("SMTP_RELAY"),
     hostname: System.fetch_env!("SMTP_DOMAIN"),
@@ -87,14 +87,14 @@ if config_env() == :prod do
     auth: :always
 
   # Production endpoint config
-  config :philomena, PhilomenaWeb.Endpoint,
+  config :tsuchinokus, TsuchinokusWeb.Endpoint,
     http: [ip: {127, 0, 0, 1}, port: {:system, "PORT"}],
     url: [host: System.fetch_env!("APP_HOSTNAME"), scheme: "https", port: 443],
     secret_key_base: System.fetch_env!("SECRET_KEY_BASE"),
     server: not is_nil(System.get_env("START_ENDPOINT"))
 else
   # Don't send email in development
-  config :philomena, Philomena.Mailer, adapter: Bamboo.LocalAdapter
+  config :tsuchinokus, Tsuchinokus.Mailer, adapter: Bamboo.LocalAdapter
 
   # Use this to debug slime templates
   # config :slime, :keep_lines, true

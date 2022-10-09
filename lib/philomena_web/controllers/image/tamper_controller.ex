@@ -1,14 +1,14 @@
-defmodule PhilomenaWeb.Image.TamperController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.Image.TamperController do
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.Users.User
-  alias Philomena.Images.Image
-  alias Philomena.Images
+  alias Tsuchinokus.Users.User
+  alias Tsuchinokus.Images.Image
+  alias Tsuchinokus.Images
 
-  alias Philomena.ImageVotes
-  alias Philomena.Repo
+  alias Tsuchinokus.ImageVotes
+  alias Tsuchinokus.Repo
 
-  plug PhilomenaWeb.CanaryMapPlug, create: :tamper
+  plug TsuchinokusWeb.CanaryMapPlug, create: :tamper
   plug :load_and_authorize_resource, model: Image, id_name: "image_id", persisted: true
   plug :load_resource, model: User, id_name: "user_id", persisted: true
 

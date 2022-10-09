@@ -1,4 +1,4 @@
-defmodule Philomena.Repo.Migrations.AddIndexPostsOnTopicIdAndTopicPosition do
+defmodule Tsuchinokus.Repo.Migrations.AddIndexPostsOnTopicIdAndTopicPosition do
   use Ecto.Migration
 
   def up do

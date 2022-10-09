@@ -1,7 +1,7 @@
-defmodule PhilomenaWeb.Admin.DnpEntryView do
-  use PhilomenaWeb, :view
+defmodule TsuchinokusWeb.Admin.DnpEntryView do
+  use TsuchinokusWeb, :view
 
-  alias PhilomenaWeb.DnpEntryView
+  alias TsuchinokusWeb.DnpEntryView
 
   defp pretty_state(dnp_entry),
     do: DnpEntryView.pretty_state(dnp_entry)

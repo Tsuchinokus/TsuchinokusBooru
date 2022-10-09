@@ -1,12 +1,12 @@
-defmodule PhilomenaWeb.Tag.TagChangeController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.Tag.TagChangeController do
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.Tags.Tag
-  alias Philomena.TagChanges.TagChange
-  alias Philomena.Repo
+  alias Tsuchinokus.Tags.Tag
+  alias Tsuchinokus.TagChanges.TagChange
+  alias Tsuchinokus.Repo
   import Ecto.Query
 
-  plug PhilomenaWeb.CanaryMapPlug, index: :show
+  plug TsuchinokusWeb.CanaryMapPlug, index: :show
   plug :load_resource, model: Tag, id_name: "tag_id", id_field: "slug", persisted: true
 
   def index(conn, params) do

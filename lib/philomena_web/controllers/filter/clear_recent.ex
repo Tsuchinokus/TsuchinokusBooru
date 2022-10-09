@@ -1,9 +1,9 @@
-defmodule PhilomenaWeb.Filter.ClearRecentController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.Filter.ClearRecentController do
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.Users
+  alias Tsuchinokus.Users
 
-  plug PhilomenaWeb.RequireUserPlug
+  plug TsuchinokusWeb.RequireUserPlug
 
   def delete(conn, _params) do
     {:ok, _user} = Users.clear_recent_filters(conn.assigns.current_user)

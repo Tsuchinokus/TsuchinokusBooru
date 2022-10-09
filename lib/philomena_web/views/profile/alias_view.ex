@@ -1,5 +1,5 @@
-defmodule PhilomenaWeb.Profile.AliasView do
-  use PhilomenaWeb, :view
+defmodule TsuchinokusWeb.Profile.AliasView do
+  use TsuchinokusWeb, :view
 
   def younger_than_7_days?(user),
     do: younger_than_time_offset?(user, -7 * 24 * 60 * 60)

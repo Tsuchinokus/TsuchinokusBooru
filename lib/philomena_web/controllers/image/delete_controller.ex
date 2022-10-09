@@ -1,13 +1,13 @@
-defmodule PhilomenaWeb.Image.DeleteController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.Image.DeleteController do
+  use TsuchinokusWeb, :controller
 
   # N.B.: this would be Image.Hide, because it hides the image, but that is
   # taken by the user action
 
-  alias Philomena.Images.Image
-  alias Philomena.Images
+  alias Tsuchinokus.Images.Image
+  alias Tsuchinokus.Images
 
-  plug PhilomenaWeb.CanaryMapPlug, create: :hide, update: :hide, delete: :hide
+  plug TsuchinokusWeb.CanaryMapPlug, create: :hide, update: :hide, delete: :hide
   plug :load_and_authorize_resource, model: Image, id_name: "image_id", persisted: true
   plug :verify_deleted when action in [:update]
 

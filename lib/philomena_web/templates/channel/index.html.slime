@@ -1,7 +1,7 @@
 h1 Livestreams
 
 - route = fn p -> Routes.channel_path(@conn, :index, p) end
-- pagination = render PhilomenaWeb.PaginationView, "_pagination.html", page: @channels, route: route, conn: @conn, params: [cq: @conn.params["cq"]]
+- pagination = render TsuchinokusWeb.PaginationView, "_pagination.html", page: @channels, route: route, conn: @conn, params: [cq: @conn.params["cq"]]
 
 = form_for :channels, Routes.channel_path(@conn, :index), [method: "get", class: "hform", enforce_utf8: false], fn f ->
   .field
@@ -23,13 +23,13 @@ h1 Livestreams
 
   .block__content
     = for channel <- @channels do
-      = render PhilomenaWeb.ChannelView, "_channel_box.html", channel: channel, conn: @conn, subscriptions: @subscriptions
+      = render TsuchinokusWeb.ChannelView, "_channel_box.html", channel: channel, conn: @conn, subscriptions: @subscriptions
 
   .block__header.page__header
     .page__pagination = pagination
 
 br
-= if can?(@conn, :create, Philomena.Channels.Channel) do
+= if can?(@conn, :create, Tsuchinokus.Channels.Channel) do
   = link "New Channel", to: Routes.channel_path(@conn, :new)
 
 h2 FAQ

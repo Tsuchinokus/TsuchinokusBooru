@@ -1,10 +1,10 @@
-defmodule PhilomenaWeb.Tag.ImageController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.Tag.ImageController do
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.Tags.Tag
-  alias Philomena.Tags
+  alias Tsuchinokus.Tags.Tag
+  alias Tsuchinokus.Tags
 
-  plug PhilomenaWeb.CanaryMapPlug, update: :edit, delete: :edit
+  plug TsuchinokusWeb.CanaryMapPlug, update: :edit, delete: :edit
 
   plug :load_and_authorize_resource,
     model: Tag,

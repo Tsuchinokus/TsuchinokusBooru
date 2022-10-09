@@ -1,10 +1,10 @@
-defmodule PhilomenaWeb.Image.Comment.DeleteController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.Image.Comment.DeleteController do
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.Comments.Comment
-  alias Philomena.Comments
+  alias Tsuchinokus.Comments.Comment
+  alias Tsuchinokus.Comments
 
-  plug PhilomenaWeb.CanaryMapPlug, create: :hide
+  plug TsuchinokusWeb.CanaryMapPlug, create: :hide
   plug :load_and_authorize_resource, model: Comment, id_name: "comment_id", persisted: true
 
   def create(conn, _params) do

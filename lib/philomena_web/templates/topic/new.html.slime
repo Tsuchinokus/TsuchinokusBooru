@@ -12,17 +12,17 @@
 
   .block
     = inputs_for f, :posts, fn fp ->
-        = render PhilomenaWeb.MarkdownView, "_input.html", conn: @conn, f: fp, action_icon: "pencil-alt", action_text: "First Post", placeholder: "Please read the site rules before posting and use ||spoilers|| for NSFW stuff in SFW forums."
+        = render TsuchinokusWeb.MarkdownView, "_input.html", conn: @conn, f: fp, action_icon: "pencil-alt", action_text: "First Post", placeholder: "Please read the site rules before posting and use ||spoilers|| for NSFW stuff in SFW forums."
 
     .block__content.communication-edit__wrap
-      = render PhilomenaWeb.MarkdownView, "_anon_checkbox.html", conn: @conn, f: f, label: "Post anonymously"
+      = render TsuchinokusWeb.MarkdownView, "_anon_checkbox.html", conn: @conn, f: f, label: "Post anonymously"
 
       = inputs_for f, :poll, fn fp ->
         #add-poll.field
           input.toggle-box id="add_poll" name="add_poll" type="checkbox"
           label for="add_poll" Add a poll
           .toggle-box-container
-            = render PhilomenaWeb.Topic.PollView, "_form.html", Map.put(assigns, :f, fp)
+            = render TsuchinokusWeb.Topic.PollView, "_form.html", Map.put(assigns, :f, fp)
 
     .block__content.communication-edit__actions
       = submit "Post", class: "button", data: [disable_with: raw("Posting&hellip;")]

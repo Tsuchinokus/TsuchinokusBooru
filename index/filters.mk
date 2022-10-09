@@ -1,4 +1,4 @@
-DATABASE ?= philomena
+DATABASE ?= tsuchinokus
 ELASTICSEARCH_URL ?= http://localhost:9200/
 ELASTICDUMP ?= elasticdump
 # uncomment if getting "redirection unexpected" error on dump_jsonl

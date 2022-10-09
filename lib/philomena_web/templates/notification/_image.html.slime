@@ -1,7 +1,7 @@
 .flex.flex--centered.flex__grow
   div
     = if @notification.actor_child do
-      => render PhilomenaWeb.UserAttributionView, "_anon_user.html", object: @notification.actor_child, conn: @conn
+      => render TsuchinokusWeb.UserAttributionView, "_anon_user.html", object: @notification.actor_child, conn: @conn
     - else
       ' Someone
     => @notification.action

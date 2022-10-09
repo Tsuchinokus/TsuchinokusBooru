@@ -1,7 +1,7 @@
-defmodule Philomena.ArtistLinks.AutomaticVerifier do
+defmodule Tsuchinokus.ArtistLinks.AutomaticVerifier do
   def check_link(artist_link, recheck_time) do
     artist_link.uri
-    |> Philomena.Http.get()
+    |> Tsuchinokus.Http.get()
     |> contains_verification_code?(artist_link.verification_code)
     |> case do
       true ->

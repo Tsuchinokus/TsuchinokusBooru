@@ -1,6 +1,6 @@
-defmodule PhilomenaWeb.LoadTopicPlug do
-  alias Philomena.Topics.Topic
-  alias Philomena.Repo
+defmodule TsuchinokusWeb.LoadTopicPlug do
+  alias Tsuchinokus.Topics.Topic
+  alias Tsuchinokus.Repo
 
   import Plug.Conn, only: [assign: 3]
   import Canada.Can, only: [can?: 3]
@@ -21,7 +21,7 @@ defmodule PhilomenaWeb.LoadTopicPlug do
   end
 
   defp maybe_hide_topic(nil, conn, _show_hidden),
-    do: PhilomenaWeb.NotFoundPlug.call(conn)
+    do: TsuchinokusWeb.NotFoundPlug.call(conn)
 
   defp maybe_hide_topic(%{hidden_from_users: false} = topic, conn, _show_hidden),
     do: assign(conn, :topic, topic)
@@ -29,7 +29,7 @@ defmodule PhilomenaWeb.LoadTopicPlug do
   defp maybe_hide_topic(topic, %{assigns: %{current_user: user}} = conn, show_hidden) do
     case show_hidden or can?(user, :show, topic) do
       true -> assign(conn, :topic, topic)
-      false -> PhilomenaWeb.NotAuthorizedPlug.call(conn)
+      false -> TsuchinokusWeb.NotAuthorizedPlug.call(conn)
     end
   end
 end

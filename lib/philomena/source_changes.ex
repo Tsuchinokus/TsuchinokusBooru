@@ -1,12 +1,12 @@
-defmodule Philomena.SourceChanges do
+defmodule Tsuchinokus.SourceChanges do
   @moduledoc """
   The SourceChanges context.
   """
 
   import Ecto.Query, warn: false
-  alias Philomena.Repo
+  alias Tsuchinokus.Repo
 
-  alias Philomena.SourceChanges.SourceChange
+  alias Tsuchinokus.SourceChanges.SourceChange
 
   @doc """
   Gets a single source_change.

@@ -1,5 +1,5 @@
-defmodule PhilomenaWeb.ConversationView do
-  use PhilomenaWeb, :view
+defmodule TsuchinokusWeb.ConversationView do
+  use TsuchinokusWeb, :view
 
   def other_party(%{id: user_id}, %{to_id: user_id} = conversation),
     do: conversation.from

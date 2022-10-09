@@ -7,7 +7,7 @@ ul
   li = link "View comments this fingerprint has posted", to: Routes.comment_path(@conn, :index, cq: "fingerprint:#{@fingerprint}")
   li = link "View posts this fingerprint has made", to: Routes.post_path(@conn, :index, pq: "fingerprint:#{@fingerprint}")
 
-= render PhilomenaWeb.BanView, "_bans.html", bans: @fingerprint_bans, conn: @conn
+= render TsuchinokusWeb.BanView, "_bans.html", bans: @fingerprint_bans, conn: @conn
 
 h2 Administration Options
 ul

@@ -5,11 +5,11 @@ p
 article.block.communication
   .block__content.flex.flex--no-wrap
     .flex__fixed.spacing-right
-      = render PhilomenaWeb.UserAttributionView, "_anon_user_avatar.html", object: @report, conn: @conn
+      = render TsuchinokusWeb.UserAttributionView, "_anon_user_avatar.html", object: @report, conn: @conn
     .flex__grow.communication__body
-      span.communication__body__sender-name = render PhilomenaWeb.UserAttributionView, "_anon_user.html", object: @report, awards: true, conn: @conn
+      span.communication__body__sender-name = render TsuchinokusWeb.UserAttributionView, "_anon_user.html", object: @report, awards: true, conn: @conn
       br
-      = render PhilomenaWeb.UserAttributionView, "_anon_user_title.html", object: @report, conn: @conn
+      = render TsuchinokusWeb.UserAttributionView, "_anon_user_title.html", object: @report, conn: @conn
       .communication__body__text
         ==<> @body
 
@@ -30,7 +30,7 @@ article.block.communication
 
 = if assigns[:mod_notes] do
   h4 Mod Notes
-  = render PhilomenaWeb.Admin.ModNoteView, "_table.html", mod_notes: @mod_notes, conn: @conn
+  = render TsuchinokusWeb.Admin.ModNoteView, "_table.html", mod_notes: @mod_notes, conn: @conn
   = link "Add New Note", to: Routes.admin_mod_note_path(@conn, :new, notable_id: @report.id, notable_type: "Report")
 
 p

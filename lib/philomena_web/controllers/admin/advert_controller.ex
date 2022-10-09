@@ -1,9 +1,9 @@
-defmodule PhilomenaWeb.Admin.AdvertController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.Admin.AdvertController do
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.Adverts.Advert
-  alias Philomena.Adverts
-  alias Philomena.Repo
+  alias Tsuchinokus.Adverts.Advert
+  alias Tsuchinokus.Adverts
+  alias Tsuchinokus.Repo
   import Ecto.Query
 
   plug :verify_authorized
@@ -67,7 +67,7 @@ defmodule PhilomenaWeb.Admin.AdvertController do
   defp verify_authorized(conn, _opts) do
     case Canada.Can.can?(conn.assigns.current_user, :index, Advert) do
       true -> conn
-      false -> PhilomenaWeb.NotAuthorizedPlug.call(conn)
+      false -> TsuchinokusWeb.NotAuthorizedPlug.call(conn)
     end
   end
 end

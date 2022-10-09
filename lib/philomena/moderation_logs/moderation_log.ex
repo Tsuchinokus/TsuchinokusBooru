@@ -1,8 +1,8 @@
-defmodule Philomena.ModerationLogs.ModerationLog do
+defmodule Tsuchinokus.ModerationLogs.ModerationLog do
   use Ecto.Schema
   import Ecto.Changeset
 
-  alias Philomena.Users.User
+  alias Tsuchinokus.Users.User
 
   schema "moderation_logs" do
     belongs_to :user, User

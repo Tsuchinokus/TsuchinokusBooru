@@ -1,13 +1,13 @@
-defmodule Philomena.Topics.Topic do
+defmodule Tsuchinokus.Topics.Topic do
   use Ecto.Schema
   import Ecto.Changeset
 
-  alias Philomena.Forums.Forum
-  alias Philomena.Users.User
-  alias Philomena.Polls.Poll
-  alias Philomena.Posts.Post
-  alias Philomena.Topics.Subscription
-  alias Philomena.Slug
+  alias Tsuchinokus.Forums.Forum
+  alias Tsuchinokus.Users.User
+  alias Tsuchinokus.Polls.Poll
+  alias Tsuchinokus.Posts.Post
+  alias Tsuchinokus.Topics.Subscription
+  alias Tsuchinokus.Slug
 
   @derive {Phoenix.Param, key: :slug}
   schema "topics" do

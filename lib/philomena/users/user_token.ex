@@ -1,4 +1,4 @@
-defmodule Philomena.Users.UserToken do
+defmodule Tsuchinokus.Users.UserToken do
   use Ecto.Schema
   import Ecto.Query
 
@@ -17,7 +17,7 @@ defmodule Philomena.Users.UserToken do
     field :token, :binary
     field :context, :string
     field :sent_to, :string
-    belongs_to :user, Philomena.Users.User
+    belongs_to :user, Tsuchinokus.Users.User
 
     timestamps(inserted_at: :created_at, updated_at: false, type: :utc_datetime)
   end
@@ -29,7 +29,7 @@ defmodule Philomena.Users.UserToken do
   """
   def build_session_token(user) do
     token = :crypto.strong_rand_bytes(@rand_size)
-    {token, %Philomena.Users.UserToken{token: token, context: "session", user_id: user.id}}
+    {token, %Tsuchinokus.Users.UserToken{token: token, context: "session", user_id: user.id}}
   end
 
   @doc """
@@ -54,7 +54,7 @@ defmodule Philomena.Users.UserToken do
   """
   def build_totp_token(user) do
     token = :crypto.strong_rand_bytes(@rand_size)
-    {token, %Philomena.Users.UserToken{token: token, context: "totp", user_id: user.id}}
+    {token, %Tsuchinokus.Users.UserToken{token: token, context: "totp", user_id: user.id}}
   end
 
   @doc """
@@ -86,7 +86,7 @@ defmodule Philomena.Users.UserToken do
     hashed_token = :crypto.hash(@hash_algorithm, token)
 
     {Base.url_encode64(token, padding: false),
-     %Philomena.Users.UserToken{
+     %Tsuchinokus.Users.UserToken{
        token: hashed_token,
        context: context,
        sent_to: sent_to,
@@ -147,17 +147,17 @@ defmodule Philomena.Users.UserToken do
   Returns the given token with the given context.
   """
   def token_and_context_query(token, context) do
-    from Philomena.Users.UserToken, where: [token: ^token, context: ^context]
+    from Tsuchinokus.Users.UserToken, where: [token: ^token, context: ^context]
   end
 
   @doc """
   Gets all tokens for the given user for the given contexts.
   """
   def user_and_contexts_query(user, :all) do
-    from t in Philomena.Users.UserToken, where: t.user_id == ^user.id
+    from t in Tsuchinokus.Users.UserToken, where: t.user_id == ^user.id
   end
 
   def user_and_contexts_query(user, [_ | _] = contexts) do
-    from t in Philomena.Users.UserToken, where: t.user_id == ^user.id and t.context in ^contexts
+    from t in Tsuchinokus.Users.UserToken, where: t.user_id == ^user.id and t.context in ^contexts
   end
 end

@@ -1,3 +1,3 @@
-defmodule PhilomenaWeb.AvatarView do
-  use PhilomenaWeb, :view
+defmodule TsuchinokusWeb.AvatarView do
+  use TsuchinokusWeb, :view
 end

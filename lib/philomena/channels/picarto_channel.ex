@@ -1,10 +1,10 @@
-defmodule Philomena.Channels.PicartoChannel do
+defmodule Tsuchinokus.Channels.PicartoChannel do
   @api_online "https://api.picarto.tv/api/v1/online?adult=true&gaming=true"
 
   @spec live_channels(DateTime.t()) :: map()
   def live_channels(now) do
     @api_online
-    |> Philomena.Http.get()
+    |> Tsuchinokus.Http.get()
     |> case do
       {:ok, %Tesla.Env{body: body, status: 200}} ->
         body

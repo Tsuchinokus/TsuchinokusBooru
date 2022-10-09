@@ -1,3 +1,3 @@
-defmodule PhilomenaWeb.ConfirmationView do
-  use PhilomenaWeb, :view
+defmodule TsuchinokusWeb.ConfirmationView do
+  use TsuchinokusWeb, :view
 end

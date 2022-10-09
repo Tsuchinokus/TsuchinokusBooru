@@ -1,9 +1,9 @@
-defmodule PhilomenaWeb.LastIpPlug do
+defmodule TsuchinokusWeb.LastIpPlug do
   @moduledoc """
   This plug stores the connecting IP address in the session.
   ## Example
 
-      plug PhilomenaWeb.LastIpPlug
+      plug TsuchinokusWeb.LastIpPlug
   """
 
   alias Plug.Conn

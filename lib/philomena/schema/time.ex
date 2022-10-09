@@ -1,5 +1,5 @@
-defmodule Philomena.Schema.Time do
-  alias Philomena.RelativeDate
+defmodule Tsuchinokus.Schema.Time do
+  alias Tsuchinokus.RelativeDate
   import Ecto.Changeset
 
   def assign_time(changeset, field, target_field) do

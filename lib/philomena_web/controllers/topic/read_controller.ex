@@ -1,9 +1,9 @@
-defmodule PhilomenaWeb.Topic.ReadController do
+defmodule TsuchinokusWeb.Topic.ReadController do
   import Plug.Conn
-  use PhilomenaWeb, :controller
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.Forums.Forum
-  alias Philomena.Topics
+  alias Tsuchinokus.Forums.Forum
+  alias Tsuchinokus.Topics
 
   plug :load_resource,
     model: Forum,
@@ -11,7 +11,7 @@ defmodule PhilomenaWeb.Topic.ReadController do
     id_field: "short_name",
     persisted: true
 
-  plug PhilomenaWeb.LoadTopicPlug, show_hidden: true
+  plug TsuchinokusWeb.LoadTopicPlug, show_hidden: true
 
   def create(conn, _params) do
     user = conn.assigns.current_user

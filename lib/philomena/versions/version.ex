@@ -1,4 +1,4 @@
-defmodule Philomena.Versions.Version do
+defmodule Tsuchinokus.Versions.Version do
   use Ecto.Schema
   import Ecto.Changeset
 

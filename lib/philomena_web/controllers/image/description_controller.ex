@@ -1,12 +1,12 @@
-defmodule PhilomenaWeb.Image.DescriptionController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.Image.DescriptionController do
+  use TsuchinokusWeb, :controller
 
-  alias PhilomenaWeb.MarkdownRenderer
-  alias Philomena.Images.Image
-  alias Philomena.Images
+  alias TsuchinokusWeb.MarkdownRenderer
+  alias Tsuchinokus.Images.Image
+  alias Tsuchinokus.Images
 
-  plug PhilomenaWeb.FilterBannedUsersPlug
-  plug PhilomenaWeb.CanaryMapPlug, update: :edit_description
+  plug TsuchinokusWeb.FilterBannedUsersPlug
+  plug TsuchinokusWeb.CanaryMapPlug, update: :edit_description
 
   plug :load_and_authorize_resource,
     model: Image,
@@ -20,16 +20,16 @@ defmodule PhilomenaWeb.Image.DescriptionController do
 
     case Images.update_description(image, image_params) do
       {:ok, image} ->
-        PhilomenaWeb.Endpoint.broadcast!(
+        TsuchinokusWeb.Endpoint.broadcast!(
           "firehose",
           "image:description_update",
           %{image_id: image.id, added: image.description, removed: old_description}
         )
 
-        PhilomenaWeb.Endpoint.broadcast!(
+        TsuchinokusWeb.Endpoint.broadcast!(
           "firehose",
           "image:update",
-          PhilomenaWeb.Api.Json.ImageView.render("show.json", %{image: image, interactions: []})
+          TsuchinokusWeb.Api.Json.ImageView.render("show.json", %{image: image, interactions: []})
         )
 
         Images.reindex_image(image)
@@ -37,7 +37,7 @@ defmodule PhilomenaWeb.Image.DescriptionController do
         body = MarkdownRenderer.render_one(%{body: image.description}, conn)
 
         conn
-        |> put_view(PhilomenaWeb.ImageView)
+        |> put_view(TsuchinokusWeb.ImageView)
         |> render("_description.html", layout: false, image: image, body: body)
 
       {:error, changeset} ->

@@ -1,17 +1,17 @@
-defmodule PhilomenaWeb.Conversation.ReportController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.Conversation.ReportController do
+  use TsuchinokusWeb, :controller
 
-  alias PhilomenaWeb.ReportController
-  alias PhilomenaWeb.ReportView
-  alias Philomena.Conversations.Conversation
-  alias Philomena.Reports.Report
-  alias Philomena.Reports
+  alias TsuchinokusWeb.ReportController
+  alias TsuchinokusWeb.ReportView
+  alias Tsuchinokus.Conversations.Conversation
+  alias Tsuchinokus.Reports.Report
+  alias Tsuchinokus.Reports
 
-  plug PhilomenaWeb.FilterBannedUsersPlug
-  plug PhilomenaWeb.UserAttributionPlug
-  plug PhilomenaWeb.CaptchaPlug
-  plug PhilomenaWeb.CheckCaptchaPlug when action in [:create]
-  plug PhilomenaWeb.CanaryMapPlug, new: :show, create: :show
+  plug TsuchinokusWeb.FilterBannedUsersPlug
+  plug TsuchinokusWeb.UserAttributionPlug
+  plug TsuchinokusWeb.CaptchaPlug
+  plug TsuchinokusWeb.CheckCaptchaPlug when action in [:create]
+  plug TsuchinokusWeb.CanaryMapPlug, new: :show, create: :show
 
   plug :load_and_authorize_resource,
     model: Conversation,

@@ -1,3 +1,3 @@
-defmodule PhilomenaWeb.SessionView do
-  use PhilomenaWeb, :view
+defmodule TsuchinokusWeb.SessionView do
+  use TsuchinokusWeb, :view
 end

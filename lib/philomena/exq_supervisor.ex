@@ -1,4 +1,4 @@
-defmodule Philomena.ExqSupervisor do
+defmodule Tsuchinokus.ExqSupervisor do
   use Supervisor
 
   def start_link(init_arg) do

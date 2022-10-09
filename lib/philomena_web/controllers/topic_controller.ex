@@ -1,23 +1,23 @@
-defmodule PhilomenaWeb.TopicController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.TopicController do
+  use TsuchinokusWeb, :controller
 
-  alias PhilomenaWeb.NotificationCountPlug
-  alias Philomena.{Forums.Forum, Topics.Topic, Posts.Post, Polls.Poll, PollOptions.PollOption}
-  alias Philomena.{Forums, Topics, Polls, Posts}
-  alias Philomena.PollVotes
-  alias PhilomenaWeb.MarkdownRenderer
-  alias Philomena.Repo
+  alias TsuchinokusWeb.NotificationCountPlug
+  alias Tsuchinokus.{Forums.Forum, Topics.Topic, Posts.Post, Polls.Poll, PollOptions.PollOption}
+  alias Tsuchinokus.{Forums, Topics, Polls, Posts}
+  alias Tsuchinokus.PollVotes
+  alias TsuchinokusWeb.MarkdownRenderer
+  alias Tsuchinokus.Repo
   import Ecto.Query
 
-  plug PhilomenaWeb.LimitPlug,
+  plug TsuchinokusWeb.LimitPlug,
        [time: 300, error: "You may only make a new topic once every 5 minutes."]
        when action in [:create]
 
-  plug PhilomenaWeb.FilterBannedUsersPlug when action in [:new, :create]
-  plug PhilomenaWeb.UserAttributionPlug when action in [:new, :create]
-  plug PhilomenaWeb.AdvertPlug when action in [:show]
+  plug TsuchinokusWeb.FilterBannedUsersPlug when action in [:new, :create]
+  plug TsuchinokusWeb.UserAttributionPlug when action in [:new, :create]
+  plug TsuchinokusWeb.AdvertPlug when action in [:show]
 
-  plug PhilomenaWeb.CanaryMapPlug, new: :show, create: :show, update: :show
+  plug TsuchinokusWeb.CanaryMapPlug, new: :show, create: :show, update: :show
 
   plug :load_and_authorize_resource,
     model: Forum,
@@ -25,7 +25,7 @@ defmodule PhilomenaWeb.TopicController do
     id_field: "short_name",
     persisted: true
 
-  plug PhilomenaWeb.LoadTopicPlug, [param: "id"] when action in [:show, :update]
+  plug TsuchinokusWeb.LoadTopicPlug, [param: "id"] when action in [:show, :update]
   plug :verify_authorized when action in [:update]
 
   def show(conn, params) do
@@ -115,10 +115,10 @@ defmodule PhilomenaWeb.TopicController do
         Topics.notify_topic(topic, post)
 
         if forum.access_level == "normal" do
-          PhilomenaWeb.Endpoint.broadcast!(
+          TsuchinokusWeb.Endpoint.broadcast!(
             "firehose",
             "post:create",
-            PhilomenaWeb.Api.Json.Forum.Topic.PostView.render("firehose.json", %{
+            TsuchinokusWeb.Api.Json.Forum.Topic.PostView.render("firehose.json", %{
               post: post,
               topic: topic,
               forum: forum
@@ -160,7 +160,7 @@ defmodule PhilomenaWeb.TopicController do
   defp verify_authorized(conn, _opts) do
     case Canada.Can.can?(conn.assigns.current_user, :edit, conn.assigns.topic) do
       true -> conn
-      _false -> PhilomenaWeb.NotAuthorizedPlug.call(conn)
+      _false -> TsuchinokusWeb.NotAuthorizedPlug.call(conn)
     end
   end
 end

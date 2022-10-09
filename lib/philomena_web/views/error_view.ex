@@ -1,7 +1,7 @@
-defmodule PhilomenaWeb.ErrorView do
-  use PhilomenaWeb, :view
+defmodule TsuchinokusWeb.ErrorView do
+  use TsuchinokusWeb, :view
 
-  import PhilomenaWeb.LayoutView,
+  import TsuchinokusWeb.LayoutView,
     only: [
       stylesheet_path: 2,
       dark_stylesheet_path: 1,
@@ -31,7 +31,7 @@ defmodule PhilomenaWeb.ErrorView do
 
       _ ->
         render(
-          PhilomenaWeb.ErrorView,
+          TsuchinokusWeb.ErrorView,
           "show.html",
           conn: assigns.conn,
           status: assigns.status,

@@ -1,14 +1,14 @@
-defmodule Philomena.Tags.Tag do
+defmodule Tsuchinokus.Tags.Tag do
   use Ecto.Schema
   import Ecto.Changeset
   import Ecto.Query
 
-  alias Philomena.Channels.Channel
-  alias Philomena.DnpEntries.DnpEntry
-  alias Philomena.ArtistLinks.ArtistLink
-  alias Philomena.Tags.Tag
-  alias Philomena.Slug
-  alias Philomena.Repo
+  alias Tsuchinokus.Channels.Channel
+  alias Tsuchinokus.DnpEntries.DnpEntry
+  alias Tsuchinokus.ArtistLinks.ArtistLink
+  alias Tsuchinokus.Tags.Tag
+  alias Tsuchinokus.Slug
+  alias Tsuchinokus.Repo
 
   @namespaces [
     "artist",

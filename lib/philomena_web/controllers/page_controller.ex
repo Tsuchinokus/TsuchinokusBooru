@@ -1,9 +1,9 @@
-defmodule PhilomenaWeb.PageController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.PageController do
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.StaticPages.StaticPage
-  alias Philomena.StaticPages
-  alias PhilomenaWeb.MarkdownRenderer
+  alias Tsuchinokus.StaticPages.StaticPage
+  alias Tsuchinokus.StaticPages
+  alias TsuchinokusWeb.MarkdownRenderer
 
   plug :load_and_authorize_resource, model: StaticPage, id_field: "slug"
 

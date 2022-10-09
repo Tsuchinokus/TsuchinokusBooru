@@ -1,6 +1,6 @@
 elixir:
   route = fn p -> Routes.image_comment_path(@conn, :index, @image, p) end
-  pagination = render PhilomenaWeb.PaginationView, "_pagination.html", page: @comments, route: route
+  pagination = render TsuchinokusWeb.PaginationView, "_pagination.html", page: @comments, route: route
 
 .block
   .block__header.page__header
@@ -15,7 +15,7 @@ elixir:
         span.hide-mobile<> Refresh
 
 = for {comment, body} <- @comments, can_view_communication?(@conn, comment) do
-  = render PhilomenaWeb.CommentView, "_comment.html", comment: comment, body: body, conn: @conn
+  = render TsuchinokusWeb.CommentView, "_comment.html", comment: comment, body: body, conn: @conn
 
 .block
   .block__header.block__header--light.page__header

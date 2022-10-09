@@ -1,8 +1,8 @@
-defmodule PhilomenaWeb.Registration.EmailControllerTest do
-  use PhilomenaWeb.ConnCase, async: true
+defmodule TsuchinokusWeb.Registration.EmailControllerTest do
+  use TsuchinokusWeb.ConnCase, async: true
 
-  alias Philomena.Users
-  import Philomena.UsersFixtures
+  alias Tsuchinokus.Users
+  import Tsuchinokus.UsersFixtures
 
   setup :register_and_log_in_user
 

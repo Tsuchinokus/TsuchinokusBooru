@@ -1,12 +1,12 @@
-defmodule Philomena.ImageFeatures do
+defmodule Tsuchinokus.ImageFeatures do
   @moduledoc """
   The ImageFeatures context.
   """
 
   import Ecto.Query, warn: false
-  alias Philomena.Repo
+  alias Tsuchinokus.Repo
 
-  alias Philomena.ImageFeatures.ImageFeature
+  alias Tsuchinokus.ImageFeatures.ImageFeature
 
   @doc """
   Returns the list of image_features.

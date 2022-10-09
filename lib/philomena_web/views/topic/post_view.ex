@@ -1,3 +1,3 @@
-defmodule PhilomenaWeb.Topic.PostView do
-  use PhilomenaWeb, :view
+defmodule TsuchinokusWeb.Topic.PostView do
+  use TsuchinokusWeb, :view
 end

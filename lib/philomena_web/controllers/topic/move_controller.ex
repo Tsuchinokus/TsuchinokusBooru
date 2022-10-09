@@ -1,13 +1,13 @@
-defmodule PhilomenaWeb.Topic.MoveController do
+defmodule TsuchinokusWeb.Topic.MoveController do
   import Plug.Conn
-  use PhilomenaWeb, :controller
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.Forums.Forum
-  alias Philomena.Topics.Topic
-  alias Philomena.Topics
-  alias Philomena.Repo
+  alias Tsuchinokus.Forums.Forum
+  alias Tsuchinokus.Topics.Topic
+  alias Tsuchinokus.Topics
+  alias Tsuchinokus.Repo
 
-  plug PhilomenaWeb.CanaryMapPlug, create: :show, delete: :show
+  plug TsuchinokusWeb.CanaryMapPlug, create: :show, delete: :show
 
   plug :load_and_authorize_resource,
     model: Forum,
@@ -15,8 +15,8 @@ defmodule PhilomenaWeb.Topic.MoveController do
     id_field: "short_name",
     persisted: true
 
-  plug PhilomenaWeb.LoadTopicPlug
-  plug PhilomenaWeb.CanaryMapPlug, create: :hide, delete: :hide
+  plug TsuchinokusWeb.LoadTopicPlug
+  plug TsuchinokusWeb.CanaryMapPlug, create: :hide, delete: :hide
   plug :authorize_resource, model: Topic, persisted: true
 
   def create(conn, %{"topic" => %{"target_forum_id" => target_id}}) do

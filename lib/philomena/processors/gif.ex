@@ -1,5 +1,5 @@
-defmodule Philomena.Processors.Gif do
-  alias Philomena.Intensities
+defmodule Tsuchinokus.Processors.Gif do
+  alias Tsuchinokus.Intensities
 
   def process(analysis, file, versions) do
     dimensions = analysis.dimensions

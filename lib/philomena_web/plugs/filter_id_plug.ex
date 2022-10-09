@@ -1,6 +1,6 @@
-defmodule PhilomenaWeb.FilterIdPlug do
-  alias Philomena.Filters.Filter
-  alias Philomena.Repo
+defmodule TsuchinokusWeb.FilterIdPlug do
+  alias Tsuchinokus.Filters.Filter
+  alias Tsuchinokus.Repo
 
   # No options
   def init([]), do: false

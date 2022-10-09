@@ -1,5 +1,5 @@
-defmodule Philomena.Batch do
-  alias Philomena.Repo
+defmodule Tsuchinokus.Batch do
+  alias Tsuchinokus.Repo
   import Ecto.Query
 
   @doc """

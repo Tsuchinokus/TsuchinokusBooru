@@ -1,9 +1,9 @@
 defmodule Mix.Tasks.ReindexAll do
   use Mix.Task
 
-  alias Philomena.Elasticsearch
+  alias Tsuchinokus.Elasticsearch
 
-  alias Philomena.{
+  alias Tsuchinokus.{
     Comments.Comment,
     Galleries.Gallery,
     Posts.Post,
@@ -13,9 +13,9 @@ defmodule Mix.Tasks.ReindexAll do
     Filters.Filter
   }
 
-  alias Philomena.{Comments, Galleries, Posts, Images, Tags, Filters}
-  alias Philomena.Polymorphic
-  alias Philomena.Repo
+  alias Tsuchinokus.{Comments, Galleries, Posts, Images, Tags, Filters}
+  alias Tsuchinokus.Polymorphic
+  alias Tsuchinokus.Repo
   import Ecto.Query
 
   @indices [

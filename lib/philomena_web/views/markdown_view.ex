@@ -1,5 +1,5 @@
-defmodule PhilomenaWeb.MarkdownView do
-  use PhilomenaWeb, :view
+defmodule TsuchinokusWeb.MarkdownView do
+  use TsuchinokusWeb, :view
 
   def anonymous_by_default?(conn) do
     conn.assigns.current_user.anonymous_by_default

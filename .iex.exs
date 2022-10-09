@@ -1,4 +1,4 @@
-alias Philomena.{
+alias Tsuchinokus.{
   Repo,
   Comments.Comment,
   Galleries.Gallery,

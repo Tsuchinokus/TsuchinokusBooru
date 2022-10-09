@@ -1,10 +1,10 @@
-defmodule PhilomenaWeb.Forum.SubscriptionController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.Forum.SubscriptionController do
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.Forums.Forum
-  alias Philomena.Forums
+  alias Tsuchinokus.Forums.Forum
+  alias Tsuchinokus.Forums
 
-  plug PhilomenaWeb.CanaryMapPlug, create: :show, delete: :show
+  plug TsuchinokusWeb.CanaryMapPlug, create: :show, delete: :show
 
   plug :load_and_authorize_resource,
     model: Forum,

@@ -1,17 +1,17 @@
-defmodule Philomena.ArtistLinks do
+defmodule Tsuchinokus.ArtistLinks do
   @moduledoc """
   The ArtistLinks context.
   """
 
   import Ecto.Query, warn: false
   alias Ecto.Multi
-  alias Philomena.Repo
+  alias Tsuchinokus.Repo
 
-  alias Philomena.ArtistLinks.ArtistLink
-  alias Philomena.ArtistLinks.AutomaticVerifier
-  alias Philomena.Badges.Badge
-  alias Philomena.Badges.Award
-  alias Philomena.Tags.Tag
+  alias Tsuchinokus.ArtistLinks.ArtistLink
+  alias Tsuchinokus.ArtistLinks.AutomaticVerifier
+  alias Tsuchinokus.Badges.Badge
+  alias Tsuchinokus.Badges.Award
+  alias Tsuchinokus.Tags.Tag
 
   @doc """
   Check links pending verification to see if the user placed

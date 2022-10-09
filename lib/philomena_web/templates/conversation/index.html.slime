@@ -1,6 +1,6 @@
 elixir:
   route = fn p -> Routes.conversation_path(@conn, :index, p) end
-  pagination = render PhilomenaWeb.PaginationView, "_pagination.html", page: @conversations, route: route, conn: @conn
+  pagination = render TsuchinokusWeb.PaginationView, "_pagination.html", page: @conversations, route: route, conn: @conn
 
 h1 My Conversations
 .block
@@ -34,7 +34,7 @@ h1 My Conversations
                 = pretty_time(c.last_message_at)
 
             td.table--communication-list__stats
-              = render PhilomenaWeb.UserAttributionView, "_user.html", object: %{user: other_party(@current_user, c)}, conn: @conn
+              = render TsuchinokusWeb.UserAttributionView, "_user.html", object: %{user: other_party(@current_user, c)}, conn: @conn
             td.table--communication-list__options
               => link "Last message", to: last_message_path(@conn, c, count)
               ' &bull;

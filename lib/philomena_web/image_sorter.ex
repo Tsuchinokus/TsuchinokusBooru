@@ -1,4 +1,4 @@
-defmodule PhilomenaWeb.ImageSorter do
+defmodule TsuchinokusWeb.ImageSorter do
   @allowed_fields ~W(
     id
     updated_at

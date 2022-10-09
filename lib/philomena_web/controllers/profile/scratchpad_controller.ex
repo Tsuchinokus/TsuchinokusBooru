@@ -1,11 +1,11 @@
-defmodule PhilomenaWeb.Profile.ScratchpadController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.Profile.ScratchpadController do
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.Users.User
-  alias Philomena.Users
+  alias Tsuchinokus.Users.User
+  alias Tsuchinokus.Users
 
-  plug PhilomenaWeb.FilterBannedUsersPlug
-  plug PhilomenaWeb.CanaryMapPlug, edit: :index, update: :index
+  plug TsuchinokusWeb.FilterBannedUsersPlug
+  plug TsuchinokusWeb.CanaryMapPlug, edit: :index, update: :index
   plug :load_resource, model: User, id_name: "profile_id", id_field: "slug", persisted: true
 
   def edit(conn, _params) do

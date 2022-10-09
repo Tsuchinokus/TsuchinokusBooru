@@ -1,7 +1,7 @@
-defmodule PhilomenaWeb.SessionControllerTest do
-  use PhilomenaWeb.ConnCase, async: true
+defmodule TsuchinokusWeb.SessionControllerTest do
+  use TsuchinokusWeb.ConnCase, async: true
 
-  import Philomena.UsersFixtures
+  import Tsuchinokus.UsersFixtures
 
   setup do
     %{user: confirmed_user_fixture()}

@@ -1,3 +1,3 @@
-defmodule PhilomenaWeb.FingerprintProfile.SourceChangeView do
-  use PhilomenaWeb, :view
+defmodule TsuchinokusWeb.FingerprintProfile.SourceChangeView do
+  use TsuchinokusWeb, :view
 end

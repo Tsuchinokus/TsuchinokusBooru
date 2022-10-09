@@ -1,5 +1,5 @@
 h2 Editing Filter
-= render PhilomenaWeb.FilterView, "_form.html", filter: @changeset, route: Routes.filter_path(@conn, :update, @filter)
+= render TsuchinokusWeb.FilterView, "_form.html", filter: @changeset, route: Routes.filter_path(@conn, :update, @filter)
 
 = if not @filter.public and not @filter.system do
   br

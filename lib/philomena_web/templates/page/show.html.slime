@@ -7,7 +7,7 @@ p
   => link to: Routes.page_history_path(@conn, :index, @static_page) do
     i.fa.fa-history>
     ' Revision history
-  = if can?(@conn, :edit, Philomena.StaticPages.StaticPage) do
+  = if can?(@conn, :edit, Tsuchinokus.StaticPages.StaticPage) do
     =< link to: Routes.page_path(@conn, :edit, @static_page) do
       i.fa.fa-edit>
       ' Edit

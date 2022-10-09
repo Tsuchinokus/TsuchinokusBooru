@@ -6,7 +6,7 @@ h2 Do-Not-Post Requests
     = submit "Search", class: "hform__button button"
 
 - route = fn p -> Routes.admin_dnp_entry_path(@conn, :index, p) end
-- pagination = render PhilomenaWeb.PaginationView, "_pagination.html", page: @dnp_entries, route: route, params: [states: state_param(@conn.params["states"])]
+- pagination = render TsuchinokusWeb.PaginationView, "_pagination.html", page: @dnp_entries, route: route, params: [states: state_param(@conn.params["states"])]
 
 .block
   .block__header
@@ -35,7 +35,7 @@ h2 Do-Not-Post Requests
           = for {body, request} <- @dnp_entries do
             tr
               td
-                = render PhilomenaWeb.TagView, "_tag.html", tag: request.tag, conn: @conn
+                = render TsuchinokusWeb.TagView, "_tag.html", tag: request.tag, conn: @conn
 
               td
                 = link request.requesting_user.name, to: Routes.profile_path(@conn, :show, request.requesting_user)

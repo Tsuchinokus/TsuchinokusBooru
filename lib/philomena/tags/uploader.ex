@@ -1,10 +1,10 @@
-defmodule Philomena.Tags.Uploader do
+defmodule Tsuchinokus.Tags.Uploader do
   @moduledoc """
   Upload and processing callback logic for Tag images.
   """
 
-  alias Philomena.Tags.Tag
-  alias Philomena.Uploader
+  alias Tsuchinokus.Tags.Tag
+  alias Tsuchinokus.Uploader
 
   def analyze_upload(tag, params) do
     Uploader.analyze_upload(tag, "image", params["image"], &Tag.image_changeset/2)
@@ -19,6 +19,6 @@ defmodule Philomena.Tags.Uploader do
   end
 
   defp tag_file_root do
-    Application.get_env(:philomena, :tag_file_root)
+    Application.get_env(:tsuchinokus, :tag_file_root)
   end
 end

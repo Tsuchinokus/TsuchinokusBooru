@@ -1,18 +1,18 @@
-defmodule Philomena.UserWipe do
+defmodule Tsuchinokus.UserWipe do
   @wipe_ip %Postgrex.INET{address: {127, 0, 1, 1}, netmask: 32}
   @wipe_fp "ffff"
 
-  alias Philomena.Comments.Comment
-  alias Philomena.Images.Image
-  alias Philomena.Posts.Post
-  alias Philomena.Reports.Report
-  alias Philomena.SourceChanges.SourceChange
-  alias Philomena.TagChanges.TagChange
-  alias Philomena.UserIps.UserIp
-  alias Philomena.UserFingerprints.UserFingerprint
-  alias Philomena.Users
-  alias Philomena.Users.User
-  alias Philomena.Repo
+  alias Tsuchinokus.Comments.Comment
+  alias Tsuchinokus.Images.Image
+  alias Tsuchinokus.Posts.Post
+  alias Tsuchinokus.Reports.Report
+  alias Tsuchinokus.SourceChanges.SourceChange
+  alias Tsuchinokus.TagChanges.TagChange
+  alias Tsuchinokus.UserIps.UserIp
+  alias Tsuchinokus.UserFingerprints.UserFingerprint
+  alias Tsuchinokus.Users
+  alias Tsuchinokus.Users.User
+  alias Tsuchinokus.Repo
   import Ecto.Query
 
   def perform(user_id) do

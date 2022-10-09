@@ -1,4 +1,4 @@
-defmodule PhilomenaWeb.CompromisedPasswordCheckPlug do
+defmodule TsuchinokusWeb.CompromisedPasswordCheckPlug do
   import Phoenix.Controller
   import Plug.Conn
 
@@ -35,7 +35,7 @@ defmodule PhilomenaWeb.CompromisedPasswordCheckPlug do
       :crypto.hash(:sha, password)
       |> Base.encode16()
 
-    case Philomena.Http.get(make_api_url(prefix)) do
+    case Tsuchinokus.Http.get(make_api_url(prefix)) do
       {:ok, %Tesla.Env{body: body, status: 200}} -> String.contains?(body, rest)
       _ -> false
     end
@@ -46,6 +46,6 @@ defmodule PhilomenaWeb.CompromisedPasswordCheckPlug do
   end
 
   defp pwned_passwords_enabled? do
-    Application.get_env(:philomena, :pwned_passwords) != false
+    Application.get_env(:tsuchinokus, :pwned_passwords) != false
   end
 end

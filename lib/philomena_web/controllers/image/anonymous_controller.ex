@@ -1,8 +1,8 @@
-defmodule PhilomenaWeb.Image.AnonymousController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.Image.AnonymousController do
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.Images.Image
-  alias Philomena.Images
+  alias Tsuchinokus.Images.Image
+  alias Tsuchinokus.Images
 
   plug :verify_authorized
   plug :load_resource, model: Image, id_name: "image_id", persisted: true
@@ -29,7 +29,7 @@ defmodule PhilomenaWeb.Image.AnonymousController do
   defp verify_authorized(conn, _opts) do
     case Canada.Can.can?(conn.assigns.current_user, :show, :ip_address) do
       true -> conn
-      _false -> PhilomenaWeb.NotAuthorizedPlug.call(conn)
+      _false -> TsuchinokusWeb.NotAuthorizedPlug.call(conn)
     end
   end
 

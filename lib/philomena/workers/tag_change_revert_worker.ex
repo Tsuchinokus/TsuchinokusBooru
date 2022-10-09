@@ -1,8 +1,8 @@
-defmodule Philomena.TagChangeRevertWorker do
-  alias Philomena.TagChanges.TagChange
-  alias Philomena.TagChanges
-  alias Philomena.Batch
-  alias Philomena.Repo
+defmodule Tsuchinokus.TagChangeRevertWorker do
+  alias Tsuchinokus.TagChanges.TagChange
+  alias Tsuchinokus.TagChanges
+  alias Tsuchinokus.Batch
+  alias Tsuchinokus.Repo
   import Ecto.Query
 
   def perform(%{"user_id" => user_id, "attributes" => attributes}) do

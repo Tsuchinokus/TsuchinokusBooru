@@ -1,4 +1,4 @@
-defmodule PhilomenaWeb.AppView do
+defmodule TsuchinokusWeb.AppView do
   use Phoenix.HTML
 
   @time_strings %{
@@ -44,7 +44,7 @@ defmodule PhilomenaWeb.AppView do
   end
 
   def tag_list(image) do
-    Philomena.Images.tag_list(image)
+    Tsuchinokus.Images.tag_list(image)
   end
 
   def distance_of_time_in_words(time_2, time_1) do

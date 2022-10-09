@@ -2,31 +2,31 @@
   "users": [{
       "name": "Hot Pocket Consumer",
       "email": "moderator@example.com",
-      "password": "philomena123",
+      "password": "tsuchinokus123",
       "role": "moderator"
     },
     {
       "name": "Hoping For a Promotion",
       "email": "assistant@example.com",
-      "password": "philomena123",
+      "password": "tsuchinokus123",
       "role": "assistant"
     },
     {
       "name": "Pleb",
       "email": "user@example.com",
-      "password": "philomena123",
+      "password": "tsuchinokus123",
       "role": "user"
     }
   ],
   "remote_images": [{
       "url": "https://derpicdn.net/img/2015/9/26/988000/thumb.gif",
-      "source_url": "https://derpibooru.org/988000",
+      "source_url": "https://tsuchinokus.org/988000",
       "description": "Fairly large GIF (~23MB), use to test WebM stuff.",
       "tag_input": "alicorn, angry, animated, art, artist:assasinmonkey, artist:equum_amici, badass, barrier, crying, dark, epic, female, fight, force field, glare, glow, good vs evil, lord tirek, low angle, magic, mare, messy mane, metal as fuck, perspective, plot, pony, raised hoof, safe, size difference, spread wings, stomping, twilight's kingdom, twilight sparkle, twilight sparkle (alicorn), twilight vs tirek, underhoof"
     },
     {
       "url": "https://derpicdn.net/img/2012/1/2/25/large.png",
-      "source_url": "https://derpibooru.org/25",
+      "source_url": "https://tsuchinokus.org/25",
       "tag_input": "artist:moe, canterlot, castle, cliff, cloud, detailed background, fog, forest, grass, mountain, mountain range, nature, no pony, outdoors, path, river, safe, scenery, scenery porn, signature, source needed, sunset, technical advanced, town, tree, useless source url, water, waterfall, widescreen, wood"
     },
     {
@@ -46,7 +46,7 @@
     },
     {
       "url": "https://derpicdn.net/img/view/2019/6/16/2067468.svg",
-      "source_url": "https://derpibooru.org/2067468",
+      "source_url": "https://tsuchinokus.org/2067468",
       "tag_input": "artist:cheezedoodle96, babs seed, bloom and gloom, cutie mark, cutie mark only, no pony, safe, scissors, simple background, svg, .svg available, transparent background, vector"
     }
   ],

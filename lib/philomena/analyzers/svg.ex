@@ -1,4 +1,4 @@
-defmodule Philomena.Analyzers.Svg do
+defmodule Tsuchinokus.Analyzers.Svg do
   def analyze(file) do
     stats = stats(file)
 

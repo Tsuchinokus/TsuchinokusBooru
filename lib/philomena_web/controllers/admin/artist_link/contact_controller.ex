@@ -1,10 +1,10 @@
-defmodule PhilomenaWeb.Admin.ArtistLink.ContactController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.Admin.ArtistLink.ContactController do
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.ArtistLinks.ArtistLink
-  alias Philomena.ArtistLinks
+  alias Tsuchinokus.ArtistLinks.ArtistLink
+  alias Tsuchinokus.ArtistLinks
 
-  plug PhilomenaWeb.CanaryMapPlug, create: :edit
+  plug TsuchinokusWeb.CanaryMapPlug, create: :edit
 
   plug :load_and_authorize_resource,
     model: ArtistLink,

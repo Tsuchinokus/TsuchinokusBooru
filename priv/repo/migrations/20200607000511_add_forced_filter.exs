@@ -1,4 +1,4 @@
-defmodule Philomena.Repo.Migrations.AddForcedFilter do
+defmodule Tsuchinokus.Repo.Migrations.AddForcedFilter do
   use Ecto.Migration
 
   def change do

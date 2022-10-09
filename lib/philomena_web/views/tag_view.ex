@@ -1,12 +1,12 @@
-defmodule PhilomenaWeb.TagView do
-  use PhilomenaWeb, :view
+defmodule TsuchinokusWeb.TagView do
+  use TsuchinokusWeb, :view
 
   # this is bad practice, don't copy this.
-  alias Philomena.Config
-  alias Philomena.Elasticsearch
-  alias Philomena.Tags.Tag
-  alias Philomena.Repo
-  alias PhilomenaWeb.ImageScope
+  alias Tsuchinokus.Config
+  alias Tsuchinokus.Elasticsearch
+  alias Tsuchinokus.Tags.Tag
+  alias Tsuchinokus.Repo
+  alias TsuchinokusWeb.ImageScope
   import Ecto.Query
 
   def scope(conn), do: ImageScope.scope(conn)
@@ -32,14 +32,14 @@ defmodule PhilomenaWeb.TagView do
   end
 
   def quick_tags(conn) do
-    case Application.get_env(:philomena, :quick_tags) do
+    case Application.get_env(:tsuchinokus, :quick_tags) do
       nil ->
         quick_tags =
           Config.get(:quick_tag_table)
           |> lookup_quick_tags()
           |> render_quick_tags(conn)
 
-        Application.put_env(:philomena, :quick_tags, quick_tags)
+        Application.put_env(:tsuchinokus, :quick_tags, quick_tags)
 
         quick_tags
 
@@ -104,7 +104,7 @@ defmodule PhilomenaWeb.TagView do
   end
 
   defp render_quick_tags({tags, shipping, data}, conn) do
-    render(PhilomenaWeb.TagView, "_quick_tag_table.html",
+    render(TsuchinokusWeb.TagView, "_quick_tag_table.html",
       tags: tags,
       shipping: shipping,
       data: data,
@@ -155,12 +155,12 @@ defmodule PhilomenaWeb.TagView do
   end
 
   defp manages_links?(conn),
-    do: can?(conn, :index, Philomena.ArtistLinks.ArtistLink)
+    do: can?(conn, :index, Tsuchinokus.ArtistLinks.ArtistLink)
 
   defp manages_dnp?(conn),
-    do: can?(conn, :index, Philomena.DnpEntries.DnpEntry)
+    do: can?(conn, :index, Tsuchinokus.DnpEntries.DnpEntry)
 
   defp tag_url_root do
-    Application.get_env(:philomena, :tag_url_root)
+    Application.get_env(:tsuchinokus, :tag_url_root)
   end
 end

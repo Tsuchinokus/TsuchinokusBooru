@@ -1,12 +1,12 @@
-defmodule Philomena.UserNameChanges do
+defmodule Tsuchinokus.UserNameChanges do
   @moduledoc """
   The UserNameChanges context.
   """
 
   import Ecto.Query, warn: false
-  alias Philomena.Repo
+  alias Tsuchinokus.Repo
 
-  alias Philomena.UserNameChanges.UserNameChange
+  alias Tsuchinokus.UserNameChanges.UserNameChange
 
   @doc """
   Returns the list of user_name_changes.

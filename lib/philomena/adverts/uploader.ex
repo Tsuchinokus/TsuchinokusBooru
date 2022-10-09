@@ -1,10 +1,10 @@
-defmodule Philomena.Adverts.Uploader do
+defmodule Tsuchinokus.Adverts.Uploader do
   @moduledoc """
   Upload and processing callback logic for Advert images.
   """
 
-  alias Philomena.Adverts.Advert
-  alias Philomena.Uploader
+  alias Tsuchinokus.Adverts.Advert
+  alias Tsuchinokus.Uploader
 
   def analyze_upload(advert, params) do
     Uploader.analyze_upload(advert, "image", params["image"], &Advert.image_changeset/2)
@@ -19,6 +19,6 @@ defmodule Philomena.Adverts.Uploader do
   end
 
   defp advert_file_root do
-    Application.get_env(:philomena, :advert_file_root)
+    Application.get_env(:tsuchinokus, :advert_file_root)
   end
 end

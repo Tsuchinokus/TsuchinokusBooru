@@ -1,3 +1,3 @@
-defmodule PhilomenaWeb.Topic.Post.HistoryView do
-  use PhilomenaWeb, :view
+defmodule TsuchinokusWeb.Topic.Post.HistoryView do
+  use TsuchinokusWeb, :view
 end

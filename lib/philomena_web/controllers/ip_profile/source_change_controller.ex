@@ -1,8 +1,8 @@
-defmodule PhilomenaWeb.IpProfile.SourceChangeController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.IpProfile.SourceChangeController do
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.SourceChanges.SourceChange
-  alias Philomena.Repo
+  alias Tsuchinokus.SourceChanges.SourceChange
+  alias Tsuchinokus.Repo
   import Ecto.Query
 
   plug :verify_authorized
@@ -27,7 +27,7 @@ defmodule PhilomenaWeb.IpProfile.SourceChangeController do
   defp verify_authorized(conn, _opts) do
     case Canada.Can.can?(conn.assigns.current_user, :show, :ip_address) do
       true -> conn
-      _false -> PhilomenaWeb.NotAuthorizedPlug.call(conn)
+      _false -> TsuchinokusWeb.NotAuthorizedPlug.call(conn)
     end
   end
 end

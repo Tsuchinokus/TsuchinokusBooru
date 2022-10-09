@@ -1,12 +1,12 @@
-defmodule Philomena.UserWhitelists do
+defmodule Tsuchinokus.UserWhitelists do
   @moduledoc """
   The UserWhitelists context.
   """
 
   import Ecto.Query, warn: false
-  alias Philomena.Repo
+  alias Tsuchinokus.Repo
 
-  alias Philomena.UserWhitelists.UserWhitelist
+  alias Tsuchinokus.UserWhitelists.UserWhitelist
 
   @doc """
   Returns the list of user_whitelists.

@@ -1,4 +1,4 @@
-defmodule Philomena.Scrapers.Pillowfort do
+defmodule Tsuchinokus.Scrapers.Pillowfort do
   @url_regex ~r|\Ahttps?://www\.pillowfort\.social/posts/([0-9]+)|
 
   @spec can_handle?(URI.t(), String.t()) :: boolean()
@@ -11,7 +11,7 @@ defmodule Philomena.Scrapers.Pillowfort do
 
     api_url = "https://www.pillowfort.social/posts/#{post_id}/json"
 
-    Philomena.Http.get(api_url)
+    Tsuchinokus.Http.get(api_url)
     |> json!()
     |> process_response!(url)
   end

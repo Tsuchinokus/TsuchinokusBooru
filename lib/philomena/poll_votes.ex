@@ -1,16 +1,16 @@
-defmodule Philomena.PollVotes do
+defmodule Tsuchinokus.PollVotes do
   @moduledoc """
   The PollVotes context.
   """
 
   import Ecto.Query, warn: false
   alias Ecto.Multi
-  alias Philomena.Repo
+  alias Tsuchinokus.Repo
 
-  alias Philomena.Polls
-  alias Philomena.Polls.Poll
-  alias Philomena.PollVotes.PollVote
-  alias Philomena.PollOptions.PollOption
+  alias Tsuchinokus.Polls
+  alias Tsuchinokus.Polls.Poll
+  alias Tsuchinokus.PollVotes.PollVote
+  alias Tsuchinokus.PollOptions.PollOption
 
   @doc """
   Gets a single poll_vote.

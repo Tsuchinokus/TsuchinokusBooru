@@ -6,4 +6,4 @@
 
     .block__content
       = for {body, comment} <- @comments, can?(@conn, :show, comment.image) do
-        = render PhilomenaWeb.CommentView, "_comment_with_image.html", comment: comment, body: body, conn: @conn
+        = render TsuchinokusWeb.CommentView, "_comment_with_image.html", comment: comment, body: body, conn: @conn

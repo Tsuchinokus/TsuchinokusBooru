@@ -1,5 +1,5 @@
-defmodule PhilomenaWeb.Admin.UserView do
-  use PhilomenaWeb, :view
+defmodule TsuchinokusWeb.Admin.UserView do
+  use TsuchinokusWeb, :view
 
   def page_params(params) do
     []

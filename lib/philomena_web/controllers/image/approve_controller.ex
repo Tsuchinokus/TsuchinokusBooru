@@ -1,10 +1,10 @@
-defmodule PhilomenaWeb.Image.ApproveController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.Image.ApproveController do
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.Images.Image
-  alias Philomena.Images
+  alias Tsuchinokus.Images.Image
+  alias Tsuchinokus.Images
 
-  plug PhilomenaWeb.CanaryMapPlug, create: :approve
+  plug TsuchinokusWeb.CanaryMapPlug, create: :approve
   plug :load_and_authorize_resource, model: Image, id_name: "image_id", persisted: true
 
   def create(conn, _params) do

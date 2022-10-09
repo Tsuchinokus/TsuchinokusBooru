@@ -1,12 +1,12 @@
-defmodule PhilomenaWeb.Gallery.OrderController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.Gallery.OrderController do
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.Galleries.Gallery
-  alias Philomena.Galleries
+  alias Tsuchinokus.Galleries.Gallery
+  alias Tsuchinokus.Galleries
 
-  plug PhilomenaWeb.FilterBannedUsersPlug
+  plug TsuchinokusWeb.FilterBannedUsersPlug
 
-  plug PhilomenaWeb.CanaryMapPlug, update: :edit
+  plug TsuchinokusWeb.CanaryMapPlug, update: :edit
   plug :load_and_authorize_resource, model: Gallery, id_name: "gallery_id", persisted: true
 
   def update(conn, %{"image_ids" => image_ids}) when is_list(image_ids) do

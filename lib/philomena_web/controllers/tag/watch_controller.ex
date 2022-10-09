@@ -1,8 +1,8 @@
-defmodule PhilomenaWeb.Tag.WatchController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.Tag.WatchController do
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.Tags.Tag
-  alias Philomena.Users
+  alias Tsuchinokus.Tags.Tag
+  alias Tsuchinokus.Users
 
   plug :load_resource, model: Tag, id_field: "slug", id_name: "tag_id", persisted: true
 

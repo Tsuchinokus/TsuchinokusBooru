@@ -1,7 +1,7 @@
-defmodule PhilomenaWeb.Image.ScrapeController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.Image.ScrapeController do
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.Scrapers
+  alias Tsuchinokus.Scrapers
 
   def create(conn, params) do
     result =

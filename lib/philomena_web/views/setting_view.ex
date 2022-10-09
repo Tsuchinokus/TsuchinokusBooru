@@ -1,5 +1,5 @@
-defmodule PhilomenaWeb.SettingView do
-  use PhilomenaWeb, :view
+defmodule TsuchinokusWeb.SettingView do
+  use TsuchinokusWeb, :view
 
   def theme_options(conn) do
     [

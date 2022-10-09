@@ -1,10 +1,10 @@
-defmodule Philomena.Scrapers do
+defmodule Tsuchinokus.Scrapers do
   @scrapers [
-    Philomena.Scrapers.Deviantart,
-    Philomena.Scrapers.Pillowfort,
-    Philomena.Scrapers.Twitter,
-    Philomena.Scrapers.Tumblr,
-    Philomena.Scrapers.Raw
+    Tsuchinokus.Scrapers.Deviantart,
+    Tsuchinokus.Scrapers.Pillowfort,
+    Tsuchinokus.Scrapers.Twitter,
+    Tsuchinokus.Scrapers.Tumblr,
+    Tsuchinokus.Scrapers.Raw
   ]
 
   def scrape!(url) do

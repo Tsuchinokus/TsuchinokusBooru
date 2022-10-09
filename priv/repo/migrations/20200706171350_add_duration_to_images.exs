@@ -1,4 +1,4 @@
-defmodule Philomena.Repo.Migrations.AddDurationToImages do
+defmodule Tsuchinokus.Repo.Migrations.AddDurationToImages do
   use Ecto.Migration
 
   def change do
@@ -7,8 +7,8 @@ defmodule Philomena.Repo.Migrations.AddDurationToImages do
     end
 
     # After successful migration:
-    #   alias Philomena.Elasticsearch
-    #   alias Philomena.Images.Image
+    #   alias Tsuchinokus.Elasticsearch
+    #   alias Tsuchinokus.Images.Image
     #   Elasticsearch.update_mapping!(Image)
   end
 end

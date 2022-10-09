@@ -10,7 +10,7 @@ h1 Users
 => link "2FA users", to: Routes.admin_user_path(@conn, :index, twofactor: 1)
 
 - route = fn p -> Routes.admin_user_path(@conn, :index, p) end
-- pagination = render PhilomenaWeb.PaginationView, "_pagination.html", page: @users, route: route, conn: @conn, params: page_params(@conn.params)
+- pagination = render TsuchinokusWeb.PaginationView, "_pagination.html", page: @users, route: route, conn: @conn, params: page_params(@conn.params)
 
 .block
   .block__header
@@ -46,7 +46,7 @@ h1 Users
               - true ->
 
           td
-            = if can?(@conn, :edit, Philomena.Users.User) do
+            = if can?(@conn, :edit, Tsuchinokus.Users.User) do
               = user.email
             - else
               i N/A
@@ -81,11 +81,11 @@ h1 Users
             /  => link_to 'Deactivate', admin_user_activation_path(user), data: { confirm: t('are_you_sure') }, method: :delete
             /' &bull;
 
-            = if can?(@conn, :index, Philomena.Bans.User) do
+            = if can?(@conn, :index, Tsuchinokus.Bans.User) do
               => link to: Routes.admin_user_ban_path(@conn, :new, username: user.name) do
                 i.fa.fa-fw.fa-ban
                 ' Ban
-            = if can?(@conn, :edit, Philomena.ArtistLinks.ArtistLink) do
+            = if can?(@conn, :edit, Tsuchinokus.ArtistLinks.ArtistLink) do
               => link to: Routes.profile_artist_link_path(@conn, :new, user) do
                 i.fa.fa-fw.fa-link
                 ' Add link

@@ -1,5 +1,5 @@
 - route = fn p -> Routes.admin_report_path(@conn, :index, p) end
-- pagination = render PhilomenaWeb.PaginationView, "_pagination.html", route: route, page: @reports, conn: @conn, params: [rq: @conn.params["rq"] || "*"]
+- pagination = render TsuchinokusWeb.PaginationView, "_pagination.html", route: route, page: @reports, conn: @conn, params: [rq: @conn.params["rq"] || "*"]
 
 h1 Reports
 
@@ -8,14 +8,14 @@ h1 Reports
     .block__header
       span.block__header__title Your Reports
     .block__content
-      = render PhilomenaWeb.Admin.ReportView, "_reports.html", reports: @my_reports, conn: @conn
+      = render TsuchinokusWeb.Admin.ReportView, "_reports.html", reports: @my_reports, conn: @conn
 
 = if Enum.any?(@system_reports) do
   .block
     .block__header.block--danger
       span.block__header__title System Reports
     .block__content
-      = render PhilomenaWeb.Admin.ReportView, "_reports.html", reports: @system_reports, conn: @conn
+      = render TsuchinokusWeb.Admin.ReportView, "_reports.html", reports: @system_reports, conn: @conn
 
 .block
   .block__header
@@ -23,7 +23,7 @@ h1 Reports
     = pagination
   .block__content
     = if Enum.any?(@reports) do
-      = render PhilomenaWeb.Admin.ReportView, "_reports.html", reports: @reports, conn: @conn
+      = render TsuchinokusWeb.Admin.ReportView, "_reports.html", reports: @reports, conn: @conn
     - else
       p We couldn't find any reports for you, sorry!
 

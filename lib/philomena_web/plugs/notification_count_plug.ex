@@ -1,15 +1,15 @@
-defmodule PhilomenaWeb.NotificationCountPlug do
+defmodule TsuchinokusWeb.NotificationCountPlug do
   @moduledoc """
   This plug stores the current notification count.
 
   ## Example
 
-      plug PhilomenaWeb.NotificationCountPlug
+      plug TsuchinokusWeb.NotificationCountPlug
   """
 
   alias Plug.Conn
-  alias Philomena.Conversations
-  alias Philomena.Notifications
+  alias Tsuchinokus.Conversations
+  alias Tsuchinokus.Notifications
 
   @doc false
   @spec init(any()) :: any()

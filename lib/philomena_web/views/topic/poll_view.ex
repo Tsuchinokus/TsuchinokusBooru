@@ -1,5 +1,5 @@
-defmodule PhilomenaWeb.Topic.PollView do
-  use PhilomenaWeb, :view
+defmodule TsuchinokusWeb.Topic.PollView do
+  use TsuchinokusWeb, :view
 
   def ranked_options(poll) do
     poll.options

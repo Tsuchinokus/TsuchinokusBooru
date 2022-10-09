@@ -1,7 +1,7 @@
-defmodule Philomena.Schema.TagList do
+defmodule Tsuchinokus.Schema.TagList do
   # TODO: remove this in favor of normalized relations
-  alias Philomena.Tags.Tag
-  alias Philomena.Repo
+  alias Tsuchinokus.Tags.Tag
+  alias Tsuchinokus.Repo
   import Ecto.Changeset
   import Ecto.Query
 

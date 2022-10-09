@@ -1,5 +1,5 @@
-defmodule PhilomenaWeb.CaptchaView do
-  use PhilomenaWeb, :view
+defmodule TsuchinokusWeb.CaptchaView do
+  use TsuchinokusWeb, :view
 
   # Prevent ID collisions if multiple forms are on the page.
   def challenge_name(name) do
@@ -7,6 +7,6 @@ defmodule PhilomenaWeb.CaptchaView do
   end
 
   def hcaptcha_site_key do
-    Application.get_env(:philomena, :hcaptcha_site_key)
+    Application.get_env(:tsuchinokus, :hcaptcha_site_key)
   end
 end

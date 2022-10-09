@@ -1,12 +1,12 @@
-defmodule Philomena.Roles do
+defmodule Tsuchinokus.Roles do
   @moduledoc """
   The Roles context.
   """
 
   import Ecto.Query, warn: false
-  alias Philomena.Repo
+  alias Tsuchinokus.Repo
 
-  alias Philomena.Roles.Role
+  alias Tsuchinokus.Roles.Role
 
   @doc """
   Returns the list of roles.

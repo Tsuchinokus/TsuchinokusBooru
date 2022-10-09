@@ -1,4 +1,4 @@
-defmodule PhilomenaWeb.RequireUserPlug do
+defmodule TsuchinokusWeb.RequireUserPlug do
   import Phoenix.Controller
   import Plug.Conn
 

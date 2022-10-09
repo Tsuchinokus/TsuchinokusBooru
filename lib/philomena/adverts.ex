@@ -1,13 +1,13 @@
-defmodule Philomena.Adverts do
+defmodule Tsuchinokus.Adverts do
   @moduledoc """
   The Adverts context.
   """
 
   import Ecto.Query, warn: false
-  alias Philomena.Repo
+  alias Tsuchinokus.Repo
 
-  alias Philomena.Adverts.Advert
-  alias Philomena.Adverts.Uploader
+  alias Tsuchinokus.Adverts.Advert
+  alias Tsuchinokus.Adverts.Uploader
 
   def random_live do
     now = DateTime.utc_now()

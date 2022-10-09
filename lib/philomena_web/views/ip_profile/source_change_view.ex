@@ -1,3 +1,3 @@
-defmodule PhilomenaWeb.IpProfile.SourceChangeView do
-  use PhilomenaWeb, :view
+defmodule TsuchinokusWeb.IpProfile.SourceChangeView do
+  use TsuchinokusWeb, :view
 end

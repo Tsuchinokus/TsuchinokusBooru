@@ -1,3 +1,3 @@
-defmodule PhilomenaWeb.PasswordView do
-  use PhilomenaWeb, :view
+defmodule TsuchinokusWeb.PasswordView do
+  use TsuchinokusWeb, :view
 end

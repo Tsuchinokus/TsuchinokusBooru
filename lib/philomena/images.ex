@@ -1,4 +1,4 @@
-defmodule Philomena.Images do
+defmodule Tsuchinokus.Images do
   @moduledoc """
   The Images context.
   """
@@ -6,35 +6,35 @@ defmodule Philomena.Images do
   import Ecto.Query, warn: false
 
   alias Ecto.Multi
-  alias Philomena.Repo
+  alias Tsuchinokus.Repo
 
-  alias Philomena.Elasticsearch
-  alias Philomena.ThumbnailWorker
-  alias Philomena.ImagePurgeWorker
-  alias Philomena.DuplicateReports.DuplicateReport
-  alias Philomena.Images.Image
-  alias Philomena.Images.Hider
-  alias Philomena.Images.Uploader
-  alias Philomena.Images.Tagging
-  alias Philomena.Images.Thumbnailer
-  alias Philomena.Images.ElasticsearchIndex, as: ImageIndex
-  alias Philomena.IndexWorker
-  alias Philomena.ImageFeatures.ImageFeature
-  alias Philomena.SourceChanges.SourceChange
-  alias Philomena.Notifications.Notification
-  alias Philomena.NotificationWorker
-  alias Philomena.TagChanges.TagChange
-  alias Philomena.Tags
-  alias Philomena.UserStatistics
-  alias Philomena.Tags.Tag
-  alias Philomena.Notifications
-  alias Philomena.Interactions
-  alias Philomena.Reports
-  alias Philomena.Reports.Report
-  alias Philomena.Comments
-  alias Philomena.Galleries.Gallery
-  alias Philomena.Galleries.Interaction
-  alias Philomena.Users.User
+  alias Tsuchinokus.Elasticsearch
+  alias Tsuchinokus.ThumbnailWorker
+  alias Tsuchinokus.ImagePurgeWorker
+  alias Tsuchinokus.DuplicateReports.DuplicateReport
+  alias Tsuchinokus.Images.Image
+  alias Tsuchinokus.Images.Hider
+  alias Tsuchinokus.Images.Uploader
+  alias Tsuchinokus.Images.Tagging
+  alias Tsuchinokus.Images.Thumbnailer
+  alias Tsuchinokus.Images.ElasticsearchIndex, as: ImageIndex
+  alias Tsuchinokus.IndexWorker
+  alias Tsuchinokus.ImageFeatures.ImageFeature
+  alias Tsuchinokus.SourceChanges.SourceChange
+  alias Tsuchinokus.Notifications.Notification
+  alias Tsuchinokus.NotificationWorker
+  alias Tsuchinokus.TagChanges.TagChange
+  alias Tsuchinokus.Tags
+  alias Tsuchinokus.UserStatistics
+  alias Tsuchinokus.Tags.Tag
+  alias Tsuchinokus.Notifications
+  alias Tsuchinokus.Interactions
+  alias Tsuchinokus.Reports
+  alias Tsuchinokus.Reports.Report
+  alias Tsuchinokus.Comments
+  alias Tsuchinokus.Galleries.Gallery
+  alias Tsuchinokus.Galleries.Interaction
+  alias Tsuchinokus.Users.User
 
   @doc """
   Gets a single image.
@@ -777,7 +777,7 @@ defmodule Philomena.Images do
     Hider.purge_cache(files)
   end
 
-  alias Philomena.Images.Subscription
+  alias Tsuchinokus.Images.Subscription
 
   def subscribed?(_image, nil), do: false
 

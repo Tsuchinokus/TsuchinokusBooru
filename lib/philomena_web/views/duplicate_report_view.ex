@@ -1,7 +1,7 @@
-defmodule PhilomenaWeb.DuplicateReportView do
-  use PhilomenaWeb, :view
+defmodule TsuchinokusWeb.DuplicateReportView do
+  use TsuchinokusWeb, :view
 
-  alias PhilomenaWeb.ImageView
+  alias TsuchinokusWeb.ImageView
 
   @formats_order ~W(video/webm image/svg+xml image/png image/gif image/jpeg other)
 

@@ -3,7 +3,7 @@
     = @user.name
     | 's Donations
 
-  = render PhilomenaWeb.Admin.DonationView, "_table.html", donations: @donations, conn: @conn
+  = render TsuchinokusWeb.Admin.DonationView, "_table.html", donations: @donations, conn: @conn
 
   h1 Add Donation
   = form_for @changeset, Routes.admin_donation_path(@conn, :create), fn f ->

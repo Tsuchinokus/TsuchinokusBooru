@@ -1,16 +1,16 @@
-defmodule PhilomenaWeb.Api.Json.GalleryView do
-  use PhilomenaWeb, :view
+defmodule TsuchinokusWeb.Api.Json.GalleryView do
+  use TsuchinokusWeb, :view
 
   def render("index.json", %{galleries: galleries, total: total} = assigns) do
     %{
       galleries:
-        render_many(galleries, PhilomenaWeb.Api.Json.GalleryView, "gallery.json", assigns),
+        render_many(galleries, TsuchinokusWeb.Api.Json.GalleryView, "gallery.json", assigns),
       total: total
     }
   end
 
   def render("show.json", %{gallery: gallery} = assigns) do
-    %{gallery: render_one(gallery, PhilomenaWeb.Api.Json.GalleryView, "gallery.json", assigns)}
+    %{gallery: render_one(gallery, TsuchinokusWeb.Api.Json.GalleryView, "gallery.json", assigns)}
   end
 
   def render("gallery.json", %{gallery: gallery}) do

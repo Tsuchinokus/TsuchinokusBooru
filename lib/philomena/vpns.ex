@@ -1,12 +1,12 @@
-defmodule Philomena.Vpns do
+defmodule Tsuchinokus.Vpns do
   @moduledoc """
   The Vpns context.
   """
 
   import Ecto.Query, warn: false
-  alias Philomena.Repo
+  alias Tsuchinokus.Repo
 
-  alias Philomena.Vpns.Vpn
+  alias Tsuchinokus.Vpns.Vpn
 
   @doc """
   Returns the list of vpns.

@@ -1,7 +1,7 @@
-defmodule PhilomenaWeb.Tag.ImageView do
-  use PhilomenaWeb, :view
+defmodule TsuchinokusWeb.Tag.ImageView do
+  use TsuchinokusWeb, :view
 
-  alias PhilomenaWeb.TagView
+  alias TsuchinokusWeb.TagView
 
   defp tag_image(tag),
     do: TagView.tag_image(tag)

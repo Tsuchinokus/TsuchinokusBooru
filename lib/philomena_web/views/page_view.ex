@@ -1,3 +1,3 @@
-defmodule PhilomenaWeb.PageView do
-  use PhilomenaWeb, :view
+defmodule TsuchinokusWeb.PageView do
+  use TsuchinokusWeb, :view
 end

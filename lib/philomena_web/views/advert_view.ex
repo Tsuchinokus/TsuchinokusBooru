@@ -1,5 +1,5 @@
-defmodule PhilomenaWeb.AdvertView do
-  use PhilomenaWeb, :view
+defmodule TsuchinokusWeb.AdvertView do
+  use TsuchinokusWeb, :view
 
   def advert_image_url(%{image: image}) do
     advert_url_root() <> "/" <> image
@@ -8,6 +8,6 @@ defmodule PhilomenaWeb.AdvertView do
   def advert_image_url(_), do: nil
 
   defp advert_url_root do
-    Application.get_env(:philomena, :advert_url_root)
+    Application.get_env(:tsuchinokus, :advert_url_root)
   end
 end

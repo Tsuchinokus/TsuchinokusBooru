@@ -1,18 +1,18 @@
-defmodule PhilomenaWeb.Topic.Post.ReportController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.Topic.Post.ReportController do
+  use TsuchinokusWeb, :controller
 
-  alias PhilomenaWeb.ReportController
-  alias PhilomenaWeb.ReportView
-  alias Philomena.Forums.Forum
-  alias Philomena.Reports.Report
-  alias Philomena.Reports
+  alias TsuchinokusWeb.ReportController
+  alias TsuchinokusWeb.ReportView
+  alias Tsuchinokus.Forums.Forum
+  alias Tsuchinokus.Reports.Report
+  alias Tsuchinokus.Reports
 
-  plug PhilomenaWeb.FilterBannedUsersPlug
-  plug PhilomenaWeb.UserAttributionPlug
-  plug PhilomenaWeb.CaptchaPlug
-  plug PhilomenaWeb.CheckCaptchaPlug when action in [:create]
+  plug TsuchinokusWeb.FilterBannedUsersPlug
+  plug TsuchinokusWeb.UserAttributionPlug
+  plug TsuchinokusWeb.CaptchaPlug
+  plug TsuchinokusWeb.CheckCaptchaPlug when action in [:create]
 
-  plug PhilomenaWeb.CanaryMapPlug, new: :show, create: :show
+  plug TsuchinokusWeb.CanaryMapPlug, new: :show, create: :show
 
   plug :load_and_authorize_resource,
     model: Forum,
@@ -20,8 +20,8 @@ defmodule PhilomenaWeb.Topic.Post.ReportController do
     id_field: "short_name",
     persisted: true
 
-  plug PhilomenaWeb.LoadTopicPlug
-  plug PhilomenaWeb.LoadPostPlug
+  plug TsuchinokusWeb.LoadTopicPlug
+  plug TsuchinokusWeb.LoadPostPlug
 
   def new(conn, _params) do
     topic = conn.assigns.topic

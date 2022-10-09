@@ -15,17 +15,17 @@ h2 Search Results
 = cond do
   - Enum.any?(@comments) ->
     - route = fn p -> Routes.comment_path(@conn, :index, p) end
-    - pagination = render PhilomenaWeb.PaginationView, "_pagination.html", page: @comments, route: route, params: [cq: @conn.params["cq"]], conn: @conn
+    - pagination = render TsuchinokusWeb.PaginationView, "_pagination.html", page: @comments, route: route, params: [cq: @conn.params["cq"]], conn: @conn
 
     = for {body, comment} <- @comments, comment.image.hidden_from_users == false do
-      = render PhilomenaWeb.CommentView, "_comment_with_image.html", body: body, comment: comment, conn: @conn
+      = render TsuchinokusWeb.CommentView, "_comment_with_image.html", body: body, comment: comment, conn: @conn
 
     .block
       .block__header.block__header--light.page__header
         .page__pagination = pagination
         .page__info
           span.block__header__title
-            = render PhilomenaWeb.PaginationView, "_pagination_info.html", page: @comments, conn: @conn
+            = render TsuchinokusWeb.PaginationView, "_pagination_info.html", page: @comments, conn: @conn
 
   - assigns[:error] ->
     p

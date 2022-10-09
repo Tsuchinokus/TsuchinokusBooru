@@ -1,7 +1,7 @@
-defmodule PhilomenaWeb.ImageNavigator do
-  alias PhilomenaWeb.ImageSorter
-  alias Philomena.Images.Image
-  alias Philomena.Elasticsearch
+defmodule TsuchinokusWeb.ImageNavigator do
+  alias TsuchinokusWeb.ImageSorter
+  alias Tsuchinokus.Images.Image
+  alias Tsuchinokus.Elasticsearch
 
   @order_for_dir %{
     "next" => %{"asc" => "asc", "desc" => "desc"},

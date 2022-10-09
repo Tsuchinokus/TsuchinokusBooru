@@ -5,6 +5,6 @@ h1
     = @image.id
 
 - route = fn p -> Routes.image_source_change_path(@conn, :index, @image, p) end
-- pagination = render PhilomenaWeb.PaginationView, "_pagination.html", page: @source_changes, route: route, conn: @conn
+- pagination = render TsuchinokusWeb.PaginationView, "_pagination.html", page: @source_changes, route: route, conn: @conn
 
-= render PhilomenaWeb.SourceChangeView, "index.html", conn: @conn, source_changes: @source_changes, pagination: pagination
+= render TsuchinokusWeb.SourceChangeView, "index.html", conn: @conn, source_changes: @source_changes, pagination: pagination

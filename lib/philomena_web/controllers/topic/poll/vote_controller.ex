@@ -1,14 +1,14 @@
-defmodule PhilomenaWeb.Topic.Poll.VoteController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.Topic.Poll.VoteController do
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.Forums.Forum
-  alias Philomena.PollOptions.PollOption
-  alias Philomena.PollVotes
-  alias Philomena.Repo
+  alias Tsuchinokus.Forums.Forum
+  alias Tsuchinokus.PollOptions.PollOption
+  alias Tsuchinokus.PollVotes
+  alias Tsuchinokus.Repo
   import Ecto.Query
 
-  plug PhilomenaWeb.FilterBannedUsersPlug when action in [:create]
-  plug PhilomenaWeb.CanaryMapPlug, index: :show, create: :show, delete: :show
+  plug TsuchinokusWeb.FilterBannedUsersPlug when action in [:create]
+  plug TsuchinokusWeb.CanaryMapPlug, index: :show, create: :show, delete: :show
 
   plug :load_and_authorize_resource,
     model: Forum,
@@ -16,8 +16,8 @@ defmodule PhilomenaWeb.Topic.Poll.VoteController do
     id_field: "short_name",
     persisted: true
 
-  plug PhilomenaWeb.LoadTopicPlug
-  plug PhilomenaWeb.LoadPollPlug
+  plug TsuchinokusWeb.LoadTopicPlug
+  plug TsuchinokusWeb.LoadPollPlug
 
   plug :verify_authorized when action in [:index, :delete]
 
@@ -65,7 +65,7 @@ defmodule PhilomenaWeb.Topic.Poll.VoteController do
   defp verify_authorized(conn, _opts) do
     case Canada.Can.can?(conn.assigns.current_user, :hide, conn.assigns.topic) do
       true -> conn
-      _false -> PhilomenaWeb.NotAuthorizedPlug.call(conn)
+      _false -> TsuchinokusWeb.NotAuthorizedPlug.call(conn)
     end
   end
 end

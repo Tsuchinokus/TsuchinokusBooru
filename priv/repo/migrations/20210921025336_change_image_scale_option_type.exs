@@ -1,4 +1,4 @@
-defmodule Philomena.Repo.Migrations.ChangeImageScaleOptionType do
+defmodule Tsuchinokus.Repo.Migrations.ChangeImageScaleOptionType do
   use Ecto.Migration
 
   def change do

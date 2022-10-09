@@ -1,6 +1,6 @@
-defmodule Philomena.Repo do
+defmodule Tsuchinokus.Repo do
   use Ecto.Repo,
-    otp_app: :philomena,
+    otp_app: :tsuchinokus,
     adapter: Ecto.Adapters.Postgres
 
   use Scrivener, page_size: 250

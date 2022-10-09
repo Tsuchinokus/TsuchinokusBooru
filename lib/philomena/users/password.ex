@@ -1,4 +1,4 @@
-defmodule Philomena.Users.Password do
+defmodule Tsuchinokus.Users.Password do
   def hash_pwd_salt(password, opts \\ []) do
     Bcrypt.hash_pwd_salt(<<password::binary, password_pepper()::binary>>, opts)
   end
@@ -8,6 +8,6 @@ defmodule Philomena.Users.Password do
   end
 
   defp password_pepper do
-    Application.get_env(:philomena, :password_pepper)
+    Application.get_env(:tsuchinokus, :password_pepper)
   end
 end

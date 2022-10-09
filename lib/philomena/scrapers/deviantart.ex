@@ -1,4 +1,4 @@
-defmodule Philomena.Scrapers.Deviantart do
+defmodule Tsuchinokus.Scrapers.Deviantart do
   @image_regex ~r|data-rh="true" rel="preload" href="([^"]*)" as="image"|
   @source_regex ~r|rel="canonical" href="([^"]*)"|
   @artist_regex ~r|https://www.deviantart.com/([^/]*)/art|
@@ -51,7 +51,7 @@ defmodule Philomena.Scrapers.Deviantart do
     with [domain, object_uuid, object_name] <-
            Regex.run(@cdnint_regex, image.url, capture: :all_but_first),
          built_url <- "#{domain}/intermediary/f/#{object_uuid}/#{object_name}",
-         {:ok, %Tesla.Env{status: 200}} <- Philomena.Http.head(built_url) do
+         {:ok, %Tesla.Env{status: 200}} <- Tsuchinokus.Http.head(built_url) do
       # This is the high resolution URL.
       %{
         data
@@ -110,7 +110,7 @@ defmodule Philomena.Scrapers.Deviantart do
 
     built_url = "http://orig01.deviantart.net/x_by_x-d#{base36}.png"
 
-    case Philomena.Http.get(built_url) do
+    case Tsuchinokus.Http.get(built_url) do
       {:ok, %Tesla.Env{status: 301, headers: headers}} ->
         # Location header provides URL of high res image.
         {_location, link} = Enum.find(headers, fn {header, _val} -> header == "location" end)
@@ -135,7 +135,7 @@ defmodule Philomena.Scrapers.Deviantart do
   defp follow_redirect(_url, 0), do: nil
 
   defp follow_redirect(url, max_times) do
-    case Philomena.Http.get(url) do
+    case Tsuchinokus.Http.get(url) do
       {:ok, %Tesla.Env{headers: headers, status: code}} when code in [301, 302] ->
         location = Enum.find_value(headers, &location_header/1)
         follow_redirect(location, max_times - 1)

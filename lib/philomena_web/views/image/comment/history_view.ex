@@ -1,3 +1,3 @@
-defmodule PhilomenaWeb.Image.Comment.HistoryView do
-  use PhilomenaWeb, :view
+defmodule TsuchinokusWeb.Image.Comment.HistoryView do
+  use TsuchinokusWeb, :view
 end

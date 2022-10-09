@@ -22,7 +22,7 @@ h1 Content Settings
         h4 Tags
         .field
           = label f, :watched_tag_list, "Tags to watch"
-          = render PhilomenaWeb.TagView, "_tag_editor.html", f: f, name: :watched_tag_list, type: :edit, conn: @conn
+          = render TsuchinokusWeb.TagView, "_tag_editor.html", f: f, name: :watched_tag_list, type: :edit, conn: @conn
           = error_tag f, :watched_tag_list
 
         h4 Watchlist queries and filtering

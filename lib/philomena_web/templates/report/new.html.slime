@@ -45,8 +45,8 @@ p
     .field
       = select f, :category, report_categories(), class: "input"
     .block
-      = render PhilomenaWeb.MarkdownView, "_input.html", conn: @conn, f: f, placeholder: "Provide anything else we should know here.", name: :reason, required: false
+      = render TsuchinokusWeb.MarkdownView, "_input.html", conn: @conn, f: f, placeholder: "Provide anything else we should know here.", name: :reason, required: false
 
-    = render PhilomenaWeb.CaptchaView, "_captcha.html", name: "report", conn: @conn
+    = render TsuchinokusWeb.CaptchaView, "_captcha.html", name: "report", conn: @conn
 
     = submit "Send Report", class: "button"

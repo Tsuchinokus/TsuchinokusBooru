@@ -1,22 +1,22 @@
-defmodule PhilomenaWeb.Image.SourceController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.Image.SourceController do
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.SourceChanges.SourceChange
-  alias Philomena.UserStatistics
-  alias Philomena.Images.Image
-  alias Philomena.Images
-  alias Philomena.Repo
+  alias Tsuchinokus.SourceChanges.SourceChange
+  alias Tsuchinokus.UserStatistics
+  alias Tsuchinokus.Images.Image
+  alias Tsuchinokus.Images
+  alias Tsuchinokus.Repo
   import Ecto.Query
 
-  plug PhilomenaWeb.LimitPlug,
+  plug TsuchinokusWeb.LimitPlug,
        [time: 5, error: "You may only update metadata once every 5 seconds."]
        when action in [:update]
 
-  plug PhilomenaWeb.FilterBannedUsersPlug
-  plug PhilomenaWeb.CaptchaPlug
-  plug PhilomenaWeb.CheckCaptchaPlug
-  plug PhilomenaWeb.UserAttributionPlug
-  plug PhilomenaWeb.CanaryMapPlug, update: :edit_metadata
+  plug TsuchinokusWeb.FilterBannedUsersPlug
+  plug TsuchinokusWeb.CaptchaPlug
+  plug TsuchinokusWeb.CheckCaptchaPlug
+  plug TsuchinokusWeb.UserAttributionPlug
+  plug TsuchinokusWeb.CanaryMapPlug, update: :edit_metadata
 
   plug :load_and_authorize_resource,
     model: Image,
@@ -30,16 +30,16 @@ defmodule PhilomenaWeb.Image.SourceController do
 
     case Images.update_source(image, attributes, image_params) do
       {:ok, %{image: image}} ->
-        PhilomenaWeb.Endpoint.broadcast!(
+        TsuchinokusWeb.Endpoint.broadcast!(
           "firehose",
           "image:source_update",
           %{image_id: image.id, added: [image.source_url], removed: [old_source]}
         )
 
-        PhilomenaWeb.Endpoint.broadcast!(
+        TsuchinokusWeb.Endpoint.broadcast!(
           "firehose",
           "image:update",
-          PhilomenaWeb.Api.Json.ImageView.render("show.json", %{image: image, interactions: []})
+          TsuchinokusWeb.Api.Json.ImageView.render("show.json", %{image: image, interactions: []})
         )
 
         changeset = Images.change_image(image)
@@ -56,7 +56,7 @@ defmodule PhilomenaWeb.Image.SourceController do
         Images.reindex_image(image)
 
         conn
-        |> put_view(PhilomenaWeb.ImageView)
+        |> put_view(TsuchinokusWeb.ImageView)
         |> render("_source.html",
           layout: false,
           source_change_count: source_change_count,
@@ -66,7 +66,7 @@ defmodule PhilomenaWeb.Image.SourceController do
 
       {:error, :image, changeset, _} ->
         conn
-        |> put_view(PhilomenaWeb.ImageView)
+        |> put_view(TsuchinokusWeb.ImageView)
         |> render("_source.html",
           layout: false,
           source_change_count: 0,

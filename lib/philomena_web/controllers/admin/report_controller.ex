@@ -1,13 +1,13 @@
-defmodule PhilomenaWeb.Admin.ReportController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.Admin.ReportController do
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.Elasticsearch
-  alias PhilomenaWeb.MarkdownRenderer
-  alias Philomena.Reports.Report
-  alias Philomena.Reports.Query
-  alias Philomena.Polymorphic
-  alias Philomena.ModNotes.ModNote
-  alias Philomena.Repo
+  alias Tsuchinokus.Elasticsearch
+  alias TsuchinokusWeb.MarkdownRenderer
+  alias Tsuchinokus.Reports.Report
+  alias Tsuchinokus.Reports.Query
+  alias Tsuchinokus.Polymorphic
+  alias Tsuchinokus.ModNotes.ModNote
+  alias Tsuchinokus.Repo
   import Ecto.Query
 
   plug :verify_authorized
@@ -119,7 +119,7 @@ defmodule PhilomenaWeb.Admin.ReportController do
   defp verify_authorized(conn, _opts) do
     case Canada.Can.can?(conn.assigns.current_user, :index, Report) do
       true -> conn
-      false -> PhilomenaWeb.NotAuthorizedPlug.call(conn)
+      false -> TsuchinokusWeb.NotAuthorizedPlug.call(conn)
     end
   end
 

@@ -1,9 +1,9 @@
-defmodule Philomena.ImageFaves.ImageFave do
+defmodule Tsuchinokus.ImageFaves.ImageFave do
   use Ecto.Schema
   import Ecto.Changeset
 
-  alias Philomena.Images.Image
-  alias Philomena.Users.User
+  alias Tsuchinokus.Images.Image
+  alias Tsuchinokus.Users.User
 
   @primary_key false
 

@@ -1,4 +1,4 @@
-defprotocol Philomena.Attribution do
+defprotocol Tsuchinokus.Attribution do
   @doc """
     Provides the "parent object" identifier for this object. This is so
     that anonymous posts under the same topic id can return the same hash

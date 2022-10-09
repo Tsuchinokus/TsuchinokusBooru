@@ -1,4 +1,4 @@
-- pagination = render PhilomenaWeb.PaginationView, "_pagination.html", page: @topics, route: fn p -> Routes.forum_path(@conn, :show, @forum, p) end
+- pagination = render TsuchinokusWeb.PaginationView, "_pagination.html", page: @topics, route: fn p -> Routes.forum_path(@conn, :show, @forum, p) end
 
 h1 = @forum.name
 .block
@@ -20,7 +20,7 @@ h1 = @forum.name
     .page__pagination = pagination
     .page__info
       span.block__header__title = @forum.description
-      = render PhilomenaWeb.Forum.SubscriptionView, "_subscription.html", forum: @forum, watching: @watching, conn: @conn
+      = render TsuchinokusWeb.Forum.SubscriptionView, "_subscription.html", forum: @forum, watching: @watching, conn: @conn
   .block__content
     table.table.table--communication-list
       thead
@@ -43,13 +43,13 @@ h1 = @forum.name
                 ' Posted
                 => pretty_time(topic.created_at)
                 ' by
-                = render PhilomenaWeb.UserAttributionView, "_anon_user.html", object: topic, conn: @conn
+                = render TsuchinokusWeb.UserAttributionView, "_anon_user.html", object: topic, conn: @conn
             td.table--communication-list__stats.hide-mobile = topic.post_count
             td.table--communication-list__last-post
               = if topic.last_post do
                 => link("Go to post", to: Routes.forum_topic_path(@conn, :show, topic.forum, topic, post_id: topic.last_post) <> "#post_#{topic.last_post.id}")
                 ' by
-                = render PhilomenaWeb.UserAttributionView, "_anon_user.html", object: topic.last_post, conn: @conn
+                = render TsuchinokusWeb.UserAttributionView, "_anon_user.html", object: topic.last_post, conn: @conn
                 br
                 => pretty_time(topic.last_post.created_at)
   .block__header.block__header--light.page__header

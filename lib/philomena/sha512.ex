@@ -1,4 +1,4 @@
-defmodule Philomena.Sha512 do
+defmodule Tsuchinokus.Sha512 do
   @spec file(String.t()) :: String.t()
   def file(file) do
     hash_ref = :crypto.hash_init(:sha512)

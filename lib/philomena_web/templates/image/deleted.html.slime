@@ -33,8 +33,8 @@
       ' . Other useful links can be found at the bottom of the page.
 
 = if can?(@conn, :hide, @image) do
-  = render PhilomenaWeb.ImageView, "show.html", assigns
+  = render TsuchinokusWeb.ImageView, "show.html", assigns
 - else
   p
     strong Tags:
-  = render PhilomenaWeb.TagView, "_tag_list.html", tags: display_order(@image.tags), conn: @conn
+  = render TsuchinokusWeb.TagView, "_tag_list.html", tags: display_order(@image.tags), conn: @conn

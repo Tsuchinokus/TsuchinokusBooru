@@ -32,7 +32,7 @@ br
 h3 The List
 .block
   - route = fn p -> Routes.dnp_entry_path(@conn, :index, p) end
-  - pagination = render PhilomenaWeb.PaginationView, "_pagination.html", page: @dnp_entries, route: route, conn: @conn
+  - pagination = render TsuchinokusWeb.PaginationView, "_pagination.html", page: @dnp_entries, route: route, conn: @conn
 
   .block__header.page__header
     span.block__header__title.page__title The DNP List
@@ -53,7 +53,7 @@ h3 The List
         = for {body, entry} <- @dnp_entries do
           tr
             td
-              = render PhilomenaWeb.TagView, "_tag.html", tag: entry.tag, conn: @conn
+              = render TsuchinokusWeb.TagView, "_tag.html", tag: entry.tag, conn: @conn
 
             td
               = entry.dnp_type

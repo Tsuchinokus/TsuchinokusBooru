@@ -1,3 +1,3 @@
-defmodule PhilomenaWeb.UnlockView do
-  use PhilomenaWeb, :view
+defmodule TsuchinokusWeb.UnlockView do
+  use TsuchinokusWeb, :view
 end

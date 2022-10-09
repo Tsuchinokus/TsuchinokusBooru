@@ -1,10 +1,10 @@
-defmodule Philomena.Comments.Comment do
+defmodule Tsuchinokus.Comments.Comment do
   use Ecto.Schema
   import Ecto.Changeset
 
-  alias Philomena.Images.Image
-  alias Philomena.Users.User
-  alias Philomena.Schema.Approval
+  alias Tsuchinokus.Images.Image
+  alias Tsuchinokus.Users.User
+  alias Tsuchinokus.Schema.Approval
 
   schema "comments" do
     belongs_to :user, User

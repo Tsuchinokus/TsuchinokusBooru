@@ -1,7 +1,7 @@
-defmodule PhilomenaWeb.Profile.CommissionView do
-  use PhilomenaWeb, :view
+defmodule TsuchinokusWeb.Profile.CommissionView do
+  use TsuchinokusWeb, :view
 
-  alias Philomena.Commissions.Commission
+  alias Tsuchinokus.Commissions.Commission
 
   def categories, do: Commission.categories()
 

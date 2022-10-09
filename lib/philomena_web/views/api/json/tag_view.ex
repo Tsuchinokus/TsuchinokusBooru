@@ -1,15 +1,15 @@
-defmodule PhilomenaWeb.Api.Json.TagView do
-  use PhilomenaWeb, :view
+defmodule TsuchinokusWeb.Api.Json.TagView do
+  use TsuchinokusWeb, :view
 
   def render("index.json", %{tags: tags, total: total} = assigns) do
     %{
-      tags: render_many(tags, PhilomenaWeb.Api.Json.TagView, "tag.json", assigns),
+      tags: render_many(tags, TsuchinokusWeb.Api.Json.TagView, "tag.json", assigns),
       total: total
     }
   end
 
   def render("show.json", %{tag: tag} = assigns) do
-    %{tag: render_one(tag, PhilomenaWeb.Api.Json.TagView, "tag.json", assigns)}
+    %{tag: render_one(tag, TsuchinokusWeb.Api.Json.TagView, "tag.json", assigns)}
   end
 
   def render("tag.json", %{tag: tag} = assigns) do
@@ -29,7 +29,7 @@ defmodule PhilomenaWeb.Api.Json.TagView do
       implied_tags: Enum.map(tag.implied_tags, & &1.slug),
       implied_by_tags: Enum.map(tag.implied_by_tags, & &1.slug),
       dnp_entries:
-        render_many(tag.dnp_entries, PhilomenaWeb.Api.Json.DnpView, "dnp.json", assigns)
+        render_many(tag.dnp_entries, TsuchinokusWeb.Api.Json.DnpView, "dnp.json", assigns)
     }
   end
 
@@ -44,6 +44,6 @@ defmodule PhilomenaWeb.Api.Json.TagView do
     do: nil
 
   defp tag_url_root do
-    Application.get_env(:philomena, :tag_url_root)
+    Application.get_env(:tsuchinokus, :tag_url_root)
   end
 end

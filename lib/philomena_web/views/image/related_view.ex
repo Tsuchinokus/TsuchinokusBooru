@@ -1,3 +1,3 @@
-defmodule PhilomenaWeb.Image.RelatedView do
-  use PhilomenaWeb, :view
+defmodule TsuchinokusWeb.Image.RelatedView do
+  use TsuchinokusWeb, :view
 end

@@ -1,4 +1,4 @@
-defmodule Philomena.Repo.Migrations.ProdSchemaSync2 do
+defmodule Tsuchinokus.Repo.Migrations.ProdSchemaSync2 do
   use Ecto.Migration
 
   def change do

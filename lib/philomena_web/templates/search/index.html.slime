@@ -1,6 +1,6 @@
 = cond do
   - Enum.any?(@images) ->
-    = render PhilomenaWeb.ImageView, "index.html", conn: @conn, tags: @tags, images: @images, header: "Searching for #{@conn.params["q"]}", route: fn p -> Routes.search_path(@conn, :index, p) end, scope: scope(@conn)
+    = render TsuchinokusWeb.ImageView, "index.html", conn: @conn, tags: @tags, images: @images, header: "Searching for #{@conn.params["q"]}", route: fn p -> Routes.search_path(@conn, :index, p) end, scope: scope(@conn)
 
   - assigns[:error] ->
     .block.block--fixed.block--danger
@@ -14,4 +14,4 @@
     p
       ' No images found!
 
-= render PhilomenaWeb.SearchView, "_form.html", conn: @conn
+= render TsuchinokusWeb.SearchView, "_form.html", conn: @conn

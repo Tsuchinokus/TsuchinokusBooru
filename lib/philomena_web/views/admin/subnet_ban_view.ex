@@ -1,5 +1,5 @@
-defmodule PhilomenaWeb.Admin.SubnetBanView do
-  use PhilomenaWeb, :view
+defmodule TsuchinokusWeb.Admin.SubnetBanView do
+  use TsuchinokusWeb, :view
 
-  import PhilomenaWeb.Admin.BanView
+  import TsuchinokusWeb.Admin.BanView
 end

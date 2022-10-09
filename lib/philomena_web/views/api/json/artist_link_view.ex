@@ -1,5 +1,5 @@
-defmodule PhilomenaWeb.Api.Json.ArtistLinkView do
-  use PhilomenaWeb, :view
+defmodule TsuchinokusWeb.Api.Json.ArtistLinkView do
+  use TsuchinokusWeb, :view
 
   def render("artist_link.json", %{artist_link: %{public: false}}) do
     nil

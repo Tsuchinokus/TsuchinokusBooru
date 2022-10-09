@@ -1,7 +1,7 @@
 import Config
 
 # Configure your database
-config :philomena, Philomena.Repo, show_sensitive_data_on_connection_error: true
+config :tsuchinokus, Tsuchinokus.Repo, show_sensitive_data_on_connection_error: true
 
 # For development, we disable any cache and enable
 # debugging and code reloading.
@@ -9,7 +9,7 @@ config :philomena, Philomena.Repo, show_sensitive_data_on_connection_error: true
 # The watchers configuration can be used to run external
 # watchers to your application. For example, we use it
 # with webpack to recompile .js and .css sources.
-config :philomena, PhilomenaWeb.Endpoint,
+config :tsuchinokus, TsuchinokusWeb.Endpoint,
   http: [port: 4000],
   debug_errors: true,
   code_reloader: true,
@@ -50,13 +50,13 @@ config :philomena, PhilomenaWeb.Endpoint,
 # different ports.
 
 # Watch static and templates for browser reloading.
-config :philomena, PhilomenaWeb.Endpoint,
+config :tsuchinokus, TsuchinokusWeb.Endpoint,
   live_reload: [
     patterns: [
       ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",
       ~r"priv/gettext/.*(po)$",
-      ~r"lib/philomena_web/{live,views}/.*(ex)$",
-      ~r"lib/philomena_web/templates/.*(eex|slim|slime)$"
+      ~r"lib/tsuchinokus_web/{live,views}/.*(ex)$",
+      ~r"lib/tsuchinokus_web/templates/.*(eex|slim|slime)$"
     ]
   ]
 

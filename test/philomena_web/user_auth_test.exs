@@ -1,14 +1,14 @@
-defmodule PhilomenaWeb.UserAuthTest do
-  use PhilomenaWeb.ConnCase, async: true
+defmodule TsuchinokusWeb.UserAuthTest do
+  use TsuchinokusWeb.ConnCase, async: true
 
-  alias Philomena.Users
-  alias PhilomenaWeb.UserAuth
-  import Philomena.UsersFixtures
+  alias Tsuchinokus.Users
+  alias TsuchinokusWeb.UserAuth
+  import Tsuchinokus.UsersFixtures
 
   setup %{conn: conn} do
     conn =
       conn
-      |> Map.replace!(:secret_key_base, PhilomenaWeb.Endpoint.config(:secret_key_base))
+      |> Map.replace!(:secret_key_base, TsuchinokusWeb.Endpoint.config(:secret_key_base))
       |> init_test_session(%{})
 
     %{user: user_fixture(), conn: conn}
@@ -93,7 +93,7 @@ defmodule PhilomenaWeb.UserAuthTest do
 
     test "broadcasts to the given live_socket_id", %{conn: conn} do
       live_socket_id = "users_sessions:abcdef-token"
-      PhilomenaWeb.Endpoint.subscribe(live_socket_id)
+      TsuchinokusWeb.Endpoint.subscribe(live_socket_id)
 
       conn
       |> put_session(:live_socket_id, live_socket_id)

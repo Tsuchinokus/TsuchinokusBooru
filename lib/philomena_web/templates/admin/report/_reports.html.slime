@@ -25,7 +25,7 @@ table.table
             = link_to_fingerprint(@conn, report.fingerprint)
 
           = if not is_nil(report.user) and Enum.any?(report.user.linked_tags) do
-            = render PhilomenaWeb.TagView, "_tag_list.html", tags: ordered_tags(report.user.linked_tags), conn: @conn
+            = render TsuchinokusWeb.TagView, "_tag_list.html", tags: ordered_tags(report.user.linked_tags), conn: @conn
 
         td.hide-mobile
           = pretty_time report.created_at

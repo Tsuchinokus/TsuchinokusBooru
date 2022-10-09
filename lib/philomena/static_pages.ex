@@ -1,14 +1,14 @@
-defmodule Philomena.StaticPages do
+defmodule Tsuchinokus.StaticPages do
   @moduledoc """
   The StaticPages context.
   """
 
   import Ecto.Query, warn: false
   alias Ecto.Multi
-  alias Philomena.Repo
+  alias Tsuchinokus.Repo
 
-  alias Philomena.StaticPages.StaticPage
-  alias Philomena.StaticPages.Version
+  alias Tsuchinokus.StaticPages.StaticPage
+  alias Tsuchinokus.StaticPages.Version
 
   @doc """
   Returns the list of static_pages.

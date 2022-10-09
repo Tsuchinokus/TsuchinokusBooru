@@ -5,7 +5,7 @@
   = if @filter.user do
     p
       ' Maintained by
-      = render PhilomenaWeb.UserAttributionView, "_user.html", object: @filter, conn: @conn
+      = render TsuchinokusWeb.UserAttributionView, "_user.html", object: @filter, conn: @conn
 
   = if @filter.system do
     p

@@ -1,12 +1,12 @@
-defmodule Philomena.Polls do
+defmodule Tsuchinokus.Polls do
   @moduledoc """
   The Polls context.
   """
 
   import Ecto.Query, warn: false
-  alias Philomena.Repo
+  alias Tsuchinokus.Repo
 
-  alias Philomena.Polls.Poll
+  alias Tsuchinokus.Polls.Poll
 
   @doc """
   Returns the list of polls.

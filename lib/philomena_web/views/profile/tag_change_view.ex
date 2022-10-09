@@ -1,3 +1,3 @@
-defmodule PhilomenaWeb.Profile.TagChangeView do
-  use PhilomenaWeb, :view
+defmodule TsuchinokusWeb.Profile.TagChangeView do
+  use TsuchinokusWeb, :view
 end

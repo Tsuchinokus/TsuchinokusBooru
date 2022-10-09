@@ -1,8 +1,8 @@
-defmodule PhilomenaWeb.Api.Json.ProfileView do
-  use PhilomenaWeb, :view
+defmodule TsuchinokusWeb.Api.Json.ProfileView do
+  use TsuchinokusWeb, :view
 
   def render("show.json", %{user: user} = assigns) do
-    %{user: render_one(user, PhilomenaWeb.Api.Json.ProfileView, "profile.json", assigns)}
+    %{user: render_one(user, TsuchinokusWeb.Api.Json.ProfileView, "profile.json", assigns)}
   end
 
   def render("profile.json", %{user: user} = assigns) do
@@ -21,11 +21,11 @@ defmodule PhilomenaWeb.Api.Json.ProfileView do
       links:
         render_many(
           user.public_links,
-          PhilomenaWeb.Api.Json.ArtistLinkView,
+          TsuchinokusWeb.Api.Json.ArtistLinkView,
           "artist_link.json",
           assigns
         ),
-      awards: render_many(user.awards, PhilomenaWeb.Api.Json.AwardView, "award.json", assigns)
+      awards: render_many(user.awards, TsuchinokusWeb.Api.Json.AwardView, "award.json", assigns)
     }
   end
 
@@ -42,6 +42,6 @@ defmodule PhilomenaWeb.Api.Json.ProfileView do
   end
 
   defp avatar_url(user) do
-    Application.get_env(:philomena, :avatar_url_root) <> "/" <> user.avatar
+    Application.get_env(:tsuchinokus, :avatar_url_root) <> "/" <> user.avatar
   end
 end

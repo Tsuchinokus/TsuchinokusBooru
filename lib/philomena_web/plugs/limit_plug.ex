@@ -1,16 +1,16 @@
-defmodule PhilomenaWeb.LimitPlug do
+defmodule TsuchinokusWeb.LimitPlug do
   @moduledoc """
   This plug automatically limits requests which are submitted faster
   than should be allowed for a given client.
 
   ## Example
 
-      plug PhilomenaWeb.LimitPlug, [time: 30, error: "Too fast! Slow down."]
+      plug TsuchinokusWeb.LimitPlug, [time: 30, error: "Too fast! Slow down."]
   """
 
   alias Plug.Conn
   alias Phoenix.Controller
-  alias Philomena.Users.User
+  alias Tsuchinokus.Users.User
 
   @doc false
   @spec init(any()) :: any()

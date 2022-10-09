@@ -1,13 +1,13 @@
-defmodule PhilomenaWeb.TotpPlug do
+defmodule TsuchinokusWeb.TotpPlug do
   @moduledoc """
   This plug ensures that a user session has a valid TOTP.
 
   ## Example
 
-      plug PhilomenaWeb.TotpPlug
+      plug TsuchinokusWeb.TotpPlug
   """
 
-  alias PhilomenaWeb.Router.Helpers, as: Routes
+  alias TsuchinokusWeb.Router.Helpers, as: Routes
 
   @doc false
   @spec init(any()) :: any()

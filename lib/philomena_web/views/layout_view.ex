@@ -1,8 +1,8 @@
-defmodule PhilomenaWeb.LayoutView do
-  use PhilomenaWeb, :view
+defmodule TsuchinokusWeb.LayoutView do
+  use TsuchinokusWeb, :view
 
-  alias PhilomenaWeb.ImageView
-  alias Philomena.Config
+  alias TsuchinokusWeb.ImageView
+  alias Tsuchinokus.Config
   alias Plug.Conn
 
   def layout_class(conn) do
@@ -19,7 +19,7 @@ defmodule PhilomenaWeb.LayoutView do
   end
 
   def cdn_host do
-    Application.get_env(:philomena, :cdn_host)
+    Application.get_env(:tsuchinokus, :cdn_host)
   end
 
   defp ignored_tag_list(nil), do: []
@@ -38,9 +38,9 @@ defmodule PhilomenaWeb.LayoutView do
     data = [
       filter_id: filter.id,
       hidden_tag_list: Jason.encode!(filter.hidden_tag_ids),
-      hidden_filter: Philomena.Search.String.normalize(filter.hidden_complex_str || ""),
+      hidden_filter: Tsuchinokus.Search.String.normalize(filter.hidden_complex_str || ""),
       spoilered_tag_list: Jason.encode!(filter.spoilered_tag_ids),
-      spoilered_filter: Philomena.Search.String.normalize(filter.spoilered_complex_str || ""),
+      spoilered_filter: Tsuchinokus.Search.String.normalize(filter.spoilered_complex_str || ""),
       user_id: if(user, do: user.id, else: nil),
       user_name: if(user, do: user.name, else: nil),
       user_slug: if(user, do: user.slug, else: nil),
@@ -88,37 +88,37 @@ defmodule PhilomenaWeb.LayoutView do
         is_list(conn.assigns.image.tags)
 
   def hides_images?(conn),
-    do: can?(conn, :hide, %Philomena.Images.Image{})
+    do: can?(conn, :hide, %Tsuchinokus.Images.Image{})
 
   def manages_site_notices?(conn),
-    do: can?(conn, :index, Philomena.SiteNotices.SiteNotice)
+    do: can?(conn, :index, Tsuchinokus.SiteNotices.SiteNotice)
 
   def manages_tags?(conn),
-    do: can?(conn, :edit, %Philomena.Tags.Tag{})
+    do: can?(conn, :edit, %Tsuchinokus.Tags.Tag{})
 
   def manages_users?(conn),
-    do: can?(conn, :index, Philomena.Users.User)
+    do: can?(conn, :index, Tsuchinokus.Users.User)
 
   def manages_forums?(conn),
-    do: can?(conn, :edit, Philomena.Forums.Forum)
+    do: can?(conn, :edit, Tsuchinokus.Forums.Forum)
 
   def manages_ads?(conn),
-    do: can?(conn, :index, Philomena.Adverts.Advert)
+    do: can?(conn, :index, Tsuchinokus.Adverts.Advert)
 
   def manages_badges?(conn),
-    do: can?(conn, :index, Philomena.Badges.Badge)
+    do: can?(conn, :index, Tsuchinokus.Badges.Badge)
 
   def manages_static_pages?(conn),
-    do: can?(conn, :edit, %Philomena.StaticPages.StaticPage{})
+    do: can?(conn, :edit, %Tsuchinokus.StaticPages.StaticPage{})
 
   def manages_mod_notes?(conn),
-    do: can?(conn, :index, Philomena.ModNotes.ModNote)
+    do: can?(conn, :index, Tsuchinokus.ModNotes.ModNote)
 
   def manages_bans?(conn),
-    do: can?(conn, :create, Philomena.Bans.User)
+    do: can?(conn, :create, Tsuchinokus.Bans.User)
 
   def can_see_moderation_log?(conn),
-    do: can?(conn, :index, Philomena.ModerationLogs.ModerationLog)
+    do: can?(conn, :index, Tsuchinokus.ModerationLogs.ModerationLog)
 
   def viewport_meta_tag(conn) do
     ua = get_user_agent(conn)

@@ -1,8 +1,8 @@
-defmodule PhilomenaWeb.DnpEntryView do
-  use PhilomenaWeb, :view
+defmodule TsuchinokusWeb.DnpEntryView do
+  use TsuchinokusWeb, :view
 
   def reasons do
-    Philomena.DnpEntries.DnpEntry.reasons()
+    Tsuchinokus.DnpEntries.DnpEntry.reasons()
   end
 
   def form_class(changeset) do

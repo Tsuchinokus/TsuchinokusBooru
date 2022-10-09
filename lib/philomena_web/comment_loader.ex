@@ -1,6 +1,6 @@
-defmodule PhilomenaWeb.CommentLoader do
-  alias Philomena.Comments.Comment
-  alias Philomena.Repo
+defmodule TsuchinokusWeb.CommentLoader do
+  alias Tsuchinokus.Comments.Comment
+  alias Tsuchinokus.Repo
   import Ecto.Query
 
   def load_comments(conn, image) do

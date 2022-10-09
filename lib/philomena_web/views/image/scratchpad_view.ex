@@ -1,3 +1,3 @@
-defmodule PhilomenaWeb.Image.ScratchpadView do
-  use PhilomenaWeb, :view
+defmodule TsuchinokusWeb.Image.ScratchpadView do
+  use TsuchinokusWeb, :view
 end

@@ -8,7 +8,7 @@ mod markdown;
 static GLOBAL: Jemalloc = Jemalloc;
 
 rustler::init! {
-    "Elixir.Philomena.Native",
+    "Elixir.Tsuchinokus.Native",
     [markdown_to_html, markdown_to_html_unsafe, camo_image_url]
 }
 

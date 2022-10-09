@@ -1,6 +1,6 @@
-defmodule PhilomenaWeb.LoadCommentPlug do
-  alias Philomena.Comments.Comment
-  alias Philomena.Repo
+defmodule TsuchinokusWeb.LoadCommentPlug do
+  alias Tsuchinokus.Comments.Comment
+  alias Tsuchinokus.Repo
 
   import Plug.Conn, only: [assign: 3]
   import Canada.Can, only: [can?: 3]
@@ -21,7 +21,7 @@ defmodule PhilomenaWeb.LoadCommentPlug do
   end
 
   defp maybe_hide_comment(nil, conn, _show_hidden),
-    do: PhilomenaWeb.NotFoundPlug.call(conn)
+    do: TsuchinokusWeb.NotFoundPlug.call(conn)
 
   defp maybe_hide_comment(%{hidden_from_users: false} = comment, conn, _show_hidden),
     do: assign(conn, :comment, comment)
@@ -29,7 +29,7 @@ defmodule PhilomenaWeb.LoadCommentPlug do
   defp maybe_hide_comment(comment, %{assigns: %{current_user: user}} = conn, show_hidden) do
     case show_hidden or can?(user, :show, comment) do
       true -> assign(conn, :comment, comment)
-      false -> PhilomenaWeb.NotAuthorizedPlug.call(conn)
+      false -> TsuchinokusWeb.NotAuthorizedPlug.call(conn)
     end
   end
 end

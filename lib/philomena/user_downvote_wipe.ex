@@ -1,13 +1,13 @@
-defmodule Philomena.UserDownvoteWipe do
-  alias Philomena.Batch
-  alias Philomena.Elasticsearch
-  alias Philomena.Users
-  alias Philomena.Users.User
-  alias Philomena.Images.Image
-  alias Philomena.Images
-  alias Philomena.ImageVotes.ImageVote
-  alias Philomena.ImageFaves.ImageFave
-  alias Philomena.Repo
+defmodule Tsuchinokus.UserDownvoteWipe do
+  alias Tsuchinokus.Batch
+  alias Tsuchinokus.Elasticsearch
+  alias Tsuchinokus.Users
+  alias Tsuchinokus.Users.User
+  alias Tsuchinokus.Images.Image
+  alias Tsuchinokus.Images
+  alias Tsuchinokus.ImageVotes.ImageVote
+  alias Tsuchinokus.ImageFaves.ImageFave
+  alias Tsuchinokus.Repo
   import Ecto.Query
 
   def perform(user_id, upvotes_and_faves_too \\ false) do

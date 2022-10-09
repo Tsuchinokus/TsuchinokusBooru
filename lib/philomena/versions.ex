@@ -1,13 +1,13 @@
-defmodule Philomena.Versions do
+defmodule Tsuchinokus.Versions do
   @moduledoc """
   The Versions context.
   """
 
   import Ecto.Query, warn: false
-  alias Philomena.Repo
+  alias Tsuchinokus.Repo
 
-  alias Philomena.Versions.Version
-  alias Philomena.Users.User
+  alias Tsuchinokus.Versions.Version
+  alias Tsuchinokus.Users.User
 
   def load_data_and_associations(versions, parent) do
     user_ids =

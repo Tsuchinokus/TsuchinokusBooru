@@ -1,9 +1,9 @@
-defmodule Philomena.MixProject do
+defmodule Tsuchinokus.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :philomena,
+      app: :tsuchinokus,
       version: "1.1.0",
       elixir: "~> 1.5",
       elixirc_paths: elixirc_paths(Mix.env()),
@@ -12,7 +12,7 @@ defmodule Philomena.MixProject do
       aliases: aliases(),
       deps: deps(),
       dialyzer: [plt_add_apps: [:mix]],
-      rustler_crates: [philomena: []]
+      rustler_crates: [tsuchinokus: []]
     ]
   end
 
@@ -21,7 +21,7 @@ defmodule Philomena.MixProject do
   # Type `mix help compile.app` for more information.
   def application do
     [
-      mod: {Philomena.Application, []},
+      mod: {Tsuchinokus.Application, []},
       extra_applications: [:logger, :canada, :runtime_tools]
     ]
   end

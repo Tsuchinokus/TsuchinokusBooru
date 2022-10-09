@@ -1,4 +1,4 @@
-defmodule Philomena.Repo.Migrations.RenameBodyFields do
+defmodule Tsuchinokus.Repo.Migrations.RenameBodyFields do
   use Ecto.Migration
 
   def change do

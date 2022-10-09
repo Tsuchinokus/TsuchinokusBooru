@@ -1,4 +1,4 @@
-defmodule PhilomenaWeb.ScraperPlug do
+defmodule TsuchinokusWeb.ScraperPlug do
   @filename_regex ~r/filename="([^"]+)"/
 
   def init(opts) do
@@ -15,7 +15,7 @@ defmodule PhilomenaWeb.ScraperPlug do
 
       %{"scraper_cache" => url} when not is_nil(url) and url != "" ->
         url
-        |> Philomena.Http.get()
+        |> Tsuchinokus.Http.get()
         |> maybe_fixup_params(url, opts, conn)
 
       _ ->

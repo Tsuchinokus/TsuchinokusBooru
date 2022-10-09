@@ -1,15 +1,15 @@
-defmodule Philomena.Analyzers do
+defmodule Tsuchinokus.Analyzers do
   @moduledoc """
   Utilities for analyzing the format and various attributes of uploaded files.
   """
 
-  alias Philomena.Mime
+  alias Tsuchinokus.Mime
 
-  alias Philomena.Analyzers.Gif
-  alias Philomena.Analyzers.Jpeg
-  alias Philomena.Analyzers.Png
-  alias Philomena.Analyzers.Svg
-  alias Philomena.Analyzers.Webm
+  alias Tsuchinokus.Analyzers.Gif
+  alias Tsuchinokus.Analyzers.Jpeg
+  alias Tsuchinokus.Analyzers.Png
+  alias Tsuchinokus.Analyzers.Svg
+  alias Tsuchinokus.Analyzers.Webm
 
   @doc """
   Returns an {:ok, analyzer} tuple, with the analyzer being a module capable

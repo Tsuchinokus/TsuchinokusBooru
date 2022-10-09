@@ -1,8 +1,8 @@
-defmodule PhilomenaWeb.ImageView do
-  use PhilomenaWeb, :view
+defmodule TsuchinokusWeb.ImageView do
+  use TsuchinokusWeb, :view
 
-  alias Philomena.Tags.Tag
-  alias Philomena.Images.Thumbnailer
+  alias Tsuchinokus.Tags.Tag
+  alias Tsuchinokus.Images.Thumbnailer
 
   def show_vote_counts?(%{hide_vote_counts: true}), do: false
   def show_vote_counts?(_user), do: true
@@ -134,7 +134,7 @@ defmodule PhilomenaWeb.ImageView do
   end
 
   def image_url_root do
-    Application.get_env(:philomena, :image_url_root)
+    Application.get_env(:tsuchinokus, :image_url_root)
   end
 
   def image_container_data(conn, image, size) do
@@ -173,12 +173,12 @@ defmodule PhilomenaWeb.ImageView do
   def username(%{name: name}), do: name
   def username(_user), do: nil
 
-  def scope(conn), do: PhilomenaWeb.ImageScope.scope(conn)
+  def scope(conn), do: TsuchinokusWeb.ImageScope.scope(conn)
 
   def info_row(_conn, []), do: []
 
   def info_row(conn, [{tag, description, dnp_entries}]) do
-    render(PhilomenaWeb.TagView, "_tag_info_row.html",
+    render(TsuchinokusWeb.TagView, "_tag_info_row.html",
       conn: conn,
       tag: tag,
       body: description,
@@ -187,12 +187,12 @@ defmodule PhilomenaWeb.ImageView do
   end
 
   def info_row(conn, tags) do
-    render(PhilomenaWeb.TagView, "_tags_row.html", conn: conn, tags: tags)
+    render(TsuchinokusWeb.TagView, "_tags_row.html", conn: conn, tags: tags)
   end
 
   def quick_tag(conn) do
     if can?(conn, :batch_update, Tag) do
-      render(PhilomenaWeb.ImageView, "_quick_tag.html", conn: conn)
+      render(TsuchinokusWeb.ImageView, "_quick_tag.html", conn: conn)
     end
   end
 
@@ -202,21 +202,21 @@ defmodule PhilomenaWeb.ImageView do
   def scaled_value(%{scale_large_images: scale}), do: scale
   def scaled_value(_user), do: "true"
 
-  def hides_images?(conn), do: can?(conn, :hide, %Philomena.Images.Image{})
+  def hides_images?(conn), do: can?(conn, :hide, %Tsuchinokus.Images.Image{})
 
   def random_button(conn, params) do
-    render(PhilomenaWeb.ImageView, "_random_button.html", conn: conn, params: params)
+    render(TsuchinokusWeb.ImageView, "_random_button.html", conn: conn, params: params)
   end
 
   def hidden_toggle(%{assigns: %{current_user: nil}}, _route, _params), do: nil
 
   def hidden_toggle(conn, route, params) do
-    render(PhilomenaWeb.ImageView, "_hidden_toggle.html", route: route, params: params, conn: conn)
+    render(TsuchinokusWeb.ImageView, "_hidden_toggle.html", route: route, params: params, conn: conn)
   end
 
   def deleted_toggle(conn, route, params) do
     if hides_images?(conn) do
-      render(PhilomenaWeb.ImageView, "_deleted_toggle.html",
+      render(TsuchinokusWeb.ImageView, "_deleted_toggle.html",
         route: route,
         params: params,
         conn: conn
@@ -273,6 +273,6 @@ defmodule PhilomenaWeb.ImageView do
       }
     }
 
-    Philomena.Search.Evaluator.hits?(doc, query)
+    Tsuchinokus.Search.Evaluator.hits?(doc, query)
   end
 end

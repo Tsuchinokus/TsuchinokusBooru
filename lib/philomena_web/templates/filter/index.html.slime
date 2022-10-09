@@ -30,14 +30,14 @@
       p
         = link("Click here to make a new filter from scratch", to: Routes.filter_path(@conn, :new))
       = for filter <- @my_filters do
-        = render PhilomenaWeb.FilterView, "_filter.html", conn: @conn, filter: filter
+        = render TsuchinokusWeb.FilterView, "_filter.html", conn: @conn, filter: filter
     - else
       p
         ' If you're logged in, you can create and maintain custom filters here.
 
     h2 Global Filters
     = for filter <- @system_filters do
-      = render PhilomenaWeb.FilterView, "_filter.html", conn: @conn, filter: filter
+      = render TsuchinokusWeb.FilterView, "_filter.html", conn: @conn, filter: filter
 
     = if @current_user do
       h2 Recent Filters
@@ -63,17 +63,17 @@
     = cond do
       - Enum.any?(@filters) ->
         - route = fn p -> Routes.filter_path(@conn, :index, p) end
-        - pagination = render PhilomenaWeb.PaginationView, "_pagination.html", page: @filters, route: route, params: [fq: @conn.params["fq"]], conn: @conn
+        - pagination = render TsuchinokusWeb.PaginationView, "_pagination.html", page: @filters, route: route, params: [fq: @conn.params["fq"]], conn: @conn
 
         = for filter <- @filters do
-          = render PhilomenaWeb.FilterView, "_filter.html", conn: @conn, filter: filter
+          = render TsuchinokusWeb.FilterView, "_filter.html", conn: @conn, filter: filter
 
         .block
           .block__header.block__header--light.page__header
             .page__pagination = pagination
             .page__info
               span.block__header__title
-                = render PhilomenaWeb.PaginationView, "_pagination_info.html", page: @filters, conn: @conn
+                = render TsuchinokusWeb.PaginationView, "_pagination_info.html", page: @filters, conn: @conn
 
       - assigns[:error] ->
         p

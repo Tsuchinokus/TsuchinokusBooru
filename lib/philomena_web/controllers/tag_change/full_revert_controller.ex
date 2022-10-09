@@ -1,11 +1,11 @@
-defmodule PhilomenaWeb.TagChange.FullRevertController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.TagChange.FullRevertController do
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.TagChanges.TagChange
-  alias Philomena.TagChanges
+  alias Tsuchinokus.TagChanges.TagChange
+  alias Tsuchinokus.TagChanges
 
   plug :verify_authorized
-  plug PhilomenaWeb.UserAttributionPlug
+  plug TsuchinokusWeb.UserAttributionPlug
 
   def create(conn, params) do
     attributes = conn.assigns.attributes
@@ -37,7 +37,7 @@ defmodule PhilomenaWeb.TagChange.FullRevertController do
   defp verify_authorized(conn, _params) do
     case Canada.Can.can?(conn.assigns.current_user, :revert, TagChange) do
       true -> conn
-      _false -> PhilomenaWeb.NotAuthorizedPlug.call(conn)
+      _false -> TsuchinokusWeb.NotAuthorizedPlug.call(conn)
     end
   end
 end

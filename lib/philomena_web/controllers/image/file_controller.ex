@@ -1,13 +1,13 @@
-defmodule PhilomenaWeb.Image.FileController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.Image.FileController do
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.Images.Image
-  alias Philomena.Images
+  alias Tsuchinokus.Images.Image
+  alias Tsuchinokus.Images
 
-  plug PhilomenaWeb.CanaryMapPlug, update: :hide
+  plug TsuchinokusWeb.CanaryMapPlug, update: :hide
   plug :load_and_authorize_resource, model: Image, id_name: "image_id", persisted: true
   plug :verify_not_deleted
-  plug PhilomenaWeb.ScraperPlug, params_name: "image", params_key: "image"
+  plug TsuchinokusWeb.ScraperPlug, params_name: "image", params_key: "image"
 
   def update(conn, %{"image" => image_params}) do
     case Images.update_file(conn.assigns.image, image_params) do

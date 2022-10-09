@@ -1,7 +1,7 @@
-defmodule PhilomenaWeb.Admin.BadgeView do
-  use PhilomenaWeb, :view
+defmodule TsuchinokusWeb.Admin.BadgeView do
+  use TsuchinokusWeb, :view
 
-  alias PhilomenaWeb.ProfileView
+  alias TsuchinokusWeb.ProfileView
 
   defp badge_image(badge, options),
     do: ProfileView.badge_image(badge, options)

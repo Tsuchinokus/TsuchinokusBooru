@@ -1,3 +1,3 @@
-defmodule PhilomenaWeb.ModerationLogView do
-  use PhilomenaWeb, :view
+defmodule TsuchinokusWeb.ModerationLogView do
+  use TsuchinokusWeb, :view
 end

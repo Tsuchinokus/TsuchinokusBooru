@@ -1,4 +1,4 @@
-defmodule Philomena.Repo.Migrations.CreateUsersAuthTables do
+defmodule Tsuchinokus.Repo.Migrations.CreateUsersAuthTables do
   use Ecto.Migration
 
   def change do

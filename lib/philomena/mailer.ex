@@ -1,3 +1,3 @@
-defmodule Philomena.Mailer do
-  use Bamboo.Mailer, otp_app: :philomena
+defmodule Tsuchinokus.Mailer do
+  use Bamboo.Mailer, otp_app: :tsuchinokus
 end

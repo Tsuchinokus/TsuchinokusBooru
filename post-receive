@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Set up environment
-source ~/bin/philomena-env
+source ~/bin/tsuchinokus-env
 
 read oldrev newrev ref
 echo "Updating $oldrev -> $newrev ($ref)"
@@ -9,7 +9,7 @@ echo "Updating $oldrev -> $newrev ($ref)"
 # Clear variable set to '.' so git commands don't complain
 unset GIT_DIR
 
-cd ~/philomena
+cd ~/tsuchinokus
 
 die() {
     echo "$*" 1>&2
@@ -35,7 +35,7 @@ mix release --overwrite || die "failed to generate release"
 # Run migrations
 if git diff --name-only $oldrev $newrev | grep "^priv/repo/migrations"; then
   echo "Running database migrations"
-  _build/prod/rel/philomena/bin/philomena eval "Philomena.Release.migrate()" || die "ecto.migrate failed"
+  _build/prod/rel/tsuchinokus/bin/tsuchinokus eval "Tsuchinokus.Release.migrate()" || die "ecto.migrate failed"
 fi
 
 # Include a task to restart your running appserver instances here.

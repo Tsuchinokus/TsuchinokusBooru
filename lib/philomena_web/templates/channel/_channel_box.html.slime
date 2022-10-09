@@ -36,4 +36,4 @@
       i.fas.fa-fw.fa-trash>
       ' Delete
 
-  = render PhilomenaWeb.Channel.SubscriptionView, "_subscription.html", conn: @conn, watching: @subscriptions[@channel.id], channel: @channel
+  = render TsuchinokusWeb.Channel.SubscriptionView, "_subscription.html", conn: @conn, watching: @subscriptions[@channel.id], channel: @channel

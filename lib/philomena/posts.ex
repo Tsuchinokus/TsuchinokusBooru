@@ -1,26 +1,26 @@
-defmodule Philomena.Posts do
+defmodule Tsuchinokus.Posts do
   @moduledoc """
   The Posts context.
   """
 
   import Ecto.Query, warn: false
   alias Ecto.Multi
-  alias Philomena.Repo
+  alias Tsuchinokus.Repo
 
-  alias Philomena.Elasticsearch
-  alias Philomena.Topics.Topic
-  alias Philomena.Topics
-  alias Philomena.UserStatistics
-  alias Philomena.Posts.Post
-  alias Philomena.Posts.ElasticsearchIndex, as: PostIndex
-  alias Philomena.IndexWorker
-  alias Philomena.Forums.Forum
-  alias Philomena.Notifications
-  alias Philomena.NotificationWorker
-  alias Philomena.Versions
-  alias Philomena.Reports
-  alias Philomena.Reports.Report
-  alias Philomena.Users.User
+  alias Tsuchinokus.Elasticsearch
+  alias Tsuchinokus.Topics.Topic
+  alias Tsuchinokus.Topics
+  alias Tsuchinokus.UserStatistics
+  alias Tsuchinokus.Posts.Post
+  alias Tsuchinokus.Posts.ElasticsearchIndex, as: PostIndex
+  alias Tsuchinokus.IndexWorker
+  alias Tsuchinokus.Forums.Forum
+  alias Tsuchinokus.Notifications
+  alias Tsuchinokus.NotificationWorker
+  alias Tsuchinokus.Versions
+  alias Tsuchinokus.Reports
+  alias Tsuchinokus.Reports.Report
+  alias Tsuchinokus.Users.User
 
   @doc """
   Gets a single post.

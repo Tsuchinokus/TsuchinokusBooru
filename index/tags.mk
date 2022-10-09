@@ -1,4 +1,4 @@
-DATABASE ?= philomena
+DATABASE ?= tsuchinokus
 ELASTICDUMP ?= elasticdump
 .ONESHELL:
 

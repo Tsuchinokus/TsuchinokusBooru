@@ -1,4 +1,4 @@
-defmodule Philomena.Roles.Role do
+defmodule Tsuchinokus.Roles.Role do
   use Ecto.Schema
   import Ecto.Changeset
 

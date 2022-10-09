@@ -1,13 +1,13 @@
-defmodule Philomena.Commissions do
+defmodule Tsuchinokus.Commissions do
   @moduledoc """
   The Commissions context.
   """
 
   import Ecto.Query, warn: false
   alias Ecto.Multi
-  alias Philomena.Repo
+  alias Tsuchinokus.Repo
 
-  alias Philomena.Commissions.Commission
+  alias Tsuchinokus.Commissions.Commission
 
   @doc """
   Gets a single commission.
@@ -90,7 +90,7 @@ defmodule Philomena.Commissions do
     Commission.changeset(commission, %{})
   end
 
-  alias Philomena.Commissions.Item
+  alias Tsuchinokus.Commissions.Item
 
   @doc """
   Gets a single item.

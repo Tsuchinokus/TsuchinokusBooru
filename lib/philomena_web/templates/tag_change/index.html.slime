@@ -30,11 +30,11 @@
             td.center
               = link tag_change.image_id, to: Routes.image_path(@conn, :show, tag_change.image)
             td.center
-              = render PhilomenaWeb.ImageView, "_image_container.html", image: tag_change.image, size: :thumb_tiny, conn: @conn
+              = render TsuchinokusWeb.ImageView, "_image_container.html", image: tag_change.image, size: :thumb_tiny, conn: @conn
 
             td
               = if tag_change.tag do
-                = render PhilomenaWeb.TagView, "_tag.html", tag: tag_change.tag, conn: @conn
+                = render TsuchinokusWeb.TagView, "_tag.html", tag: tag_change.tag, conn: @conn
               - else
                 = tag_change.tag_name_cache || "Unknown tag"
 
@@ -47,7 +47,7 @@
               = pretty_time(tag_change.created_at)
 
             td class=user_column_class(tag_change)
-              => render PhilomenaWeb.UserAttributionView, "_anon_user.html", object: tag_change, conn: @conn
+              => render TsuchinokusWeb.UserAttributionView, "_anon_user.html", object: tag_change, conn: @conn
 
               = if can?(@conn, :show, :ip_address) do
                 => link_to_ip @conn, tag_change.ip

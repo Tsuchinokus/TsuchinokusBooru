@@ -1,8 +1,8 @@
-defmodule PhilomenaWeb.Api.Json.TagController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.Api.Json.TagController do
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.Tags.Tag
-  alias Philomena.Repo
+  alias Tsuchinokus.Tags.Tag
+  alias Tsuchinokus.Repo
   import Ecto.Query
 
   def show(conn, %{"id" => slug}) do

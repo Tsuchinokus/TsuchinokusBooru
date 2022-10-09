@@ -1,4 +1,4 @@
-defmodule Philomena.Search.Evaluator do
+defmodule Tsuchinokus.Search.Evaluator do
   # TODO: rethink the necessity of this module.
   # Can we do this in elasticsearch instead?
 

@@ -1,8 +1,8 @@
-defmodule PhilomenaWeb.Api.Json.Filter.UserFilterController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.Api.Json.Filter.UserFilterController do
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.Filters.Filter
-  alias Philomena.Repo
+  alias Tsuchinokus.Filters.Filter
+  alias Tsuchinokus.Repo
   import Ecto.Query
 
   def index(conn, _params) do
@@ -22,7 +22,7 @@ defmodule PhilomenaWeb.Api.Json.Filter.UserFilterController do
           |> Repo.paginate(conn.assigns.scrivener)
 
         conn
-        |> put_view(PhilomenaWeb.Api.Json.FilterView)
+        |> put_view(TsuchinokusWeb.Api.Json.FilterView)
         |> render("index.json", filters: user_filters, total: user_filters.total_entries)
     end
   end

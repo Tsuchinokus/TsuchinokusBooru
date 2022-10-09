@@ -1,11 +1,11 @@
-defmodule Philomena.Galleries.Gallery do
+defmodule Tsuchinokus.Galleries.Gallery do
   use Ecto.Schema
   import Ecto.Changeset
 
-  alias Philomena.Images.Image
-  alias Philomena.Users.User
-  alias Philomena.Galleries.Interaction
-  alias Philomena.Galleries.Subscription
+  alias Tsuchinokus.Images.Image
+  alias Tsuchinokus.Users.User
+  alias Tsuchinokus.Galleries.Interaction
+  alias Tsuchinokus.Galleries.Subscription
 
   schema "galleries" do
     belongs_to :thumbnail, Image, source: :thumbnail_id

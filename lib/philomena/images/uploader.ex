@@ -1,10 +1,10 @@
-defmodule Philomena.Images.Uploader do
+defmodule Tsuchinokus.Images.Uploader do
   @moduledoc """
   Upload and processing callback logic for Images.
   """
 
-  alias Philomena.Images.Image
-  alias Philomena.Uploader
+  alias Tsuchinokus.Images.Image
+  alias Tsuchinokus.Uploader
 
   def analyze_upload(image, params) do
     Uploader.analyze_upload(image, "image", params["image"], &Image.image_changeset/2)
@@ -19,6 +19,6 @@ defmodule Philomena.Images.Uploader do
   end
 
   defp image_file_root do
-    Application.get_env(:philomena, :image_file_root)
+    Application.get_env(:tsuchinokus, :image_file_root)
   end
 end

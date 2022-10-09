@@ -1,4 +1,4 @@
-defmodule PhilomenaWeb.CheckCaptchaPlug do
+defmodule TsuchinokusWeb.CheckCaptchaPlug do
   import Plug.Conn
   import Phoenix.Controller
 
@@ -31,7 +31,7 @@ defmodule PhilomenaWeb.CheckCaptchaPlug do
 
   defp valid_solution?(%{"h-captcha-response" => captcha_token}) do
     {:ok, %{body: body, status: 200}} =
-      Philomena.Http.post(
+      Tsuchinokus.Http.post(
         "https://hcaptcha.com/siteverify",
         URI.encode_query(%{"response" => captcha_token, "secret" => hcaptcha_secret_key()}),
         [{"Content-Type", "application/x-www-form-urlencoded"}]
@@ -55,10 +55,10 @@ defmodule PhilomenaWeb.CheckCaptchaPlug do
   end
 
   def captcha_enabled? do
-    Application.get_env(:philomena, :captcha) != false
+    Application.get_env(:tsuchinokus, :captcha) != false
   end
 
   def hcaptcha_secret_key do
-    Application.get_env(:philomena, :hcaptcha_secret_key)
+    Application.get_env(:tsuchinokus, :hcaptcha_secret_key)
   end
 end

@@ -1,4 +1,4 @@
-defimpl Philomena.Attribution, for: Philomena.Images.Image do
+defimpl Tsuchinokus.Attribution, for: Tsuchinokus.Images.Image do
   def object_identifier(image) do
     to_string(image.id)
   end

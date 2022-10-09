@@ -1,4 +1,4 @@
-defmodule PhilomenaWeb.ImageScope do
+defmodule TsuchinokusWeb.ImageScope do
   def scope(conn) do
     []
     |> scope(conn, "q", :q)

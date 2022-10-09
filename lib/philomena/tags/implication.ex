@@ -1,8 +1,8 @@
-defmodule Philomena.Tags.Implication do
+defmodule Tsuchinokus.Tags.Implication do
   use Ecto.Schema
   import Ecto.Changeset
 
-  alias Philomena.Tags.Tag
+  alias Tsuchinokus.Tags.Tag
 
   @primary_key false
 

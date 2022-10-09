@@ -1,8 +1,8 @@
-defmodule PhilomenaWeb.ModerationLogController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.ModerationLogController do
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.ModerationLogs
-  alias Philomena.ModerationLogs.ModerationLog
+  alias Tsuchinokus.ModerationLogs
+  alias Tsuchinokus.ModerationLogs.ModerationLog
 
   plug :load_and_authorize_resource,
     model: ModerationLog,

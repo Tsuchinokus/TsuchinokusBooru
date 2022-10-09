@@ -1,12 +1,12 @@
-defmodule Philomena.ImageIntensities do
+defmodule Tsuchinokus.ImageIntensities do
   @moduledoc """
   The ImageIntensities context.
   """
 
   import Ecto.Query, warn: false
-  alias Philomena.Repo
+  alias Tsuchinokus.Repo
 
-  alias Philomena.ImageIntensities.ImageIntensity
+  alias Tsuchinokus.ImageIntensities.ImageIntensity
 
   @doc """
   Gets a single image_intensity.

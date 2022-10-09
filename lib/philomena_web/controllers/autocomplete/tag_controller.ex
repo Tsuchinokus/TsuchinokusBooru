@@ -1,8 +1,8 @@
-defmodule PhilomenaWeb.Autocomplete.TagController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.Autocomplete.TagController do
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.Elasticsearch
-  alias Philomena.Tags.Tag
+  alias Tsuchinokus.Elasticsearch
+  alias Tsuchinokus.Tags.Tag
   import Ecto.Query
 
   def show(conn, params) do

@@ -1,16 +1,16 @@
-defmodule PhilomenaWeb.DuplicateReportController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.DuplicateReportController do
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.DuplicateReports
-  alias Philomena.DuplicateReports.DuplicateReport
-  alias Philomena.Images.Image
-  alias Philomena.Repo
+  alias Tsuchinokus.DuplicateReports
+  alias Tsuchinokus.DuplicateReports.DuplicateReport
+  alias Tsuchinokus.Images.Image
+  alias Tsuchinokus.Repo
   import Ecto.Query
 
   @valid_states ~W(open rejected accepted claimed)
 
-  plug PhilomenaWeb.FilterBannedUsersPlug when action in [:create]
-  plug PhilomenaWeb.UserAttributionPlug when action in [:create]
+  plug TsuchinokusWeb.FilterBannedUsersPlug when action in [:create]
+  plug TsuchinokusWeb.UserAttributionPlug when action in [:create]
 
   plug :load_resource,
     model: DuplicateReport,

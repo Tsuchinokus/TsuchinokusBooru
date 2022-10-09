@@ -1,5 +1,5 @@
-defmodule Philomena.Release do
-  @app :philomena
+defmodule Tsuchinokus.Release do
+  @app :tsuchinokus
 
   def migrate do
     load_app()
@@ -16,27 +16,27 @@ defmodule Philomena.Release do
 
   def update_channels do
     start_app()
-    Philomena.Channels.update_tracked_channels!()
+    Tsuchinokus.Channels.update_tracked_channels!()
   end
 
   def verify_artist_links do
     start_app()
-    Philomena.ArtistLinks.automatic_verify!()
+    Tsuchinokus.ArtistLinks.automatic_verify!()
   end
 
   def update_stats do
     start_app()
-    PhilomenaWeb.StatsUpdater.update_stats!()
+    TsuchinokusWeb.StatsUpdater.update_stats!()
   end
 
   def clean_moderation_logs do
     start_app()
-    Philomena.ModerationLogs.cleanup!()
+    Tsuchinokus.ModerationLogs.cleanup!()
   end
 
   def generate_autocomplete do
     start_app()
-    Philomena.Autocomplete.generate_autocomplete!()
+    Tsuchinokus.Autocomplete.generate_autocomplete!()
   end
 
   defp repos do

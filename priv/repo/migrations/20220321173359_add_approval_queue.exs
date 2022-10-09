@@ -1,4 +1,4 @@
-defmodule Philomena.Repo.Migrations.AddApprovalQueue do
+defmodule Tsuchinokus.Repo.Migrations.AddApprovalQueue do
   use Ecto.Migration
 
   def change do

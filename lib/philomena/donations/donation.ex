@@ -1,8 +1,8 @@
-defmodule Philomena.Donations.Donation do
+defmodule Tsuchinokus.Donations.Donation do
   use Ecto.Schema
   import Ecto.Changeset
 
-  alias Philomena.Users.User
+  alias Tsuchinokus.Users.User
 
   schema "donations" do
     belongs_to :user, User

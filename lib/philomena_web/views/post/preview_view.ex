@@ -1,3 +1,3 @@
-defmodule PhilomenaWeb.Post.PreviewView do
-  use PhilomenaWeb, :view
+defmodule TsuchinokusWeb.Post.PreviewView do
+  use TsuchinokusWeb, :view
 end

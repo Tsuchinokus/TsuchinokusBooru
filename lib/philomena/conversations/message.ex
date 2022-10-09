@@ -1,10 +1,10 @@
-defmodule Philomena.Conversations.Message do
+defmodule Tsuchinokus.Conversations.Message do
   use Ecto.Schema
   import Ecto.Changeset
 
-  alias Philomena.Conversations.Conversation
-  alias Philomena.Users.User
-  alias Philomena.Schema.Approval
+  alias Tsuchinokus.Conversations.Conversation
+  alias Tsuchinokus.Users.User
+  alias Tsuchinokus.Schema.Approval
 
   schema "messages" do
     belongs_to :conversation, Conversation

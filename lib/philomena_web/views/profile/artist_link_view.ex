@@ -1,5 +1,5 @@
-defmodule PhilomenaWeb.Profile.ArtistLinkView do
-  use PhilomenaWeb, :view
+defmodule TsuchinokusWeb.Profile.ArtistLinkView do
+  use TsuchinokusWeb, :view
 
   def verified?(%{aasm_state: state}), do: state == "verified"
   def contacted?(%{aasm_state: state}), do: state == "contacted"

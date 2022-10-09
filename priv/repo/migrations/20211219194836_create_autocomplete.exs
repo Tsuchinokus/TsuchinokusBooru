@@ -1,4 +1,4 @@
-defmodule Philomena.Repo.Migrations.CreateAutocomplete do
+defmodule Tsuchinokus.Repo.Migrations.CreateAutocomplete do
   use Ecto.Migration
 
   def change do

@@ -1,10 +1,10 @@
-defmodule PhilomenaWeb.Image.FeatureController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.Image.FeatureController do
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.Images.Image
-  alias Philomena.Images
+  alias Tsuchinokus.Images.Image
+  alias Tsuchinokus.Images
 
-  plug PhilomenaWeb.CanaryMapPlug, create: :hide
+  plug TsuchinokusWeb.CanaryMapPlug, create: :hide
   plug :load_and_authorize_resource, model: Image, id_name: "image_id", persisted: true
   plug :verify_not_deleted
 

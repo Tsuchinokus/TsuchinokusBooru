@@ -1,16 +1,16 @@
-defmodule PhilomenaWeb.Gallery.ImageController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.Gallery.ImageController do
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.Galleries.Gallery
-  alias Philomena.Galleries
-  alias Philomena.Images.Image
+  alias Tsuchinokus.Galleries.Gallery
+  alias Tsuchinokus.Galleries
+  alias Tsuchinokus.Images.Image
 
-  plug PhilomenaWeb.FilterBannedUsersPlug
+  plug TsuchinokusWeb.FilterBannedUsersPlug
 
-  plug PhilomenaWeb.CanaryMapPlug, create: :edit, delete: :edit
+  plug TsuchinokusWeb.CanaryMapPlug, create: :edit, delete: :edit
   plug :load_and_authorize_resource, model: Gallery, id_name: "gallery_id", persisted: true
 
-  plug PhilomenaWeb.CanaryMapPlug, create: :show, delete: :show
+  plug TsuchinokusWeb.CanaryMapPlug, create: :show, delete: :show
   plug :load_and_authorize_resource, model: Image, id_name: "image_id", persisted: true
 
   def create(conn, _params) do

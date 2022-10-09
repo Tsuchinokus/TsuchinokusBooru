@@ -1,13 +1,13 @@
-defmodule PhilomenaWeb.Image.VoteController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.Image.VoteController do
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.{Images, Images.Image}
-  alias Philomena.ImageVotes
-  alias Philomena.Repo
+  alias Tsuchinokus.{Images, Images.Image}
+  alias Tsuchinokus.ImageVotes
+  alias Tsuchinokus.Repo
   alias Ecto.Multi
 
-  plug PhilomenaWeb.FilterBannedUsersPlug
-  plug PhilomenaWeb.CanaryMapPlug, create: :vote, delete: :vote
+  plug TsuchinokusWeb.FilterBannedUsersPlug
+  plug TsuchinokusWeb.CanaryMapPlug, create: :vote, delete: :vote
 
   plug :load_and_authorize_resource,
     model: Image,
@@ -15,7 +15,7 @@ defmodule PhilomenaWeb.Image.VoteController do
     persisted: true,
     preload: [tags: :aliases]
 
-  plug PhilomenaWeb.FilterForcedUsersPlug
+  plug TsuchinokusWeb.FilterForcedUsersPlug
 
   def create(conn, params) do
     user = conn.assigns.current_user

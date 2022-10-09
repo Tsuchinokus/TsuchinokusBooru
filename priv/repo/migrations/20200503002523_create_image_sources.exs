@@ -1,4 +1,4 @@
-defmodule Philomena.Repo.Migrations.CreateImageSources do
+defmodule Tsuchinokus.Repo.Migrations.CreateImageSources do
   use Ecto.Migration
 
   def change do

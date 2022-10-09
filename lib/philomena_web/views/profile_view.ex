@@ -1,5 +1,5 @@
-defmodule PhilomenaWeb.ProfileView do
-  use PhilomenaWeb, :view
+defmodule TsuchinokusWeb.ProfileView do
+  use TsuchinokusWeb, :view
 
   def award_order(awards) do
     Enum.sort_by(awards, &{&1.badge.priority, DateTime.to_unix(&1.awarded_on)}, &>=/2)
@@ -13,7 +13,7 @@ defmodule PhilomenaWeb.ProfileView do
   def current?(_user1, _user2), do: false
 
   def manages_awards?(conn),
-    do: can?(conn, :create, Philomena.Badges.Award)
+    do: can?(conn, :create, Tsuchinokus.Badges.Award)
 
   def manages_links?(conn, user),
     do: can?(conn, :edit_links, user)
@@ -66,13 +66,13 @@ defmodule PhilomenaWeb.ProfileView do
   end
 
   def can_ban?(conn),
-    do: can?(conn, :index, Philomena.Bans.User)
+    do: can?(conn, :index, Tsuchinokus.Bans.User)
 
   def can_index_user?(conn),
-    do: can?(conn, :index, Philomena.Users.User)
+    do: can?(conn, :index, Tsuchinokus.Users.User)
 
   def can_read_mod_notes?(conn),
-    do: can?(conn, :index, Philomena.ModNotes.ModNote)
+    do: can?(conn, :index, Tsuchinokus.ModNotes.ModNote)
 
   def enabled_text(true), do: "Enabled"
   def enabled_text(_else), do: "Disabled"
@@ -129,6 +129,6 @@ defmodule PhilomenaWeb.ProfileView do
   defp zero_div(num, den), do: div(num, den)
 
   defp badge_url_root do
-    Application.get_env(:philomena, :badge_url_root)
+    Application.get_env(:tsuchinokus, :badge_url_root)
   end
 end

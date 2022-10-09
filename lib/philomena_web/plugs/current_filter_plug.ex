@@ -1,8 +1,8 @@
-defmodule PhilomenaWeb.CurrentFilterPlug do
+defmodule TsuchinokusWeb.CurrentFilterPlug do
   import Plug.Conn
 
-  alias Philomena.{Filters, Filters.Filter, Users.User}
-  alias Philomena.Repo
+  alias Tsuchinokus.{Filters, Filters.Filter, Users.User}
+  alias Tsuchinokus.Repo
 
   # No options
   def init([]), do: false

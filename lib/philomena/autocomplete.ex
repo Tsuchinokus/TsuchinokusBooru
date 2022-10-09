@@ -1,14 +1,14 @@
-defmodule Philomena.Autocomplete do
+defmodule Tsuchinokus.Autocomplete do
   @moduledoc """
   Pregenerated autocomplete files.
   """
 
   import Ecto.Query, warn: false
-  alias Philomena.Repo
+  alias Tsuchinokus.Repo
 
-  alias Philomena.Tags.Tag
-  alias Philomena.Images.Tagging
-  alias Philomena.Autocomplete.Autocomplete
+  alias Tsuchinokus.Tags.Tag
+  alias Tsuchinokus.Images.Tagging
+  alias Tsuchinokus.Autocomplete.Autocomplete
 
   @type tags_list() :: [{String.t(), number(), number(), String.t() | nil}]
   @type assoc_map() :: %{String.t() => [number()]}

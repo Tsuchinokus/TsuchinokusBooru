@@ -1,6 +1,6 @@
 elixir:
   route = fn p -> Routes.conversation_path(@conn, :show, @conversation, p) end
-  pagination = render PhilomenaWeb.PaginationView, "_pagination.html", page: @messages, route: route, conn: @conn
+  pagination = render TsuchinokusWeb.PaginationView, "_pagination.html", page: @messages, route: route, conn: @conn
   other = other_party(@current_user, @conversation)
 
 h1 = @conversation.title
@@ -10,7 +10,7 @@ h1 = @conversation.title
     ' &raquo;
     => link @conversation.title, to: Routes.conversation_path(@conn, :show, @conversation)
     ' Conversation with
-    => render PhilomenaWeb.UserAttributionView, "_user.html", object: %{user: other}, conn: @conn
+    => render TsuchinokusWeb.UserAttributionView, "_user.html", object: %{user: other}, conn: @conn
   .block__header--sub.block__header--light.page__header
     span.block__header__title.page__title>
       => @messages.total_entries
@@ -25,7 +25,7 @@ h1 = @conversation.title
       = link "Mark as unread", to: Routes.conversation_read_path(@conn, :delete, @conversation), data: [method: "delete"]
 
 = for {message, body} <- @messages do
-  = render PhilomenaWeb.MessageView, "_message.html", message: message, body: body, conn: @conn
+  = render TsuchinokusWeb.MessageView, "_message.html", message: message, body: body, conn: @conn
 
 .block
   .block__header.block__header--light.page__header
@@ -48,10 +48,10 @@ h1 = @conversation.title
 
 = cond do
   - @conn.assigns.current_ban ->
-    = render PhilomenaWeb.BanView, "_ban_reason.html", conn: @conn
+    = render TsuchinokusWeb.BanView, "_ban_reason.html", conn: @conn
 
   - @messages.total_entries < 1_000 ->
-    = render PhilomenaWeb.Conversation.MessageView, "_form.html", conversation: @conversation, changeset: @changeset, conn: @conn
+    = render TsuchinokusWeb.Conversation.MessageView, "_form.html", conversation: @conversation, changeset: @changeset, conn: @conn
 
   - true ->
     div

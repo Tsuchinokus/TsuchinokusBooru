@@ -1,8 +1,8 @@
-defmodule PhilomenaWeb.Api.Json.PostController do
-  use PhilomenaWeb, :controller
+defmodule TsuchinokusWeb.Api.Json.PostController do
+  use TsuchinokusWeb, :controller
 
-  alias Philomena.Posts.Post
-  alias Philomena.Repo
+  alias Tsuchinokus.Posts.Post
+  alias Tsuchinokus.Repo
   import Ecto.Query
 
   def show(conn, %{"id" => post_id}) do
@@ -25,7 +25,7 @@ defmodule PhilomenaWeb.Api.Json.PostController do
 
       true ->
         conn
-        |> put_view(PhilomenaWeb.Api.Json.Forum.Topic.PostView)
+        |> put_view(TsuchinokusWeb.Api.Json.Forum.Topic.PostView)
         |> render("show.json", post: post)
     end
   end

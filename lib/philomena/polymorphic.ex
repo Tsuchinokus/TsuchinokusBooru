@@ -1,22 +1,22 @@
-defmodule Philomena.Polymorphic do
-  alias Philomena.Repo
+defmodule Tsuchinokus.Polymorphic do
+  alias Tsuchinokus.Repo
   import Ecto.Query
 
   @classes %{
-    "Channel" => Philomena.Channels.Channel,
-    "Comment" => Philomena.Comments.Comment,
-    "Commission" => Philomena.Commissions.Commission,
-    "Conversation" => Philomena.Conversations.Conversation,
-    "DnpEntry" => Philomena.DnpEntries.DnpEntry,
-    "Filter" => Philomena.Filters.Filter,
-    "Forum" => Philomena.Forums.Forum,
-    "Gallery" => Philomena.Galleries.Gallery,
-    "Image" => Philomena.Images.Image,
-    "LivestreamChannel" => Philomena.Channels.Channel,
-    "Post" => Philomena.Posts.Post,
-    "Report" => Philomena.Reports.Report,
-    "Topic" => Philomena.Topics.Topic,
-    "User" => Philomena.Users.User
+    "Channel" => Tsuchinokus.Channels.Channel,
+    "Comment" => Tsuchinokus.Comments.Comment,
+    "Commission" => Tsuchinokus.Commissions.Commission,
+    "Conversation" => Tsuchinokus.Conversations.Conversation,
+    "DnpEntry" => Tsuchinokus.DnpEntries.DnpEntry,
+    "Filter" => Tsuchinokus.Filters.Filter,
+    "Forum" => Tsuchinokus.Forums.Forum,
+    "Gallery" => Tsuchinokus.Galleries.Gallery,
+    "Image" => Tsuchinokus.Images.Image,
+    "LivestreamChannel" => Tsuchinokus.Channels.Channel,
+    "Post" => Tsuchinokus.Posts.Post,
+    "Report" => Tsuchinokus.Reports.Report,
+    "Topic" => Tsuchinokus.Topics.Topic,
+    "User" => Tsuchinokus.Users.User
   }
 
   @preloads %{
