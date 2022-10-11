@@ -1,17 +1,44 @@
 {
   "system_filters": [{
       "name": "Default",
-      "description": "The site's default filter. Hides everything that is not safe, and fandoms related stuff.",
+      "description": "The site's default filter. Hides everything that is not safe, and spoiler fandoms related stuff. Also, must serve to hide all low quality memes.",
       "hidden": [
         "suggestive",
         "questionable",
         "explicit",
         "semi-grimdark",
         "grimdark",
-        "grotesque"
+        "grotesque",
+        "content-aware scale",
+        "deviantart stamp",
+        "drama bait",
+        "exploitable meme",
+        "forced meme",
+        "nazi",
+        "not art related",
+        "racial slur",
+        "text only",
+        "1000 hours in ms paint",
+        "drama",
+        "real exhibitionism",
+        "real nudity",
+        "image macro",
+        "merch sexploitation",
+        "twitter",
+        "youtube caption",
+        "not art related screenshot",
+        "score.lte:-50"
       ],
       "spoilered": [
-
+        "otaku",
+        "furry",
+        "gamer",
+        "abuse",
+        "politics",
+        "seizure warning",
+        "vulgar",
+        "machine learning generated",
+        "score.lte:-15"
       ]
     },
     {
