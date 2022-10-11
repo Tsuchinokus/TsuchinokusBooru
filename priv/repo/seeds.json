@@ -1,18 +1,22 @@
 {
   "system_filters": [{
       "name": "Default",
-      "description": "The site's default filter.",
+      "description": "The site's default filter. Hides everything that is not safe, and fandoms related stuff.",
       "hidden": [
+        "suggestive",
+        "questionable",
         "explicit",
+        "semi-grimdark",
+        "grimdark",
         "grotesque"
       ],
       "spoilered": [
-        "questionable"
+
       ]
     },
     {
       "name": "Everything",
-      "description": "This filter won't filter out anything at all.",
+      "description": "This filter won't filter out anything at all. Be warned, you will see even the most grotesque images that was upload. I advice use only as base for your own filters. Staffs MUST use this for moderation issues.",
       "hidden": [],
       "spoilered": []
     }
@@ -20,50 +24,74 @@
   "forums": [{
       "name": "General Discussion",
       "short_name": "dis",
-      "description": "This is a discussion forum for everything unrelated to the show or other forums",
+      "description": "This is a discussion forum for everything unrelated to the differents topics talked in the other forums.",
       "access_level": "normal"
     },
     {
       "name": "Shows and Movies",
-      "short_name": "pony",
+      "short_name": "shows",
       "description": "Discuss TV shows and movies, as well as their characters and theories.",
       "access_level": "normal"
     },
     {
+      "name": "Otaku Haven",
+      "short_name": "anime",
+      "description": "Discuss everything about anime, manga, or the fandom in general in the heaven for the otaku.",
+      "access_level": "normal"
+    },
+    {
+      "name": "Furry Paradise",
+      "short_name": "fur",
+      "description": "Discuss everything about furries, fursuits or everything about the fandom in your personal paradise.",
+      "access_level": "normal"
+    },
+    {
+    "name": "Gamers Zone",
+    "short_name": "gamer",
+    "description": "Do you like to play videogames with other people, or want to talk of the last games? Here is your zone",
+    "access_level": "normal"
+    },
+    {
       "name": "Site and Policy",
       "short_name": "meta",
-      "description": "For site discussion and policy discussion",
+      "description": "For site discussion and policy discussion.",
       "access_level": "normal"
     },
     {
       "name": "Art Chat",
       "short_name": "art",
-      "description": "Discuss art of any form, and share techniques and tips",
+      "description": "Discuss art of any form, and share techniques and tips. The major fandoms have their own post for art inside.",
       "access_level": "normal"
     },
     {
       "name": "Roleplaying",
       "short_name": "rp",
-      "description": "Roleplaying forum, in which people play roles",
+      "description": "Roleplaying forum, in which people play roles.",
+      "access_level": "normal"
+    },
+    {
+      "name": "Roleplaying After Dark",
+      "short_name": "rpad",
+      "description": "Adult roleplaying forum, in which people play +18 roles.",
       "access_level": "normal"
     },
     {
       "name": "Site Assistant Discussion",
       "short_name": "helper",
-      "description": "Restricted - Assistants and Staff",
+      "description": "Forum for Staff and their Assistants. Everything MUST be on-topic.",
       "access_level": "assistant"
     },
     {
       "name": "Moderation Discussion",
       "short_name": "mod",
-      "description": "Restricted - Staff only",
+      "description": "Staff only.",
       "access_level": "staff"
     }
   ],
   "users": [{
-    "name": "Administrator",
+    "name": "Tsuchinokus",
     "email": "admin@example.com",
-    "password": "tsuchinokus123",
+    "password": "tsuqueameesta",
     "role": "admin"
   }],
   "rating_tags": [
@@ -76,21 +104,28 @@
     "grotesque"
   ],
   "roles": [
+    {"name": "batch_update", "resource_type": "Tag"},
+
+    {"name": "moderator", "resource_type": "Tag"},
+    {"name": "moderator", "resource_type": "Badge"},
     {"name": "moderator", "resource_type": "Image"},
     {"name": "moderator", "resource_type": "DuplicateReport"},
     {"name": "moderator", "resource_type": "Comment"},
-    {"name": "moderator", "resource_type": "Tag"},
     {"name": "moderator", "resource_type": "ArtistLink"},
-    {"name": "admin", "resource_type": "Tag"},
     {"name": "moderator", "resource_type": "User"},
-    {"name": "admin", "resource_type": "SiteNotice"},
+
+    {"name": "admin", "resource_type": "Tag"},
     {"name": "admin", "resource_type": "Badge"},
+    {"name": "admin", "resource_type": "Image"},
+    {"name": "admin", "resource_type": "DuplicateReport"},
+    {"name": "admin", "resource_type": "Comment"},
+    {"name": "admin", "resource_type": "ArtistLink"},
+    {"name": "admin", "resource_type": "User"},
+
+    {"name": "admin", "resource_type": "SiteNotice"},
     {"name": "admin", "resource_type": "Role"},
-    {"name": "batch_update", "resource_type": "Tag"},
-    {"name": "moderator", "resource_type": "Topic"},
     {"name": "admin", "resource_type": "Advert"},
-    {"name": "admin", "resource_type": "StaticPage"},
-    {"name": "admin", "resource_type": "Image"}
+    {"name": "admin", "resource_type": "StaticPage"}
   ],
   "pages": []
 }
