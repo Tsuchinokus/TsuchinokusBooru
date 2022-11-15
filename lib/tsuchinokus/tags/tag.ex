@@ -163,7 +163,7 @@ defmodule Tsuchinokus.Tags.Tag do
         &1.category != "species",
         &1.category != "body-type",
         &1.category != "content-fanmade",
-        &1.category != "content-official",
+        &1.category != "official-copyright",
         &1.category != "spoiler",
         &1.name
       }
@@ -180,7 +180,7 @@ defmodule Tsuchinokus.Tags.Tag do
       "species",
       "body-type",
       "content-fanmade",
-      "content-official",
+      "official-copyright",
       "spoiler"
     ]
   end

@@ -3,23 +3,15 @@
     "Main",
     "Species",
     "Animes",
-    "Furry",
     "Gamer",
-    "Influencers",
-    "Shows",
-    "Comics",
-    "Movies"
+    "Influencers"
   ],
   "tab_modes": {
     "Main": "default",
     "Species": "default",
-    "Animes": "shipping",
-    "Furry": "shipping",
-    "Gamer": "shipping",
-    "Influencers": "shipping",
-    "Shows": "shipping",
-    "Comics": "shipping",
-    "Movies": "shipping"
+    "Animes": "default",
+    "Gamer": "default",
+    "Influencers": "default"
   },
   "Main": {
     "Ratings": [
@@ -32,42 +24,59 @@
       "grotesque"
     ],
     "General Spoilers": [
+      "spoiler:animes",
       "spoiler:books",
       "spoiler:comics",
       "spoiler:mangas",
-      "spoiler:animes",
-      "spoiler:shows",
       "spoiler:movies/tv shows",
+      "spoiler:shows",
+      "spoilers:videogames",
       "spoilers for others medias"
     ],
     "Most Used Species": [
       "human",
       "irl human",
+      "alien",
       "anthro",
+      "feral",
+      "fictional species",
       "humanized",
       "humanlike",
-      "feral",
-      "alien",
       "monster",
       "monster girl"
     ],
-    "Main Fandoms": [
+    "Main Fandom": [
       "Otaku",
       "Furry",
       "Gamer",
       "Comics",
-      "Movies",
       "Influencers",
+      "Movies",
       "Shows"
     ],
     "Often Forgotten": [
-      "solo",
-      "screencap",
+      "TagMe",
+      "animated",
+      "artist needed",
+      "cosplay",
+      "human only",
       "image macro",
       "monochrome",
-      "oc",
+      "official art",
       "photo",
+      "screencap",
+      "oc",
+      "oc only",
       "Tag original characters like oc:name"
+    ],
+    "Often Forgotten (Groups)": [
+      "solo",
+      "duo",
+      "group",
+      "solo female",
+      "solo females",
+      "solo male",
+      "solo males"
     ]
   },
   "Species": {
@@ -85,20 +94,22 @@
     "Fantasy or Mythological": [
       "alicorn",
       "alien",
+      "angel",
       "demon",
       "dragon",
       "fictional species",
       "gryphon",
       "monster",
       "pegasus",
+      "pokemon (creature)",
       "tsuchinoko",
       "undead",
       "unicorn"    
     ],
     "General Animal Category": [
       "anthropod",
-      "bird",
       "big cat",
+      "bird",
       "canine",
       "dinosaur",
       "equine",
@@ -121,12 +132,13 @@
       "fox",
       "goat",
       "hedgehog",
-      "horse"
+      "horse",
+      "hyena"
     ],
     "Specific animal races 2": [
-      "hyena",
       "lion",
       "lizard",
+      "monkey",
       "otter",
       "pony",
       "rabbit",
@@ -138,62 +150,125 @@
   },
 
   "Animes": {
-    "implying": [
-      "anime",
-      "otaku"
+    "Animes 1": [
+      "original",
+      "Touhou",
+      "Kantai Collection",
+      "Fate (series)",
+      "Kemnono Friends (anime)",
+      "Pokemon",
+      "Idolmaster",
+      "Vocaloid",
+      "Love live!",
+      "Mahou shoujo madoka magica",
+      "Girls und panzer"
     ],
-    "not_implying": [
-      "manga"
-    ]
-  },
-  "Furry": {
-    "implying": [
-      "furry"
+    "Animes 2": [
+      "One Piece",
+      "Naruto (series)",
+      "Jojo no kimyou na bouken",
+      "Umamusume (anime)",
+      "Boku no hero academia",
+      "Neon genesis evangelion",
+      "Danganronpa (series)",
+      "Dragon Ball",
+      "Jojo's bizarre adventure",
+      "k-on!",
+      "Digimon"
     ],
-    "not_implying": [
-
+    "Fate Series": [
+      "Fate (series)",
+      "Fate Grand Order",
+      "Fate Stay Night",
+      "Fate Extra",
+      "Fate Apocrypha",
+      "Fate Zero",
+      "Fate Kaleid liner prisma Illya",
+      "Fate Extra ccc",
+      "Fate Prototype",
+      "Fate Hollow Ataraxia",
+      "Fate Extella",
+      "Fate Unlimited Codes",
+      "Fate Strange Fake",
+      "Fate Requiem"
+    ],
+    "Pokemon Series": [
+      "Pokemon",
+      "Pokemon (anime)",
+      "Pokemon sm (anime)",
+      "Pokemon (classic anime)",
+      "Pokemon xy (anime)",
+      "Pokemon swsh (anime)",
+      "Pokemon dppt (anime)",
+      "Pokemon rse (anime)",
+      "Pokemon bw (anime)",
+      "Pokemon the movie: The power of us"
     ]
   },
   "Gamer": {
-    "implying": [
-      "Gamer"
+    "Main Plataforms": [
+      "Computer games",
+      "Mobile games",
+      "Nintendo",
+      "PlayStation",
+      "Retro consoles",
+      "Web-based games",
+      "Xbox",
+      "Multiplataform"
     ],
-    "not_implying": [
-
+    "Main Genres": [
+      "Sandbox",
+      "Real-Time strategy",
+      "Shooters",
+      "Indie",
+      "Moba",
+      "Roleplaying",
+      "Simulation",
+      "Puzzle/party games",
+      "Action",
+      "Adventure",
+      "Survival",
+      "Horror (games)",
+      "Platformer",
+      "MMO"
+    ],
+    "Anime/Oriental games": [
+      "Touhou",
+      "Pokemon",
+      "Genshin impact",
+      "Kemono friends (games)",
+      "Azur Lane",
+      "Fire Emblem",
+      "Arknights",
+      "Final Fantasy",
+      "Granblue fantasy",
+      "Blue Archive",
+      "Umamusume (game)",
+      "Persona",
+      "Girls' frontline",
+      "The legend of Zelda"
+    ],
+    "Pokemon games": [
+      "Pokemon (game)",
+      "Pokemon swsh",
+      "Pokemon sm",
+      "Pokemon bw",
+      "Pokemon xy",
+      "Pokemon dppt",
+      "Pokemon bw2",
+      "Pokemon hgss",
+      "Pokemon oras",
+      "Pokemon rse",
+      "Pokemon Legends: Arceus",
+      "Pokemon rgby",
+      "Pokemon frlg"
     ]
   },
   "Influencers": {
-    "implying": [
-      "influencers"
-    ],
-    "not_implying": [
-
-    ]
-  },
-  "Shows": {
-    "implying": [
-      "shows"
-    ],
-    "not_implying": [
-      "anime"
-    ]
-  },
-  "Comics": {
-    "implying": [
-      "comics"
-    ],
-    "not_implying": [
-      "manga"
-    ]
-  },
-  "Movies": {
-    "implying": [
-      "movies"
-    ],
-    "not_implying": [
-      "otaku",
-      "furry",
-      "gamer"
+    "Types of Influencers": [
+      "Streamer",
+      "Virtual Youtuber",
+      "Youtuber"
     ]
   }
 }
