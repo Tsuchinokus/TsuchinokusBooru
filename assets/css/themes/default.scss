@@ -6,43 +6,43 @@
 // ///// SECTION 1 - MAIN COLORS /////
 // ///////////////////////////////////
 
-$background_color: #ffffff;
-$page_background_color: #f8fafc;
-$foreground_color: #333333;
+$background_color: #34b5aa;
+$page_background_color: #31c5b9;
+$foreground_color: #2b302d;
 
-$base_color: #62a7d9;
+$base_color: #309191;
 
-$primary_color: #c1e4f9;
-$success_color: #bde9a3; /* tag added, currently banned, view post history--added */
-$danger_color: #ebc0bb; /* tag removed, currently not banned, view post history--deleted */
-$warning_color: #eee9bc; /* NSFW streams, image spoilered, things like that */
+$primary_color: #83c0e4;
+$success_color: #aee290; /* tag added, currently banned, view post history--added */
+$danger_color: #eb786b; /* tag removed, currently not banned, view post history--deleted */
+$warning_color: #f3ea9a; /* NSFW streams, image spoilered, things like that */
 
 $link_color: #419cd9;
-$link_hover_color: #9273d0;
+$link_hover_color: #8457dd;
 
 $fave_color: #c4b246;
-$vote_up_color: #67af2b;
-$vote_down_color: #cf0001;
-$hide_color: #cf0001;
+$vote_up_color: #70cc25;
+$vote_down_color: #df0303;
+$hide_color: #8d0101;
 
 $destroyed_content_color: #ffdcdc;
 
-$assistant_color: #eeceed;
-$unread_message_color: #ff8800;
+$assistant_color: #ddb6dc;
+$unread_message_color: #7b0380;
 
-$tag_normal_color: #6f8f0e;
+$tag_normal_color: #dfc161;
 $tag_category_rating_color: #267ead;
-$tag_category_spoiler_color: #c24523;
-$tag_category_origin_color: #393f85;
-$tag_category_oc_color: #9852a3;
+$tag_category_spoiler_color: #ca3810;
+$tag_category_origin_color: #1c27a3;
+$tag_category_oc_color: #731e80;
 $tag_category_error_color: #ad263f;
-$tag_category_character_color: #2d8677;
-$tag_category_content_official_color: #998e1a;
-$tag_category_content_fanmade_color: #bb5496;
-$tag_category_species_color: #8b552f;
+$tag_category_character_color: #13ac92;
+$tag_category_content_official_color: #8a66eb;
+$tag_category_content_fanmade_color: #c53390;
+$tag_category_species_color: #a87c5d;
 $tag_category_body_type_color: #4e4e4e; 
 
-$commission_category_color: #986f3d;
+$commission_category_color: #d8933f;
 
 $image_overlay_color: #ffffff;
 $image_overlay_background_color: #000000;
