@@ -50,10 +50,16 @@ If you are using a platform which uses cgroups v2 by default (Fedora 31+), use `
 Furbooru uses the following providers for the following purposes:
 
 OVH - main server (a simple $25 VPS)
+
 Cloudflare - anti-ddos + proxy + DNS
+
 Cloudflare R2 - primary image storage and CDN
+
 Backblaze B2 - backups storage
+
 Vultr - auxiliary servers for Discord bots, proxy and camo
+
+
 **So, in short, all that right now cost 60 or 80$ month.**
 In this moment, furbooru have near 210.000 images, 18,900 users, and 25,000 comments. 
 
