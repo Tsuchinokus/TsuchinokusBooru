@@ -2,18 +2,18 @@
   .block.block--fixed.block--warning
     h2 Content Safety
     p
-      ' By default, content that is safe and suitable for all ages is all you'll see on the site, and how most of our users browse. The default filters focus on art, so filter out things like memes and what some users would consider "spam".
+      ' By default, content that is safe and suitable for all ages is all you'll see on the site, and how most of our users browse. The staff is personally in charge together with the users to maintain the page like this by the use of tagsso, the default filters focus on safe for all artistic value content, and so on, we filter out things like memes and what some users would consider "spam".
     p
-      ' Filters let you customize what content you see on the site. This means that with the appropriate filter selected, you can access content which is not suitable for everyone, such as sexually explicit, grimdark or gory material.
+      ' Filters let you customize what content you see on the site. This means that with the appropriate filter selected, you can access content which is not suitable for everyone, such as sexually explicit, grimdark or gory material. At the same way, with the filters system, you can spoiler, or even hide for all individual images and/or tags.
     p
       strong
-        ' By changing away from the default filters, you accept you are legally permitted to view this content in your jurisdiction. If in doubt, stick with the recommended default filters.
+        ' By changing away from the default filters, you accept you are legally permitted to view this content in your jurisdiction. If in doubt, stick with the recommended default filters. Tsuchinokus are not responsible for claims, if you have changed the filter that the page has by default.
   h1 Browsing Filters
   p
-    ' Images posted on the site are tagged, allowing you to easily search for content. You can also filter out content you'd rather not see using filters. Filters are sets of tags - spoilered tags and hidden tags. Spoilers are images that show up as thumbnails instead of the image, letting you click through and find out more about an image before deciding to view it or not. Hidden tags will simply hide images.
+    ' Images posted on the site as you know, are tagged, allowing you to easily search for content. You can also filter out content you'd rather not see using filters as I say before.So filters are sets of tags - spoilered tags and hidden tags. Spoilers are images that show up as thumbnails instead of the image, letting you click through and find out more about an image before deciding to view it or not. Hidden tags will simply hide images.
   p
-    ' There are set of global filters to pick from which cover some common use-cases.
-    ' If you're logged in you can also customize these filters and make your own, as well as quickly switch (via the menu on every page) between them.
+    ' There are set of global filters to pick from which cover some common use-cases. Each of the global filters is maintained by the page staff to prevent misuse.
+    ' If you're logged in you can also customize these filters and make your own, as well as quickly switch (via the menu on every page) between them.A great advantage to be registered.
 
   h2 So how do these work?
   p
@@ -99,7 +99,7 @@ table.table
       td Literal
       td Matches the creator of this filter.
       td
-        code = link "creator:AppleDash", to: Routes.filter_path(@conn, :index, fq: "creator:AppleDash")
+        code = link "creator:Garky", to: Routes.filter_path(@conn, :index, fq: "creator:Garky")
     tr
       td
         code name
@@ -113,14 +113,14 @@ table.table
       td Full Text
       td Matches the description of this filter.
       td
-        code = link "description:the show's rating", to: Routes.filter_path(@conn, :index, fq: "description:the show's rating")
+        code = link "description:created for filter sexual", to: Routes.filter_path(@conn, :index, fq: "description:created for filter sexual")
     tr
       td
         code created_at
       td Date/Time Range
       td Matches the creation time of this filter.
       td
-        code = link "created_at:2015", to: Routes.filter_path(@conn, :index, fq: "created_at:2015")
+        code = link "created_at:2023", to: Routes.filter_path(@conn, :index, fq: "created_at:2023")
     tr
       td
         code id
