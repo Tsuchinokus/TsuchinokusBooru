@@ -67,10 +67,15 @@ Now, to Deployment:
 Prod deploy is essentially easy for a programmer. 
 
 Get a debian server. I use last ubuntu-server version mostly.
+
 Install openresty, postgresql, elasticsearch and redis. 
+
 With that 4 installed, import openresty (nginx) configs from development, adjust all the paths, and make ssl certificate. You can use Let's encrypt ones, they are free.
+
 Make a user account for your booru and install elixir **on it via kiex**. Trust me, use Kiex. Truly.
+
 Clone repo into ~/tsuchinokus folder, make a shell script that would set all environment variables (you can see which ones in docker-compose.yml file)
+
 
 Now, in that user account:
 
