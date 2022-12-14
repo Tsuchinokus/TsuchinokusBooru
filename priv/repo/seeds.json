@@ -111,7 +111,7 @@
     {
       "name": "Moderation Discussion",
       "short_name": "mod",
-      "description": "Staff only.",
+      "description": "Staff only. You know the drill",
       "access_level": "staff"
     }
   ],
