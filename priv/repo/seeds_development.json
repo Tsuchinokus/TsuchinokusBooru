@@ -8,13 +8,13 @@
     {
       "name": "Hoping For a Promotion",
       "email": "assistant@example.com",
-      "password": "tsuchinokus123",
+      "password": "tsuchinokus456",
       "role": "assistant"
     },
     {
       "name": "Pleb",
       "email": "user@example.com",
-      "password": "tsuchinokus123",
+      "password": "tsuchinokus789",
       "role": "user"
     }
   ],

@@ -118,7 +118,7 @@
   "users": [{
     "name": "Tsuchinokus",
     "email": "admin@example.com",
-    "password": "tsuqueameesta",
+    "password": "Tsuchinokus123456789",
     "role": "admin"
   }],
   "rating_tags": [
@@ -148,7 +148,6 @@
     {"name": "admin", "resource_type": "Comment"},
     {"name": "admin", "resource_type": "ArtistLink"},
     {"name": "admin", "resource_type": "User"},
-
     {"name": "admin", "resource_type": "SiteNotice"},
     {"name": "admin", "resource_type": "Role"},
     {"name": "admin", "resource_type": "Advert"},
