@@ -55,14 +55,15 @@ defmodule Tsuchinokus.Commissions.Commission do
   def categories do
     [
       Anthro: "Anthro",
-      "Canon Characters": "Canon Characters",
+      "Official Characters": "Official Characters",
       Comics: "Comics",
+      Feral: "Feral",
       "Fetish Art": "Fetish Art",
-      "Human and EqG": "Human and EqG",
+      Furry: "Furry",
+      "Human and humanlike": "Human and humanlike",
       NSFW: "NSFW",
       "Original Characters": "Original Characters",
       "Original Species": "Original Species",
-      Pony: "Pony",
       Requests: "Requests",
       Safe: "Safe",
       Shipping: "Shipping",
