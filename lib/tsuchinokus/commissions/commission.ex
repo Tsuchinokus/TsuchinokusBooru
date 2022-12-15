@@ -73,7 +73,7 @@ defmodule Tsuchinokus.Commissions.Commission do
 
   def types do
     [
-      "Sketch",
+"Sketch",
       "Colored Sketch",
       "Inked",
       "Flat Color",
@@ -87,6 +87,18 @@ defmodule Tsuchinokus.Commissions.Commission do
       "Sculpture",
       "Plushie",
       "Other"
-    ]
+      "3D"
+      "Shaders"
+      "Cell shading"
+      "Low poly"
+      "High poly"
+      "Voxel"
+      "VR-Chat"
+      "GameDev"
+      "Bases"
+      "V-Tuber"
+      "3D Printing"
+      "Props"
+      ]
   end
 end
