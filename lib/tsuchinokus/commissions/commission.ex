@@ -61,7 +61,7 @@ defmodule Tsuchinokus.Commissions.Commission do
       "Fetish Art": "Fetish Art",
       Furry: "Furry",
       "Human and humanlike": "Human and humanlike",
-      NSFW: "NSFW",
+      "NSFW": "NSFW",
       "Original Characters": "Original Characters",
       "Original Species": "Original Species",
       Requests: "Requests",
