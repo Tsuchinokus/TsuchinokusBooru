@@ -86,18 +86,18 @@ defmodule Tsuchinokus.Commissions.Commission do
       "Crafted Item",
       "Sculpture",
       "Plushie",
-      "Other"
-      "3D"
-      "Shaders"
-      "Cell shading"
-      "Low poly"
-      "High poly"
-      "Voxel"
-      "VR-Chat"
-      "GameDev"
-      "Bases"
-      "V-Tuber"
-      "3D Printing"
+      "Other",
+      "3D",
+      "Shaders",
+      "Cell shading",
+      "Low poly",
+      "High poly",
+      "Voxel",
+      "VR-Chat",
+      "GameDev",
+      "Bases",
+      "V-Tuber",
+      "3D Printing",
       "Props"
       ]
   end
