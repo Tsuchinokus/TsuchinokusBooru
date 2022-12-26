@@ -16,7 +16,7 @@ footer#footer
 
   #serving_info
     ' Powered by
-    a> href="https://github.com/tsuchinokus-dev/tsuchinokus" tsuchinokus
+    a> href="https://github.com/philomena-dev/tsuchinokus" tsuchinokus
     | (
     = render_time(@conn)
     | ms)
